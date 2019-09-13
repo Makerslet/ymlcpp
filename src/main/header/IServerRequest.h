@@ -8,6 +8,7 @@ enum class RequestType{GET, POST};
 
 class IServerRequest
 {
+public:
     RequestType requestType() const;
 };
 
