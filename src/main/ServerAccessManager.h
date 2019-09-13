@@ -5,6 +5,9 @@
 #include "header/IServerRequest.h"
 #include "header/IServerResponse.h"
 
+#include "RequestResponseConvertor.h"
+#include "ServerAccessor.h"
+
 namespace ympcpp {
 namespace server_access {
 
@@ -21,7 +24,8 @@ signals:
     void responseReceived(QSharedPointer<IServerResponse>);
 
 private:
-
+    RequestResponseConvertor _convertor;
+    ServerAccessor _accessor;
 };
 
 }
