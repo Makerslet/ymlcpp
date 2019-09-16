@@ -22,12 +22,34 @@ QPair<QNetworkRequest, QByteArray> RequestResponseConvertor::createPostNetworkRe
         QSharedPointer<ServerPostRequest> req)
 {
     auto networkRequest = req->toNetworkRequest();
+    insertRequest(req->appRequestType(), networkRequest.first);
     return networkRequest;
 }
 
-QSharedPointer<IServerResponse> RequestResponseConvertor::parseNetworkResponse(QNetworkReply*)
+void RequestResponseConvertor::insertRequest(AppRequestType type, const QNetworkRequest& req)
 {
+    auto url = req.url();
 
+    if(_requestsHash.contains(req.url()))
+        return;
+
+    _requestsHash.insert(url, qMakePair(type, req));
+}
+
+
+QSharedPointer<IServerResponse> RequestResponseConvertor::parseNetworkResponse(QNetworkReply* reply)
+{
+    auto baseRequest = reply->request();
+    auto url = baseRequest.url();
+
+    auto iterToReq = _requestsHash.find(url);
+    if(iterToReq == _requestsHash.end())
+        return QSharedPointer<IServerResponse>();
+    else
+    {
+        // create corresponding response
+        int i = 10;
+    }
 }
 
 }

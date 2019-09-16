@@ -1,9 +1,9 @@
 #ifndef REQUESTRESPONSECONVERTOR_H
 #define REQUESTRESPONSECONVERTOR_H
 
-#include "commands/headers/IServerRequest.h"
 #include "commands/headers/IServerResponse.h"
 #include "commands/ServerPostRequest.h"
+#include "commands/headers/AppRequestTypes.h"
 
 #include <QSharedPointer>
 
@@ -15,6 +15,7 @@ namespace server_access {
 
 class RequestResponseConvertor
 {
+    using RequestsHash = QHash<QUrl, QPair<AppRequestType, QNetworkRequest>>;
 public:
     RequestResponseConvertor();
     QNetworkRequest createGetNetworkRequest(QSharedPointer<IServerRequest>);
@@ -22,7 +23,10 @@ public:
     QSharedPointer<IServerResponse> parseNetworkResponse(QNetworkReply*);
 
 private:
-    QHash<QUrl, QList<QNetworkRequest>> _requestsHash;
+    void insertRequest(AppRequestType, const QNetworkRequest&);
+
+private:
+    RequestsHash _requestsHash;
 };
 
 }
