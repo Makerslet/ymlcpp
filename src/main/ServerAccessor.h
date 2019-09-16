@@ -4,7 +4,7 @@
 #include <QNetworkRequest>
 #include <QNetworkAccessManager>
 
-namespace ympcpp {
+namespace ymlcpp {
 namespace server_access {
 
 class ServerAccessor : public QObject

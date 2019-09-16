@@ -5,7 +5,7 @@
 #include <QPair>
 #include <QByteArray>
 
-namespace ympcpp {
+namespace ymlcpp {
 namespace server_access {
 
 RequestResponseConvertor::RequestResponseConvertor()
@@ -18,9 +18,11 @@ QNetworkRequest RequestResponseConvertor::createGetNetworkRequest(QSharedPointer
     return QNetworkRequest();
 }
 
-QPair<QNetworkRequest, QByteArray> RequestResponseConvertor::createPostNetworkRequest(QSharedPointer<IServerRequest>)
+QPair<QNetworkRequest, QByteArray> RequestResponseConvertor::createPostNetworkRequest(
+        QSharedPointer<ServerPostRequest> req)
 {
-    return qMakePair(QNetworkRequest(), QByteArray());
+    auto networkRequest = req->toNetworkRequest();
+    return networkRequest;
 }
 
 QSharedPointer<IServerResponse> RequestResponseConvertor::parseNetworkResponse(QNetworkReply*)

@@ -3,13 +3,13 @@
 
 #include <QObject>
 
-#include "header/IServerRequest.h"
-#include "header/IServerResponse.h"
+#include "commands/headers/IServerRequest.h"
+#include "commands/headers/IServerResponse.h"
 
 #include "RequestResponseConvertor.h"
 #include "ServerAccessor.h"
 
-namespace ympcpp {
+namespace ymlcpp {
 namespace server_access {
 
 class ServerAccessManager : public QObject

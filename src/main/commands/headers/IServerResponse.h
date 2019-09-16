@@ -1,7 +1,7 @@
 #ifndef ISERVERRESPONSE_H
 #define ISERVERRESPONSE_H
 
-namespace ympcpp {
+namespace ymlcpp {
 namespace server_access {
 
 class IServerResponse

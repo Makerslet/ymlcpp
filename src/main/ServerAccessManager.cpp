@@ -3,8 +3,9 @@
 #include <QSharedPointer>
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QDebug>
 
-namespace ympcpp {
+namespace ymlcpp {
 namespace server_access {
 
 ServerAccessManager::ServerAccessManager(QObject *parent) : QObject(parent)
@@ -26,14 +27,14 @@ ServerAccessManager::~ServerAccessManager()
 
 void ServerAccessManager::sendRequest(QSharedPointer<IServerRequest> request)
 {
-    switch (request->requestType()) {
-    case RequestType::GET: {
+    switch (request->serverRequestType()) {
+    case ServerRequestType::GET: {
         auto req = _convertor->createGetNetworkRequest(request);
         _accessor->sendRequest(req);
         break;
     }
-    case RequestType::POST: {
-        auto req = _convertor->createPostNetworkRequest(request);
+    case ServerRequestType::POST: {
+        auto req = _convertor->createPostNetworkRequest(request.dynamicCast<ServerPostRequest>());
         _accessor->sendRequest(req);
         break;
     }
@@ -43,6 +44,7 @@ void ServerAccessManager::sendRequest(QSharedPointer<IServerRequest> request)
 
 void ServerAccessManager::responseFromNetwork(QNetworkReply* reply)
 {
+    qDebug() << reply->readAll();
     emit responseReceived(_convertor->parseNetworkResponse(reply));
 }
 

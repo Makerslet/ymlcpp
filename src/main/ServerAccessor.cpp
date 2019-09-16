@@ -1,7 +1,7 @@
 #include "ServerAccessor.h"
 #include <QNetworkReply>
 
-namespace ympcpp {
+namespace ymlcpp {
 namespace server_access {
 
 ServerAccessor::ServerAccessor()
