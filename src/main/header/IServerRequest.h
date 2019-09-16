@@ -9,7 +9,12 @@ enum class RequestType{GET, POST};
 class IServerRequest
 {
 public:
-    RequestType requestType() const;
+    IServerRequest();
+    virtual ~IServerRequest();
+    RequestType requestType() const {return _reqType;}
+
+private:
+    RequestType _reqType;
 };
 
 }

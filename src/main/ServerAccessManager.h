@@ -2,6 +2,7 @@
 #define SERVERACCESSMANAGER_H
 
 #include <QObject>
+
 #include "header/IServerRequest.h"
 #include "header/IServerResponse.h"
 
@@ -16,16 +17,22 @@ class ServerAccessManager : public QObject
     Q_OBJECT
 public:
     explicit ServerAccessManager(QObject *parent = nullptr);
+    ~ServerAccessManager();
+
+    ServerAccessManager(const ServerAccessManager&) = delete;
+    ServerAccessManager& operator=(const ServerAccessManager&) = delete;
 
 public slots:
     void sendRequest(QSharedPointer<IServerRequest>);
+    void responseFromNetwork(QNetworkReply*);
+    void responseErrors(QNetworkReply*, const QList<QSslError>&);
 
 signals:
     void responseReceived(QSharedPointer<IServerResponse>);
 
 private:
-    RequestResponseConvertor _convertor;
-    ServerAccessor _accessor;
+    RequestResponseConvertor* _convertor;
+    ServerAccessor* _accessor;
 };
 
 }

@@ -2,17 +2,30 @@
 #define SERVERACCESSOR_H
 
 #include <QNetworkRequest>
+#include <QNetworkAccessManager>
 
 namespace ympcpp {
 namespace server_access {
 
-class ServerAccessor
+class ServerAccessor : public QObject
 {
+    Q_OBJECT
 public:
     ServerAccessor();
+    ~ServerAccessor();
 
-    void sendRequest(QNetworkRequest);
-    void sendRequest(QPair<QNetworkRequest, QByteArray>);
+    ServerAccessor(const ServerAccessor&) = delete;
+    ServerAccessor& operator=(const ServerAccessor&) = delete;
+
+    void sendRequest(const QNetworkRequest&);
+    void sendRequest(const QPair<QNetworkRequest, QByteArray> &);
+
+signals:
+    void responseReceived(QNetworkReply*);
+    void errorHapenned(QNetworkReply*, const QList<QSslError>&);
+
+private:
+    QNetworkAccessManager* _networkAccessManager;
 };
 
 }
