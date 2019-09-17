@@ -2,6 +2,9 @@
 #define ISERVERREQUEST_H
 
 #include "AppRequestTypes.h"
+#include "IServerResponse.h"
+
+#include <QSharedPointer>
 
 namespace ymlcpp {
 namespace server_access {
@@ -15,6 +18,7 @@ public:
 
     virtual ServerRequestType serverRequestType() const = 0;
     virtual AppRequestType appRequestType() const = 0;
+    virtual QSharedPointer<IServerResponse> createResponse(const QByteArray&) const = 0;
 };
 
 }

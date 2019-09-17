@@ -1,5 +1,4 @@
 #include "RequestResponseConvertor.h"
-#include "commands/ResponseCreator.h"
 
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -23,18 +22,18 @@ QPair<QNetworkRequest, QByteArray> RequestResponseConvertor::createPostNetworkRe
         QSharedPointer<ServerPostRequest> req)
 {
     auto networkRequest = req->toNetworkRequest();
-    insertRequest(req->appRequestType(), networkRequest.first);
+    insertRequest(req, networkRequest.first);
     return networkRequest;
 }
 
-void RequestResponseConvertor::insertRequest(AppRequestType type, const QNetworkRequest& req)
+void RequestResponseConvertor::insertRequest(RequestSptr req, const QNetworkRequest& networkReq)
 {
-    auto url = req.url();
+    auto url = networkReq.url();
 
-    if(_requestsHash.contains(req.url()))
+    if(_requestsHash.contains(url))
         return;
 
-    _requestsHash.insert(url, qMakePair(type, req));
+    _requestsHash.insert(url, qMakePair(networkReq, req));
 }
 
 
@@ -44,17 +43,15 @@ QSharedPointer<IServerResponse> RequestResponseConvertor::parseNetworkResponse(Q
     auto url = baseRequest.url();
 
     auto iterToReq = _requestsHash.find(url);
-    if(iterToReq == _requestsHash.end())
-        return QSharedPointer<IServerResponse>();
-    else
+    if(iterToReq != _requestsHash.end())
     {
-        auto reqType = iterToReq.value().first;
-        auto reqPayload = reply->readAll();
-
+        auto request = iterToReq.value().second;
         _requestsHash.erase(iterToReq);
 
-        return  ResponseCreator::createResponse(reqType, reqPayload);
+        return request->createResponse(reply->readAll());
     }
+    else
+        return QSharedPointer<IServerResponse>();
 }
 
 }

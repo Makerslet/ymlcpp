@@ -17,6 +17,7 @@ public:
                          const QString& password);
 
     QPair<QNetworkRequest, QByteArray> toNetworkRequest() const override;
+    QSharedPointer<IServerResponse> createResponse(const QByteArray&) const override;
 
 
 private:

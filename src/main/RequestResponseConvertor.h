@@ -15,7 +15,10 @@ namespace server_access {
 
 class RequestResponseConvertor
 {
-    using RequestsHash = QHash<QUrl, QPair<AppRequestType, QNetworkRequest>>;
+    using RequestSptr = QSharedPointer<IServerRequest>;
+    using PostRequestSptr = QSharedPointer<ServerPostRequest>;
+    using RequestsHash = QHash<QUrl, QPair<QNetworkRequest, RequestSptr>>;
+
 public:
     RequestResponseConvertor();
     QNetworkRequest createGetNetworkRequest(QSharedPointer<IServerRequest>);
@@ -23,7 +26,7 @@ public:
     QSharedPointer<IServerResponse> parseNetworkResponse(QNetworkReply*);
 
 private:
-    void insertRequest(AppRequestType, const QNetworkRequest&);
+    void insertRequest(RequestSptr, const QNetworkRequest&);
 
 private:
     RequestsHash _requestsHash;

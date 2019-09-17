@@ -3,7 +3,6 @@
 #include <QSharedPointer>
 #include <QNetworkRequest>
 #include <QNetworkReply>
-#include <QDebug>
 
 namespace ymlcpp {
 namespace server_access {

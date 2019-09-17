@@ -1,4 +1,8 @@
 #include "AuthorizationRequest.h"
+#include "AuthorizationResponse.h"
+
+#include <QJsonDocument>
+#include <QJsonObject>
 
 namespace ymlcpp {
 namespace server_access {
@@ -16,6 +20,12 @@ QPair<QNetworkRequest, QByteArray> AuthorizationRequest::toNetworkRequest() cons
     auto payload = preparePayload();
     auto request = prepareRequest(payload.length());
     return qMakePair(request, payload);
+}
+
+
+QSharedPointer<IServerResponse> AuthorizationRequest::createResponse(const QByteArray& payload) const
+{
+    return QSharedPointer<AuthorizationResponse>::create(payload);
 }
 
 QNetworkRequest AuthorizationRequest::prepareRequest(int payloadLen) const
