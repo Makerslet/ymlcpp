@@ -1,4 +1,5 @@
 #include "RequestResponseConvertor.h"
+#include "commands/ResponseCreator.h"
 
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -47,8 +48,12 @@ QSharedPointer<IServerResponse> RequestResponseConvertor::parseNetworkResponse(Q
         return QSharedPointer<IServerResponse>();
     else
     {
-        // create corresponding response
-        int i = 10;
+        auto reqType = iterToReq.value().first;
+        auto reqPayload = reply->readAll();
+
+        _requestsHash.erase(iterToReq);
+
+        return  ResponseCreator::createResponse(reqType, reqPayload);
     }
 }
 

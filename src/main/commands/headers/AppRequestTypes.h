@@ -1,5 +1,5 @@
-#ifndef REQUESTTYPES_H
-#define REQUESTTYPES_H
+#ifndef APPREQUESTTYPES_H
+#define APPREQUESTTYPES_H
 
 namespace ymlcpp {
 namespace server_access {
@@ -11,4 +11,4 @@ enum class AppRequestType {
 }
 }
 
-#endif // REQUESTTYPES_H
+#endif // APPREQUESTTYPES_H
