@@ -15,7 +15,7 @@ namespace server_access {
 class ServerPostRequest : public IServerRequest
 {
 public:
-    ServerPostRequest(AppRequestType appReqType);
+    ServerPostRequest(AppRequestType);
     ~ServerPostRequest() override;
 
     ServerRequestType serverRequestType() const override;

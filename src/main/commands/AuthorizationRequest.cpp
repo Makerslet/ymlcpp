@@ -7,6 +7,19 @@
 namespace ymlcpp {
 namespace server_access {
 
+const QUrl AuthorizationRequest::_authUrl("https://oauth.yandex.ru/token");
+const QString AuthorizationRequest::_clientId("23cabbbdc6cd418abb4b39c32c41195d");
+const QString AuthorizationRequest::_clientSecret("53bc75238f0c4d08a118e51fe9203300");
+const QString AuthorizationRequest::_grantType("password");
+
+const AuthorizationRequest::RequestFields AuthorizationRequest::_fields{
+    {Fields::GrantType,     "grant_type"},
+    {Fields::ClientId,      "client_id"},
+    {Fields::ClientSecret,  "client_secret"},
+    {Fields::Username,      "username"},
+    {Fields::Password,      "password"}
+};
+
 AuthorizationRequest::AuthorizationRequest(const QString &login, const QString &password) :
     ServerPostRequest (AppRequestType::AuthorizationRequest),
     _login(login),
@@ -30,8 +43,7 @@ QSharedPointer<IServerResponse> AuthorizationRequest::createResponse(const QByte
 
 QNetworkRequest AuthorizationRequest::prepareRequest(int payloadLen) const
 {
-    QUrl serviceUrl("https://oauth.yandex.ru/token");
-    QNetworkRequest request(serviceUrl);
+    QNetworkRequest request(_authUrl);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     request.setHeader(QNetworkRequest::ContentLengthHeader, payloadLen);
     return  request;
@@ -40,12 +52,11 @@ QNetworkRequest AuthorizationRequest::prepareRequest(int payloadLen) const
 QByteArray AuthorizationRequest::preparePayload() const
 {
     QHash<QString, QString> requestData;
-    requestData.insert("grant_type", "password");
-    requestData.insert("client_id", "23cabbbdc6cd418abb4b39c32c41195d");
-    requestData.insert("client_secret", "53bc75238f0c4d08a118e51fe9203300");
-
-    requestData.insert("username", _login);
-    requestData.insert("password", _password);
+    requestData.insert(_fields[Fields::GrantType],      _grantType);
+    requestData.insert(_fields[Fields::ClientId],       _clientId);
+    requestData.insert(_fields[Fields::ClientSecret],   _clientSecret);
+    requestData.insert(_fields[Fields::Username],       _login);
+    requestData.insert(_fields[Fields::Password],       _password);
 
     return toApiFormat(requestData);
 }

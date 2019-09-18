@@ -6,6 +6,11 @@
 namespace ymlcpp {
 namespace server_access {
 
+enum class ResponseResult {
+    Succes,
+    Error
+};
+
 class IServerResponse
 {
 public:
