@@ -27,7 +27,8 @@ const AuthorizationResponse::FieldsMap AuthorizationResponse::_fields {
     {ResponseFields::ErrorDescription, "error_description"}
 };
 
-AuthorizationResponse::AuthorizationResponse(const QByteArray& data)
+AuthorizationResponse::AuthorizationResponse(const QByteArray& data) :
+    IServerResponse (AppResponseType::AuthorizationResponse)
 {
     parseResponse(data);
 }
@@ -40,17 +41,18 @@ void AuthorizationResponse::parseResponse(const QByteArray& data)
 
     if(jsonObject.find(_fields[ResponseFields::Error]) != jsonObject.end())
     {
-        _status = AuthorizationStatus::Error;
+        _respStatus = ResponseResult::Error;
         parseError(jsonObject);
     }
     else if(jsonObject.find(_fields[ResponseFields::AccessToken]) != jsonObject.end())
     {
-        _status = AuthorizationStatus::Succes;
+        _respStatus = ResponseResult::Succes;
         _oauthToken = jsonObject.find(_fields[ResponseFields::AccessToken]).value().toString();
     }
     else
     {
-        _status = AuthorizationStatus::CaptchaRequired;
+        _respStatus = ResponseResult::Error;
+        _error = AuthorizationError::RequiredFillCaptcha;
         // TODO: implement captcha handler later
     }
 }
@@ -64,10 +66,11 @@ void AuthorizationResponse::parseError(const QJsonObject& object)
     _errorDescription = errorDescriptionIter != object.end() ? errorDescriptionIter.value().toString() : "";
 }
 
-AuthorizationResponse::AuthorizationStatus AuthorizationResponse::status() const
+ResponseResult AuthorizationResponse::status() const
 {
-    return _status;
+    return _respStatus;
 }
+
 
 QString AuthorizationResponse::oauthToken() const
 {

@@ -5,7 +5,8 @@ namespace ymlcpp {
 namespace server_access {
 
 enum class AppResponseType {
-    AuthorizationResponse
+    AuthorizationResponse,
+    UserInfoResponse
 };
 
 }

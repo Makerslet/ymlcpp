@@ -13,12 +13,6 @@ namespace server_access {
 
 class AuthorizationResponse : public IServerResponse
 {
-    enum class AuthorizationStatus {
-        Succes,
-        CaptchaRequired,
-        Error
-    };
-
     enum class AuthorizationError {
         AuthorizationPending,
         BadVerificationCode,
@@ -30,6 +24,7 @@ class AuthorizationResponse : public IServerResponse
         UnsupportedGrantType,
         BasicAuthRequired,
         MalformedAuthorization,
+        RequiredFillCaptcha,
         UnknownError
     };
 
@@ -46,7 +41,8 @@ class AuthorizationResponse : public IServerResponse
 public:
     AuthorizationResponse(const QByteArray&);
 
-    AuthorizationStatus status() const;
+    ResponseResult status() const override;
+
     QString oauthToken() const;
 
     AuthorizationError error() const;
@@ -59,9 +55,9 @@ private:
     void parseError(const QJsonObject&);
 
 private:
-    AuthorizationStatus _status;
     QString _oauthToken;
 
+    ResponseResult _respStatus;
     AuthorizationError _error;
     QString _errorDescription;
 

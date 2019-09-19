@@ -9,17 +9,17 @@ namespace ymlcpp {
 namespace server_access {
 
 struct UserInfo {
-    QDateTime   _createTime;
-    QString     _uid;
-    QString     _login;
-    uint        _region;
-    QString     _fullName;
-    QString     _secondName;
-    QString     _firstName;
-    QString     _displayName;
-    bool        _serviceAvailable;
-    bool        _hostedUser;
-    QDateTime   _registerTime;
+    QDateTime   createTime;
+    QString     uid;
+    QString     login;
+    uint        region;
+    QString     fullName;
+    QString     secondName;
+    QString     firstName;
+    QString     displayName;
+    bool        serviceAvailable;
+    bool        hostedUser;
+    QDateTime   registerTime;
 };
 
 class UserInfoResponse : public IServerResponse
@@ -28,8 +28,15 @@ public:
     UserInfoResponse(const QByteArray&);
     ~UserInfoResponse() override;
 
+    ResponseResult status() const override;
+    UserInfo userInfo() const;
+
 private:
     void parseResponse(const QByteArray&) override;
+
+private:
+    ResponseResult _respStatus;
+    UserInfo _userInfo;
 };
 
 }
