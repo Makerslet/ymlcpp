@@ -28,7 +28,7 @@ void ServerAccessManager::sendRequest(QSharedPointer<IServerRequest> request)
 {
     switch (request->serverRequestType()) {
     case ServerRequestType::GET: {
-        auto req = _convertor->createGetNetworkRequest(request);
+        auto req = _convertor->createGetNetworkRequest(request.dynamicCast<ServerGetRequest>());
         _accessor->sendRequest(req);
         break;
     }

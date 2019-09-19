@@ -4,6 +4,8 @@
 #include <QJsonDocument>
 #include <QVariant>
 
+#include <QDebug>
+
 namespace ymlcpp {
 namespace server_access {
 
@@ -19,16 +21,17 @@ UserInfoResponse::~UserInfoResponse()
 
 void UserInfoResponse::parseResponse(const QByteArray& data)
 {
-    auto jsonDoc = QJsonDocument::fromBinaryData(data);
+    qDebug() << data;
+    auto jsonDoc = QJsonDocument::fromJson(data);
+    auto jsonObject = jsonDoc.object();
 
-    auto rootHashMap = jsonDoc.object().toVariantHash();
-    auto resultFieldIter = rootHashMap.find("result");
-    if(resultFieldIter != rootHashMap.end())
+    auto resultFieldIter = jsonObject.find("result");
+    if(resultFieldIter != jsonObject.end())
     {
         _respStatus = ResponseResult::Succes;
 
-        auto resultHashMap = resultFieldIter->toHash();
-        auto accountFieldIter = resultHashMap.find("account");
+        /*
+        auto accountFieldIter = resultFieldIter.find("account");
         if(accountFieldIter == resultHashMap.end())
             return;
 
@@ -43,7 +46,7 @@ void UserInfoResponse::parseResponse(const QByteArray& data)
         _userInfo.displayName = accountHashMap["displayName"].toString();
         _userInfo.serviceAvailable = accountHashMap["serviceAvailable"].toBool();
         _userInfo.hostedUser = accountHashMap["hostedUser"].toBool();
-        _userInfo.registerTime = accountHashMap["registeredAt"].toDateTime().toLocalTime();
+        _userInfo.registerTime = accountHashMap["registeredAt"].toDateTime().toLocalTime();*/
     }
     else
         _respStatus = ResponseResult::Error;

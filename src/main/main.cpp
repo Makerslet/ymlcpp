@@ -5,7 +5,7 @@ int main(int argc, char** argv) {
 
     QCoreApplication app(argc, argv);
 
-    ClientCodeMock mock;
+    ymlcpp::server_access::ClientCodeMock mock;
 
 	return app.exec();
 }

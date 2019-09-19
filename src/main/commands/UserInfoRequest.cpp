@@ -1,4 +1,5 @@
 #include "UserInfoRequest.h"
+#include "UserInfoResponse.h"
 
 namespace ymlcpp {
 namespace server_access {
@@ -25,7 +26,7 @@ QNetworkRequest UserInfoRequest::toNetworkRequest() const
 
 QSharedPointer<IServerResponse> UserInfoRequest::createResponse(const QByteArray& data) const
 {
-
+    return  QSharedPointer<UserInfoResponse>::create(data);
 }
 
 }

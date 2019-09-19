@@ -3,6 +3,7 @@
 
 #include "commands/headers/IServerResponse.h"
 #include "commands/ServerPostRequest.h"
+#include "commands/ServerGetRequest.h"
 #include "commands/headers/AppRequestTypes.h"
 
 #include <QSharedPointer>
@@ -21,7 +22,7 @@ class RequestResponseConvertor
 
 public:
     RequestResponseConvertor();
-    QNetworkRequest createGetNetworkRequest(QSharedPointer<IServerRequest>);
+    QNetworkRequest createGetNetworkRequest(QSharedPointer<ServerGetRequest>);
     QPair<QNetworkRequest, QByteArray> createPostNetworkRequest(QSharedPointer<ServerPostRequest>);
     QSharedPointer<IServerResponse> parseNetworkResponse(QNetworkReply*);
 

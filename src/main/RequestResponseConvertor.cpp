@@ -13,9 +13,12 @@ RequestResponseConvertor::RequestResponseConvertor()
 
 }
 
-QNetworkRequest RequestResponseConvertor::createGetNetworkRequest(QSharedPointer<IServerRequest>)
+QNetworkRequest RequestResponseConvertor::createGetNetworkRequest(
+        QSharedPointer<ServerGetRequest> req)
 {
-    return QNetworkRequest();
+    auto networkRequest = req->toNetworkRequest();
+    insertRequest(req, networkRequest);
+    return networkRequest;
 }
 
 QPair<QNetworkRequest, QByteArray> RequestResponseConvertor::createPostNetworkRequest(
