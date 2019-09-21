@@ -39,7 +39,6 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         auto uInfoResponse = response.dynamicCast<UserInfoResponse>();
         qDebug() << "UserInfoResponse";
         qDebug() << (int)uInfoResponse->status();
-        qDebug() << uInfoResponse->userInfo().uid;
     }
 }
 
