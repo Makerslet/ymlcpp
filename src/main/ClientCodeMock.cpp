@@ -1,8 +1,7 @@
 #include "ClientCodeMock.h"
 #include "commands/AuthorizationRequest.h"
 #include "commands/AuthorizationResponse.h"
-#include "commands/UserInfoRequest.h"
-#include "commands/UserInfoResponse.h"
+#include "commands/UserLikesRequest.h"
 
 #include <QDebug>
 
@@ -32,14 +31,16 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << (int)authResponse->status();
         qDebug() << authResponse->oauthToken();
 
-        auto uInfoReq = QSharedPointer<UserInfoRequest>::create(authResponse->oauthToken());
+        auto uInfoReq = QSharedPointer<UserLikesRequest>::create(authResponse->oauthToken(),
+                                                                 "yamustest");
         emit sendRequest(uInfoReq);
     }
+    /*
     else if(response->appResponseType() == AppResponseType::UserInfoResponse) {
         auto uInfoResponse = response.dynamicCast<UserInfoResponse>();
         qDebug() << "UserInfoResponse";
         qDebug() << (int)uInfoResponse->status();
-    }
+    }*/
 }
 
 void ClientCodeMock::timerEvent(QTimerEvent* event)

@@ -4,6 +4,7 @@
 #include "AppResponseTypes.h"
 
 #include <QByteArray>
+#include <QString>
 
 namespace ymlcpp {
 namespace server_access {
@@ -11,6 +12,12 @@ namespace server_access {
 enum class ResponseResult {
     Succes,
     Error
+};
+
+struct ErrorInfo
+{
+    QString name;
+    QString message;
 };
 
 class IServerResponse

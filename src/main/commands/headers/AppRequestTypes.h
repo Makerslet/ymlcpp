@@ -6,7 +6,8 @@ namespace server_access {
 
 enum class AppRequestType {
     AuthorizationRequest,
-    UserInfoRequest
+    UserInfoRequest,
+    UserLikesRequest
 };
 
 }

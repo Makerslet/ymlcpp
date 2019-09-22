@@ -53,13 +53,6 @@ struct UserInfo {
     QString defaultEmail;
 };
 
-struct ErrorInfo
-{
-    QString name;
-    QString message;
-};
-
-
 class UserInfoResponse : public IServerResponse
 {
 public:
