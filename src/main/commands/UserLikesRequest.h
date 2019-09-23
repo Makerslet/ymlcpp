@@ -6,11 +6,18 @@
 namespace ymlcpp {
 namespace server_access  {
 
+enum class LikesType
+{
+    Albums,
+    Artists,
+    Playlists,
+    Tracks
+};
 
 class UserLikesRequest : public ServerGetRequest
 {
 public:
-    UserLikesRequest(const QString&, const QString&login);
+    UserLikesRequest(const QString&, const QString&, LikesType);
 
     QNetworkRequest toNetworkRequest() const override;
     QSharedPointer<IServerResponse> createResponse(const QByteArray&) const override;
@@ -18,6 +25,7 @@ public:
 private:
     QString _oauthToken;
     QString _login;
+    LikesType _likesType;
 
     static const QString _templateUrl;
 };

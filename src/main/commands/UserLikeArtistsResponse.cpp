@@ -47,7 +47,7 @@ void UserLikeArtistsResponse::parseResponse(const QByteArray& data)
     {
         _respStatus = ResponseResult::Succes;
         for(auto artist : resultFieldIter.value().toList())
-            _userLikes.push_back(ArtistDescriptionParser::parseArtistDescriptionJson(artist.toHash()));
+            _userLikes.push_back(ArtistDescriptionParser::parseArtistDescription(artist.toHash()));
     }
     else if(errorFieldIter != rootHash.end())
     {

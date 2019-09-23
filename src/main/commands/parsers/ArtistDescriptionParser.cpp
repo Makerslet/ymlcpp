@@ -4,7 +4,7 @@ namespace ymlcpp {
 namespace server_access {
 
 
-    ArtistDescription ArtistDescriptionParser::parseArtistDescriptionJson(const QVariantHash& artistHash)
+    ArtistDescription ArtistDescriptionParser::parseArtistDescription(const QVariantHash& artistHash)
     {
         ArtistDescription description;
         description.id = artistHash["id"].toString();
@@ -16,8 +16,8 @@ namespace server_access {
         description.ticketsAvailable = artistHash["tickestAvailable"].toBool();
         description.genres = artistHash["genres"].toStringList();
 
-        description.cover = parseArtistCoverJSon(artistHash["cover"].toHash());
-        description.counts = parseArtistCountsJSon(artistHash["counts"].toHash());
+        description.cover = parseArtistCover(artistHash["cover"].toHash());
+        description.counts = parseArtistCounts(artistHash["counts"].toHash());
         description.raitings = parseArtistRaitings(artistHash["raitings"].toHash());
 
         for(auto link : artistHash["links"].toList())
@@ -25,7 +25,7 @@ namespace server_access {
                         parseArtistLink(link.toHash()));
     }
 
-    ArtistCover ArtistDescriptionParser::parseArtistCoverJSon(const QVariantHash& coverHash)
+    ArtistCover ArtistDescriptionParser::parseArtistCover(const QVariantHash& coverHash)
     {
         ArtistCover cover;
         cover.type = coverHash["type"].toString();
@@ -34,7 +34,7 @@ namespace server_access {
         return cover;
     }
 
-    ArtistCounts ArtistDescriptionParser::parseArtistCountsJSon(const QVariantHash& countsHash)
+    ArtistCounts ArtistDescriptionParser::parseArtistCounts(const QVariantHash& countsHash)
     {
         ArtistCounts counts;
         counts.tracks = countsHash["tracks"].toUInt();

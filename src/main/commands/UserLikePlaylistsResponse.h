@@ -2,14 +2,14 @@
 #define USERLIKEPLAYLISTSRESPONSE_H
 
 #include "headers/IServerResponse.h"
+#include "common_structures/PlaylistDescription.h"
+
+#include <QVector>
+#include <QVariant>
 
 namespace ymlcpp {
 namespace server_access {
 
-struct UserLikePlaylists
-{
-
-};
 
 class UserLikePlaylistsResponse : public IServerResponse
 {
@@ -18,15 +18,16 @@ public:
     ~UserLikePlaylistsResponse() override;
 
     ResponseResult status() const override;
-    UserLikePlaylists userLikes() const;
+    QVector<PlaylistDescription> userLikes() const;
     ErrorInfo errorInfo() const;
 
 private:
     void parseResponse(const QByteArray&) override;
+    void parseError(const QVariantHash&);
 
 private:
     ResponseResult _respStatus;
-    UserLikePlaylists _userLikes;
+    QVector<PlaylistDescription> _userLikes;
     ErrorInfo _errInfo;
 };
 
