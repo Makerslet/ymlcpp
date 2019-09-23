@@ -8,7 +8,8 @@ enum class AppRequestType {
     AuthorizationRequest,
     UserInfoRequest,
     UserLikesRequest,
-    TrackVariantsRequest
+    TrackVariantsRequest,
+    TrackPathRequest
 };
 
 }

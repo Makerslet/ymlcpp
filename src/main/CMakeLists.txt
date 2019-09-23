@@ -15,5 +15,5 @@ target_sources(${TARGET_NAME}
 		PUBLIC ${TARGET_SRC}
 		PUBLIC ${TARGET_HDR})
 
-target_link_libraries(${TARGET_NAME} PUBLIC Qt5::Core Qt5::Network)
+target_link_libraries(${TARGET_NAME} PUBLIC Qt5::Core Qt5::Network Qt5::Xml)
 

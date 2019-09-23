@@ -10,7 +10,7 @@ project(ymlcpp)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON) # включаем автоматическую генерацию moc-файлов qt
 
-find_package(Qt5 COMPONENTS Core Network REQUIRED CONFIG)
+find_package(Qt5 COMPONENTS Core Network Xml REQUIRED CONFIG)
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/main)
 

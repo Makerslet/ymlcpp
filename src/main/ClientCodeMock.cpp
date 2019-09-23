@@ -5,6 +5,8 @@
 #include "commands/TrackVariantsRequest.h"
 #include "commands/UserLikesResponse.h"
 #include "commands/TrackVariantsResponse.h"
+#include "commands/TrackGetPathRequest.h"
+#include "commands/TrackGetPathResponse.h"
 
 #include <QDebug>
 
@@ -49,6 +51,20 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
     else if(response->appResponseType() == AppResponseType::TrackVariantsResponse)
     {
         auto trackVariantsResponse = response.dynamicCast<TrackVariantsResponse>();
+        auto trackVariants = trackVariantsResponse->trackVariants();
+
+        auto lambda = [](const TrackVariant& track) {return track.codec == TrackCodec::mp3;};
+        auto iterMp3 = std::find_if(trackVariants.begin(), trackVariants.end(), lambda);
+
+        auto url = iterMp3->trackXmlUrl.toString() + "f";
+        auto reqDescriptionXml = QSharedPointer<TrackGetPathRequest>::create(_oauthToken,
+                    /*iterMp3->trackXmlUrl*/QUrl(url));
+
+        emit sendRequest(reqDescriptionXml);
+    }
+    else if(response->appResponseType() == AppResponseType::TrackPathResponse)
+    {
+        auto trackPath = response.dynamicCast<TrackGetPathResponse>();
     }
 }
 
