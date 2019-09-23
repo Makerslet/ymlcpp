@@ -2,6 +2,9 @@
 #include "commands/AuthorizationRequest.h"
 #include "commands/AuthorizationResponse.h"
 #include "commands/UserLikesRequest.h"
+#include "commands/TrackVariantsRequest.h"
+#include "commands/UserLikesResponse.h"
+#include "commands/TrackVariantsResponse.h"
 
 #include <QDebug>
 
@@ -30,17 +33,23 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << "AuthorizationResponse";
         qDebug() << (int)authResponse->status();
         qDebug() << authResponse->oauthToken();
+        _oauthToken = authResponse->oauthToken();
 
-        auto uInfoReq = QSharedPointer<UserLikesRequest>::create(authResponse->oauthToken(),
-                                                                 "yamustest");
+        auto uInfoReq = QSharedPointer<UserLikesRequest>::create(_oauthToken, "yamustest");
         emit sendRequest(uInfoReq);
     }
-    /*
-    else if(response->appResponseType() == AppResponseType::UserInfoResponse) {
-        auto uInfoResponse = response.dynamicCast<UserInfoResponse>();
-        qDebug() << "UserInfoResponse";
-        qDebug() << (int)uInfoResponse->status();
-    }*/
+
+    else if(response->appResponseType() == AppResponseType::UserLikesResponse) {
+        auto responseDc = response.dynamicCast<UserLikesResponse>();
+        auto trackVariants = QSharedPointer<TrackVariantsRequest>::create(_oauthToken,
+                          responseDc->userLikes().tracks.first().id);
+        emit sendRequest(trackVariants);
+    }
+
+    else if(response->appResponseType() == AppResponseType::TrackVariantsResponse)
+    {
+        auto trackVariantsResponse = response.dynamicCast<TrackVariantsResponse>();
+    }
 }
 
 void ClientCodeMock::timerEvent(QTimerEvent* event)
