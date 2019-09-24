@@ -1,8 +1,8 @@
 #ifndef ISERVERREQUEST_H
 #define ISERVERREQUEST_H
 
-#include "AppRequestTypes.h"
 #include "IServerResponse.h"
+#include "../common_enums/AppRequestTypes.h"
 
 #include <QSharedPointer>
 

@@ -1,8 +1,8 @@
 #ifndef AUTHORIZATIONREQUEST_H
 #define AUTHORIZATIONREQUEST_H
 
-#include "ServerPostRequest.h"
-#include "headers/AppRequestTypes.h"
+#include "../common_and_base/base_requests_responses/ServerPostRequest.h"
+#include "../common_and_base/common_enums/AppRequestTypes.h"
 
 #include <QPair>
 #include <QNetworkRequest>

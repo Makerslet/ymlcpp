@@ -1,13 +1,9 @@
 #include "ClientCodeMock.h"
-#include "commands/AuthorizationRequest.h"
-#include "commands/AuthorizationResponse.h"
-#include "commands/UserLikesRequest.h"
-#include "commands/TrackVariantsRequest.h"
-#include "commands/UserLikeArtistsResponse.h"
-#include "commands/TrackVariantsResponse.h"
-#include "commands/TrackGetPathRequest.h"
-#include "commands/TrackGetPathResponse.h"
-#include "commands/UserLikePlaylistsResponse.h"
+#include "commands/authorization_commands/AuthorizationRequest.h"
+#include "commands/authorization_commands/AuthorizationResponse.h"
+#include "commands/user_choice_commands/UserChoiceRequest.h"
+#include "commands/user_choice_commands/UserLikesResponse.h"
+#include "commands/user_choice_commands/UserDislikesResponse.h"
 
 #include <QDebug>
 
@@ -38,12 +34,13 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << authResponse->oauthToken();
         _oauthToken = authResponse->oauthToken();
 
-        auto uInfoReq = QSharedPointer<UserLikesRequest>::create(_oauthToken, "yamustest", LikesType::Playlists);
+        auto uInfoReq = QSharedPointer<UserChoiceRequest>::create(_oauthToken, "yamustest",
+                                 UserChoiceType::Dislike, UserChoiceContent::Tracks);
         emit sendRequest(uInfoReq);
     }
-
-    else if(response->appResponseType() == AppResponseType::UserLikePlaylistsResponse) {
-        auto responseDc = response.dynamicCast<UserLikePlaylistsResponse>();
+    else if(response->appResponseType() == AppResponseType::UserChoiceResponse) {
+        auto responseDc  = response.dynamicCast<UserDislikeTracksResponse>();
+        int i = 10;
     }
     /*
     else if(response->appResponseType() == AppResponseType::TrackVariantsResponse)

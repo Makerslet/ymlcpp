@@ -1,5 +1,6 @@
-#include "UserLikeArtistsResponse.h"
-#include "parsers/ArtistDescriptionParser.h"
+#include "UserChoiceArtistsResponse.h"
+
+#include "../common_and_base/parsers/ArtistDescriptionParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -8,33 +9,22 @@
 namespace ymlcpp {
 namespace server_access {
 
-UserLikeArtistsResponse::UserLikeArtistsResponse(const QByteArray& data) :
-    IServerResponse (AppResponseType::UserLikeArtistsResponse)
+UserChoiceArtistsResponse::UserChoiceArtistsResponse(UserChoiceType choiceType, const QByteArray& data) :
+    UserChoiceResponse (choiceType, UserChoiceContent::Artists)
 {
-    qDebug() << data;
     parseResponse(data);
 }
 
-UserLikeArtistsResponse::~UserLikeArtistsResponse()
+UserChoiceArtistsResponse::~UserChoiceArtistsResponse()
 {
 }
 
-ResponseResult UserLikeArtistsResponse::status() const
-{
-    return _respStatus;
-}
-QVector<ArtistDescription> UserLikeArtistsResponse::userLikes() const
+QVector<ArtistDescription> UserChoiceArtistsResponse::userLikes() const
 {
     return _userLikes;
 }
 
-ErrorInfo UserLikeArtistsResponse::errorInfo() const
-{
-    return _errInfo;
-}
-
-
-void UserLikeArtistsResponse::parseResponse(const QByteArray& data)
+void UserChoiceArtistsResponse::parseResponse(const QByteArray& data)
 {
     auto jsonDoc = QJsonDocument::fromJson(data);
     auto jsonObject = jsonDoc.object();
@@ -56,12 +46,6 @@ void UserLikeArtistsResponse::parseResponse(const QByteArray& data)
     }
     else
         _respStatus = ResponseResult::Error;
-}
-
-void UserLikeArtistsResponse::parseError(const QVariantHash& errHash)
-{
-    _errInfo.name = errHash["name"].toString();
-    _errInfo.message = errHash["message"].toString();
 }
 
 }

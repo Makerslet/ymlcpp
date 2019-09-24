@@ -1,9 +1,9 @@
 #ifndef SERVERGETREQUEST_H
 #define SERVERGETREQUEST_H
 
-#include "headers/IServerRequest.h"
-#include "headers/IServerResponse.h"
-#include "headers/AppRequestTypes.h"
+#include "IServerRequest.h"
+#include "IServerResponse.h"
+#include "../common_enums/AppRequestTypes.h"
 
 #include <QNetworkRequest>
 

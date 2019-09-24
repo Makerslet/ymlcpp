@@ -1,7 +1,7 @@
 #ifndef ISERVERRESPONSE_H
 #define ISERVERRESPONSE_H
 
-#include "AppResponseTypes.h"
+#include "../common_enums/AppResponseTypes.h"
 
 #include <QByteArray>
 #include <QString>

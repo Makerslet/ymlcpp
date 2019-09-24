@@ -7,10 +7,7 @@ namespace server_access {
 enum class AppResponseType {
     AuthorizationResponse,
     UserInfoResponse,
-    UserLikeAlbumsResponse,
-    UserLikeArtistsResponse,
-    UserLikePlaylistsResponse,
-    UserLikeTracksResponse,
+    UserChoiceResponse,
     TrackVariantsResponse,
     TrackPathResponse
 };

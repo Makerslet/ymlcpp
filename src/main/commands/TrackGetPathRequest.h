@@ -1,7 +1,7 @@
 #ifndef TRACKGETPATHREQUEST_H
 #define TRACKGETPATHREQUEST_H
 
-#include "ServerGetRequest.h"
+#include "common_and_base/base_requests_responses/ServerGetRequest.h"
 
 #include <QUrl>
 

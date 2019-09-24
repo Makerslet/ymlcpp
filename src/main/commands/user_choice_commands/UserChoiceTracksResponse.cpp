@@ -1,4 +1,4 @@
-#include "UserLikeTracksResponse.h"
+#include "UserChoiceTracksResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -9,33 +9,23 @@ namespace ymlcpp {
 namespace server_access {
 
 
-UserLikeTracksResponse::UserLikeTracksResponse(const QByteArray& data) :
-    IServerResponse (AppResponseType::UserLikeTracksResponse)
+UserChoiceTracksResponse::UserChoiceTracksResponse(UserChoiceType choiceType, const QByteArray& data) :
+    UserChoiceResponse (choiceType, UserChoiceContent::Tracks)
 {
     qDebug() << data;
     parseResponse(data);
 }
 
-UserLikeTracksResponse::~UserLikeTracksResponse()
+UserChoiceTracksResponse::~UserChoiceTracksResponse()
 {
 }
 
-ResponseResult UserLikeTracksResponse::status() const
-{
-    return _respStatus;
-}
-UserLikeTracks UserLikeTracksResponse::userLikes() const
+UserLikeTracks UserChoiceTracksResponse::userLikes() const
 {
     return _userLikes;
 }
 
-ErrorInfo UserLikeTracksResponse::errorInfo() const
-{
-    return _errInfo;
-}
-
-
-void UserLikeTracksResponse::parseResponse(const QByteArray& data)
+void UserChoiceTracksResponse::parseResponse(const QByteArray& data)
 {
     auto jsonDoc = QJsonDocument::fromJson(data);
     auto jsonObject = jsonDoc.object();
@@ -58,7 +48,7 @@ void UserLikeTracksResponse::parseResponse(const QByteArray& data)
         _respStatus = ResponseResult::Error;
 }
 
-void UserLikeTracksResponse::parseLibrary(const QVariantHash& resultHash)
+void UserChoiceTracksResponse::parseLibrary(const QVariantHash& resultHash)
 {
     auto libraryIter = resultHash.find("library");
     if(libraryIter== resultHash.end())
@@ -74,7 +64,7 @@ void UserLikeTracksResponse::parseLibrary(const QVariantHash& resultHash)
 
 }
 
-void UserLikeTracksResponse::parseTrack(const QVariantHash& trackHash)
+void UserChoiceTracksResponse::parseTrack(const QVariantHash& trackHash)
 {
     Track track;
     track.id = trackHash["id"].toString();
@@ -82,12 +72,6 @@ void UserLikeTracksResponse::parseTrack(const QVariantHash& trackHash)
     track.timestamp = trackHash["timestamp"].toDateTime().toLocalTime();
 
     _userLikes.tracks.push_back(track);
-}
-
-void UserLikeTracksResponse::parseError(const QVariantHash& errHash)
-{
-    _errInfo.name = errHash["name"].toString();
-    _errInfo.message = errHash["message"].toString();
 }
 
 }

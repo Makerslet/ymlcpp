@@ -1,7 +1,7 @@
 #ifndef TRACKVARIANTSRESPONSE_H
 #define TRACKVARIANTSRESPONSE_H
 
-#include "headers/IServerResponse.h"
+#include "common_and_base/base_requests_responses/IServerResponse.h"
 
 #include <QVector>
 #include <QVariant>

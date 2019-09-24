@@ -1,4 +1,4 @@
-#include "UserLikeAlbumsResponse.h"
+#include "UserChoiceAlbumsResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -8,34 +8,24 @@
 namespace ymlcpp {
 namespace server_access {
 
-UserLikeAlbumsResponse::UserLikeAlbumsResponse(const QByteArray& data) :
-    IServerResponse (AppResponseType::UserLikeAlbumsResponse)
+UserChoiceAlbumsResponse::UserChoiceAlbumsResponse(UserChoiceType choiceType, const QByteArray& data) :
+    UserChoiceResponse (choiceType, UserChoiceContent::Albums)
 {
-    qDebug() << data;
     parseResponse(data);
 }
 
-UserLikeAlbumsResponse::~UserLikeAlbumsResponse()
+UserChoiceAlbumsResponse::~UserChoiceAlbumsResponse()
 {
 
 }
 
-ResponseResult UserLikeAlbumsResponse::status() const
-{
-    return _respStatus;
-}
-QVector<LikeAlbum> UserLikeAlbumsResponse::userLikes() const
+QVector<LikeAlbum> UserChoiceAlbumsResponse::userLikes() const
 {
     return _userLikes;
 }
 
-ErrorInfo UserLikeAlbumsResponse::errorInfo() const
-{
-    return _errInfo;
-}
 
-
-void UserLikeAlbumsResponse::parseResponse(const QByteArray& data)
+void UserChoiceAlbumsResponse::parseResponse(const QByteArray& data)
 {
     auto jsonDoc = QJsonDocument::fromJson(data);
     auto jsonObject = jsonDoc.object();
@@ -59,7 +49,7 @@ void UserLikeAlbumsResponse::parseResponse(const QByteArray& data)
         _respStatus = ResponseResult::Error;
 }
 
-void UserLikeAlbumsResponse::parseAlbum(const QVariantHash& albumHash)
+void UserChoiceAlbumsResponse::parseAlbum(const QVariantHash& albumHash)
 {
     LikeAlbum likeAlbum;
     likeAlbum.id = albumHash["id"].toUInt();
@@ -68,11 +58,6 @@ void UserLikeAlbumsResponse::parseAlbum(const QVariantHash& albumHash)
     _userLikes.push_back(likeAlbum);
 }
 
-void UserLikeAlbumsResponse::parseError(const QVariantHash& errHash)
-{
-    _errInfo.name = errHash["name"].toString();
-    _errInfo.message = errHash["message"].toString();
-}
 
 }
 }

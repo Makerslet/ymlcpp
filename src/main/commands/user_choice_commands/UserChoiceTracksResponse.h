@@ -1,7 +1,7 @@
-#ifndef USERLIKETRACKSRESPONSE_H
-#define USERLIKETRACKSRESPONSE_H
+#ifndef USERCHOICETRACKSRESPONSE_H
+#define USERCHOICETRACKSRESPONSE_H
 
-#include "headers/IServerResponse.h"
+#include "UserChoiceResponse.h"
 
 #include <QVariant>
 #include <QVector>
@@ -24,29 +24,24 @@ struct UserLikeTracks
     QVector<Track> tracks;
 };
 
-class UserLikeTracksResponse : public IServerResponse
+class UserChoiceTracksResponse : public UserChoiceResponse
 {
 public:
-    UserLikeTracksResponse(const QByteArray&);
-    ~UserLikeTracksResponse() override;
+    UserChoiceTracksResponse(UserChoiceType, const QByteArray&);
+    ~UserChoiceTracksResponse() override;
 
-    ResponseResult status() const override;
     UserLikeTracks userLikes() const;
-    ErrorInfo errorInfo() const;
 
 private:
     void parseResponse(const QByteArray&) override;
     void parseLibrary(const QVariantHash&);
     void parseTrack(const QVariantHash&);
-    void parseError(const QVariantHash&);
 
 private:
-    ResponseResult _respStatus;
     UserLikeTracks _userLikes;
-    ErrorInfo _errInfo;
 };
 
 }
 }
 
-#endif // USERLIKETRACKSRESPONSE_H
+#endif // USERCHOICETRACKSRESPONSE_H

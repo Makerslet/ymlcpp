@@ -1,7 +1,7 @@
 #ifndef AUTHORIZATIONRESPONSE_H
 #define AUTHORIZATIONRESPONSE_H
 
-#include "headers/IServerResponse.h"
+#include "../common_and_base/base_requests_responses/IServerResponse.h"
 
 #include <QByteArray>
 #include <QJsonObject>

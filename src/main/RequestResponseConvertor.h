@@ -1,10 +1,10 @@
 #ifndef REQUESTRESPONSECONVERTOR_H
 #define REQUESTRESPONSECONVERTOR_H
 
-#include "commands/headers/IServerResponse.h"
-#include "commands/ServerPostRequest.h"
-#include "commands/ServerGetRequest.h"
-#include "commands/headers/AppRequestTypes.h"
+#include "commands/common_and_base/base_requests_responses/IServerResponse.h"
+#include "commands/common_and_base/base_requests_responses/ServerPostRequest.h"
+#include "commands/common_and_base/base_requests_responses/ServerGetRequest.h"
+#include "commands/common_and_base/common_enums/AppRequestTypes.h"
 
 #include <QSharedPointer>
 
