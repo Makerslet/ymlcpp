@@ -1,15 +1,15 @@
-#include "UserChoiceRequest.h"
-#include "UserLikesResponse.h"
-#include "UserDislikesResponse.h"
+#include "UserChoiceGetRequest.h"
+#include "UserLikesGetResponse.h"
+#include "UserDislikesGetResponse.h"
 
 #include <QDebug>
 
 namespace ymlcpp {
 namespace server_access {
 
-const QString UserChoiceRequest::_templateUrl("https://api.music.yandex.net/users/%1/%2/%3");
+const QString UserChoiceGetRequest::_templateUrl("https://api.music.yandex.net/users/%1/%2/%3");
 
-UserChoiceRequest::UserChoiceRequest(const QString& oauthToken, const QString& login,
+UserChoiceGetRequest::UserChoiceGetRequest(const QString& oauthToken, const QString& login,
                                      UserChoiceType type, UserChoiceContent content) :
     ServerGetRequest (AppRequestType::UserChoiceRequest),
     _oauthToken(oauthToken),
@@ -19,7 +19,7 @@ UserChoiceRequest::UserChoiceRequest(const QString& oauthToken, const QString& l
 {
 }
 
-QNetworkRequest UserChoiceRequest::toNetworkRequest() const
+QNetworkRequest UserChoiceGetRequest::toNetworkRequest() const
 {
     QString contentTypeStr;
     switch (_choiceContent) {
@@ -45,24 +45,24 @@ QNetworkRequest UserChoiceRequest::toNetworkRequest() const
     return request;
 }
 
-QSharedPointer<IServerResponse> UserChoiceRequest::createResponse(const QByteArray& data) const
+QSharedPointer<IServerResponse> UserChoiceGetRequest::createResponse(const QByteArray& data) const
 {
     if(_choiceType == UserChoiceType::Like)
     {
         switch (_choiceContent) {
-        case UserChoiceContent::Albums:     return QSharedPointer<UserLikeAlbumsResponse>::create(data);
-        case UserChoiceContent::Artists:    return QSharedPointer<UserLikeArtistsResponse>::create(data);
-        case UserChoiceContent::Playlists:  return QSharedPointer<UserLikePlaylistsResponse>::create(data);
-        case UserChoiceContent::Tracks:     return QSharedPointer<UserLikeTracksResponse>::create(data);
+        case UserChoiceContent::Albums:     return QSharedPointer<UserLikeAlbumsGetResponse>::create(data);
+        case UserChoiceContent::Artists:    return QSharedPointer<UserLikeArtistsGetResponse>::create(data);
+        case UserChoiceContent::Playlists:  return QSharedPointer<UserLikePlaylistsGetResponse>::create(data);
+        case UserChoiceContent::Tracks:     return QSharedPointer<UserLikeTracksGetResponse>::create(data);
         }
     }
     else if(_choiceType == UserChoiceType::Dislike)
     {
         switch (_choiceContent) {
-        case UserChoiceContent::Albums:     return QSharedPointer<UserDislikeAlbumsResponse>::create(data);
-        case UserChoiceContent::Artists:    return QSharedPointer<UserDislikeArtistsResponse>::create(data);
-        case UserChoiceContent::Playlists:  return QSharedPointer<UserDislikePlaylistsResponse>::create(data);
-        case UserChoiceContent::Tracks:     return QSharedPointer<UserDislikeTracksResponse>::create(data);
+        case UserChoiceContent::Albums:     return QSharedPointer<UserDislikeAlbumsGetResponse>::create(data);
+        case UserChoiceContent::Artists:    return QSharedPointer<UserDislikeArtistsGetResponse>::create(data);
+        case UserChoiceContent::Playlists:  return QSharedPointer<UserDislikePlaylistsGetResponse>::create(data);
+        case UserChoiceContent::Tracks:     return QSharedPointer<UserDislikeTracksGetResponse>::create(data);
         }
     }
 

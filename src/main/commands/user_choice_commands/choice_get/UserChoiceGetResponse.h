@@ -1,19 +1,19 @@
-#ifndef USERCHOICERESPONSE_H
-#define USERCHOICERESPONSE_H
+#ifndef USERCHOICEGETRESPONSE_H
+#define USERCHOICEGETRESPONSE_H
 
-#include "../common_and_base/base_requests_responses/IServerResponse.h"
-#include "../common_and_base/common_enums/UserChoice.h"
+#include "../../common_and_base/base_requests_responses/IServerResponse.h"
+#include "../../common_and_base/common_enums/UserChoice.h"
 
 #include <QVariant>
 
 namespace ymlcpp {
 namespace server_access {
 
-class UserChoiceResponse : public IServerResponse
+class UserChoiceGetResponse : public IServerResponse
 {
 public:
-    UserChoiceResponse(UserChoiceType, UserChoiceContent);
-    ~UserChoiceResponse() override;
+    UserChoiceGetResponse(UserChoiceType, UserChoiceContent);
+    ~UserChoiceGetResponse() override;
 
     ResponseResult status() const override;
     ErrorInfo errorInfo() const;
@@ -35,4 +35,4 @@ private:
 }
 }
 
-#endif // USERCHOICERESPONSE_H
+#endif // USERCHOICEGETRESPONSE_H

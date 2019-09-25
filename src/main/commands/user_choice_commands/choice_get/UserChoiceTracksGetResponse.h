@@ -1,7 +1,7 @@
-#ifndef USERCHOICETRACKSRESPONSE_H
-#define USERCHOICETRACKSRESPONSE_H
+#ifndef USERCHOICETRACKSGETRESPONSE_H
+#define USERCHOICETRACKSGETRESPONSE_H
 
-#include "UserChoiceResponse.h"
+#include "UserChoiceGetResponse.h"
 
 #include <QVariant>
 #include <QVector>
@@ -24,11 +24,11 @@ struct UserLikeTracks
     QVector<Track> tracks;
 };
 
-class UserChoiceTracksResponse : public UserChoiceResponse
+class UserChoiceTracksGetResponse : public UserChoiceGetResponse
 {
 public:
-    UserChoiceTracksResponse(UserChoiceType, const QByteArray&);
-    ~UserChoiceTracksResponse() override;
+    UserChoiceTracksGetResponse(UserChoiceType, const QByteArray&);
+    ~UserChoiceTracksGetResponse() override;
 
     UserLikeTracks userLikes() const;
 
@@ -44,4 +44,4 @@ private:
 }
 }
 
-#endif // USERCHOICETRACKSRESPONSE_H
+#endif // USERCHOICETRACKSGETRESPONSE_H

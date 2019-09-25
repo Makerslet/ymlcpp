@@ -7,7 +7,7 @@ namespace server_access {
 enum class AppResponseType {
     AuthorizationResponse,
     UserInfoResponse,
-    UserChoiceResponse,
+    UserChoiceGetResponse,
     TrackVariantsResponse,
     TrackPathResponse
 };

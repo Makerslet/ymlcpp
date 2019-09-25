@@ -1,7 +1,7 @@
-#ifndef USERCHOICEALBUMSRESPONSE_H
-#define USERCHOICEALBUMSRESPONSE_H
+#ifndef USERCHOICEALBUMSGETRESPONSE_H
+#define USERCHOICEALBUMSGETRESPONSE_H
 
-#include "UserChoiceResponse.h"
+#include "UserChoiceGetResponse.h"
 
 #include <QVariant>
 #include <QDateTime>
@@ -17,11 +17,11 @@ struct LikeAlbum
 };
 
 
-class UserChoiceAlbumsResponse : public UserChoiceResponse
+class UserChoiceAlbumsGetResponse : public UserChoiceGetResponse
 {
 public:
-    UserChoiceAlbumsResponse(UserChoiceType, const QByteArray&);
-    ~UserChoiceAlbumsResponse() override;
+    UserChoiceAlbumsGetResponse(UserChoiceType, const QByteArray&);
+    ~UserChoiceAlbumsGetResponse() override;
 
     QVector<LikeAlbum> userLikes() const;
 
@@ -36,4 +36,4 @@ private:
 }
 }
 
-#endif // USERCHOICEALBUMSRESPONSE_H
+#endif // USERCHOICEALBUMSGETRESPONSE_H

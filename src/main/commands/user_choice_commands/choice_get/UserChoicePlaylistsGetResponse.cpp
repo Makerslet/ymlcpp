@@ -1,5 +1,5 @@
-#include "UserChoicePlaylistsResponse.h"
-#include "../common_and_base/parsers/PlaylistDescriptionParser.h"
+#include "UserChoicePlaylistsGetResponse.h"
+#include "../../common_and_base/parsers/PlaylistDescriptionParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -8,24 +8,24 @@
 namespace ymlcpp {
 namespace server_access {
 
-UserChoicePlaylistsResponse::UserChoicePlaylistsResponse(UserChoiceType choiceType, const QByteArray& data) :
-    UserChoiceResponse(choiceType, UserChoiceContent::Playlists)
+UserChoicePlaylistsGetResponse::UserChoicePlaylistsGetResponse(UserChoiceType choiceType, const QByteArray& data) :
+    UserChoiceGetResponse(choiceType, UserChoiceContent::Playlists)
 {
     parseResponse(data);
 }
 
-UserChoicePlaylistsResponse::~UserChoicePlaylistsResponse()
+UserChoicePlaylistsGetResponse::~UserChoicePlaylistsGetResponse()
 {
 }
 
-QVector<PlaylistDescription> UserChoicePlaylistsResponse::userLikes() const
+QVector<PlaylistDescription> UserChoicePlaylistsGetResponse::userLikes() const
 {
     return _userLikes;
 }
 
 
 
-void UserChoicePlaylistsResponse::parseResponse(const QByteArray& data)
+void UserChoicePlaylistsGetResponse::parseResponse(const QByteArray& data)
 {
     auto jsonDoc = QJsonDocument::fromJson(data);
     auto jsonObject = jsonDoc.object();

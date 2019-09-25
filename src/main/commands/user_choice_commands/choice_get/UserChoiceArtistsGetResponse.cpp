@@ -1,6 +1,6 @@
-#include "UserChoiceArtistsResponse.h"
+#include "UserChoiceArtistsGetResponse.h"
 
-#include "../common_and_base/parsers/ArtistDescriptionParser.h"
+#include "../../common_and_base/parsers/ArtistDescriptionParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -9,22 +9,22 @@
 namespace ymlcpp {
 namespace server_access {
 
-UserChoiceArtistsResponse::UserChoiceArtistsResponse(UserChoiceType choiceType, const QByteArray& data) :
-    UserChoiceResponse (choiceType, UserChoiceContent::Artists)
+UserChoiceArtistsGetResponse::UserChoiceArtistsGetResponse(UserChoiceType choiceType, const QByteArray& data) :
+    UserChoiceGetResponse (choiceType, UserChoiceContent::Artists)
 {
     parseResponse(data);
 }
 
-UserChoiceArtistsResponse::~UserChoiceArtistsResponse()
+UserChoiceArtistsGetResponse::~UserChoiceArtistsGetResponse()
 {
 }
 
-QVector<ArtistDescription> UserChoiceArtistsResponse::userLikes() const
+QVector<ArtistDescription> UserChoiceArtistsGetResponse::userLikes() const
 {
     return _userLikes;
 }
 
-void UserChoiceArtistsResponse::parseResponse(const QByteArray& data)
+void UserChoiceArtistsGetResponse::parseResponse(const QByteArray& data)
 {
     auto jsonDoc = QJsonDocument::fromJson(data);
     auto jsonObject = jsonDoc.object();

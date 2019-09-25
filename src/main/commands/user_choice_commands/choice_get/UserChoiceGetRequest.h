@@ -1,17 +1,17 @@
-#ifndef USERCHOICEREQUEST_H
-#define USERCHOICEREQUEST_H
+#ifndef USERCHOICEGETREQUEST_H
+#define USERCHOICEGETREQUEST_H
 
-#include "../common_and_base/base_requests_responses/ServerGetRequest.h"
-#include "../common_and_base/common_enums/UserChoice.h"
+#include "../../common_and_base/base_requests_responses/ServerGetRequest.h"
+#include "../../common_and_base/common_enums/UserChoice.h"
 
 namespace ymlcpp {
 namespace server_access  {
 
 
-class UserChoiceRequest : public ServerGetRequest
+class UserChoiceGetRequest : public ServerGetRequest
 {
 public:
-    UserChoiceRequest(const QString&, const QString&, UserChoiceType, UserChoiceContent);
+    UserChoiceGetRequest(const QString&, const QString&, UserChoiceType, UserChoiceContent);
 
     QNetworkRequest toNetworkRequest() const override;
     QSharedPointer<IServerResponse> createResponse(const QByteArray&) const override;
@@ -28,4 +28,4 @@ private:
 }
 }
 
-#endif // USERCHOICEREQUEST_H
+#endif // USERCHOICEGETREQUEST_H

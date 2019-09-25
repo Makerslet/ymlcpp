@@ -1,4 +1,4 @@
-#include "UserChoiceTracksResponse.h"
+#include "UserChoiceTracksGetResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -9,23 +9,23 @@ namespace ymlcpp {
 namespace server_access {
 
 
-UserChoiceTracksResponse::UserChoiceTracksResponse(UserChoiceType choiceType, const QByteArray& data) :
-    UserChoiceResponse (choiceType, UserChoiceContent::Tracks)
+UserChoiceTracksGetResponse::UserChoiceTracksGetResponse(UserChoiceType choiceType, const QByteArray& data) :
+    UserChoiceGetResponse (choiceType, UserChoiceContent::Tracks)
 {
     qDebug() << data;
     parseResponse(data);
 }
 
-UserChoiceTracksResponse::~UserChoiceTracksResponse()
+UserChoiceTracksGetResponse::~UserChoiceTracksGetResponse()
 {
 }
 
-UserLikeTracks UserChoiceTracksResponse::userLikes() const
+UserLikeTracks UserChoiceTracksGetResponse::userLikes() const
 {
     return _userLikes;
 }
 
-void UserChoiceTracksResponse::parseResponse(const QByteArray& data)
+void UserChoiceTracksGetResponse::parseResponse(const QByteArray& data)
 {
     auto jsonDoc = QJsonDocument::fromJson(data);
     auto jsonObject = jsonDoc.object();
@@ -48,7 +48,7 @@ void UserChoiceTracksResponse::parseResponse(const QByteArray& data)
         _respStatus = ResponseResult::Error;
 }
 
-void UserChoiceTracksResponse::parseLibrary(const QVariantHash& resultHash)
+void UserChoiceTracksGetResponse::parseLibrary(const QVariantHash& resultHash)
 {
     auto libraryIter = resultHash.find("library");
     if(libraryIter== resultHash.end())
@@ -64,7 +64,7 @@ void UserChoiceTracksResponse::parseLibrary(const QVariantHash& resultHash)
 
 }
 
-void UserChoiceTracksResponse::parseTrack(const QVariantHash& trackHash)
+void UserChoiceTracksGetResponse::parseTrack(const QVariantHash& trackHash)
 {
     Track track;
     track.id = trackHash["id"].toString();
