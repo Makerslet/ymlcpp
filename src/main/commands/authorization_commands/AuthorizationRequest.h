@@ -33,8 +33,6 @@ private:
     QNetworkRequest prepareRequest(int payloadLen) const;
     QByteArray preparePayload() const;
 
-    QByteArray toApiFormat(const QHash<QString, QString>&) const;
-
 private:
     const QString _login;
     const QString _password;

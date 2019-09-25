@@ -8,6 +8,7 @@
 
 #include <QPair>
 #include <QNetworkRequest>
+#include <QByteArray>
 
 namespace ymlcpp {
 namespace server_access {
@@ -23,6 +24,9 @@ public:
     AppRequestType appRequestType() const override;
 
     virtual QPair<QNetworkRequest, QByteArray> toNetworkRequest() const = 0;
+
+protected:
+    QByteArray toApiFormat(const QHash<QString, QString>&) const;
 
 private:
     const ServerRequestType _serverReqType = ServerRequestType::POST;
