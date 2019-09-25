@@ -11,7 +11,7 @@ const QString UserChoiceGetRequest::_templateUrl("https://api.music.yandex.net/u
 
 UserChoiceGetRequest::UserChoiceGetRequest(const QString& oauthToken, const QString& login,
                                      UserChoiceType type, UserChoiceContent content) :
-    ServerGetRequest (AppRequestType::UserChoiceRequest),
+    ServerGetRequest (AppRequestType::UserChoiceGetRequest),
     _oauthToken(oauthToken),
     _login(login),
     _choiceType(type),

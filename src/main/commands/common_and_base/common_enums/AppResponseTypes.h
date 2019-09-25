@@ -8,6 +8,7 @@ enum class AppResponseType {
     AuthorizationResponse,
     UserInfoResponse,
     UserChoiceGetResponse,
+    UserChoiceSetResponse,
     TrackVariantsResponse,
     TrackPathResponse
 };

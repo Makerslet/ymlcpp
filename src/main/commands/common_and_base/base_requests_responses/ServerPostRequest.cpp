@@ -38,5 +38,17 @@ QByteArray ServerPostRequest::toApiFormat(const QHash<QString, QString>& data) c
     return result;
 }
 
+QByteArray ServerPostRequest::toApiFormat(const QString& base, const QStringList& ids) const
+{
+    QByteArray result;
+
+    for(auto id : ids)
+        result.append(QString("%1=%2&").arg(base).arg(id));
+
+    result.remove(result.length() - 1, 1);
+
+    return result;
+}
+
 }
 }
