@@ -7,15 +7,17 @@
 namespace ymlcpp {
 namespace server_access {
 
-const QString UserChoiceSetRequest::_templateUrl("https://api.music.yandex.net/users/%1/%2/%3/action");
+const QString UserChoiceSetRequest::_templateUrl("https://api.music.yandex.net/users/%1/%2/%3/%4");
 
-UserChoiceSetRequest::UserChoiceSetRequest(const QString &login, const QString &oauth,
-                UserChoiceType choiceType, UserChoiceContent choiceContent, const QStringList& ids) :
+UserChoiceSetRequest::UserChoiceSetRequest(const QString &oauth, const QString &userId,
+                UserChoiceType choiceType, UserChoiceContent choiceContent,
+                UserAction action, const QStringList& ids) :
     ServerPostRequest (AppRequestType::UserChoiceSetRequest),
     _oauth(oauth),
-    _login(login),
+    _userId(userId),
     _choiceType(choiceType),
     _choiceContent(choiceContent),
+    _action(action),
     _ids(ids)
 {
 
@@ -39,10 +41,14 @@ QNetworkRequest UserChoiceSetRequest::prepareRequest(int payloadLen) const
 {
     QString choiceTypeStr = UserChoiceConvertor::userChoiceTypeToString(_choiceType);
     QString choiceContentStr = UserChoiceConvertor::userChoiceContentToString(_choiceContent);
+    QString actionStr = UserChoiceConvertor::userActionToString(_action);
 
-    QUrl actualUrl(_templateUrl.arg(_login).arg(choiceTypeStr).arg(choiceContentStr));
+    QUrl actualUrl(_templateUrl.arg(_userId).arg(choiceTypeStr).arg(choiceContentStr).arg(actionStr));
     QNetworkRequest request(actualUrl);
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+
+    QString authValue = QString("OAuth %1").arg(_oauth);
+    request.setRawHeader("Authorization", authValue.toUtf8());
+    //request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
     request.setHeader(QNetworkRequest::ContentLengthHeader, payloadLen);
     return  request;
 }

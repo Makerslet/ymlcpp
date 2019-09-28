@@ -6,7 +6,7 @@
 namespace ymlcpp {
 namespace server_access {
 
-enum UserChoiceContent
+enum class UserChoiceContent
 {
     Albums,
     Artists,
@@ -14,10 +14,16 @@ enum UserChoiceContent
     Tracks
 };
 
-enum UserChoiceType
+enum class UserChoiceType
 {
     Like,
     Dislike
+};
+
+enum class UserAction
+{
+    AddMultiple,
+    Remove
 };
 
 class UserChoiceConvertor
@@ -26,6 +32,7 @@ public:
     static QString userChoiceContentToString(UserChoiceContent);
     static QString userChoiceContentToStringSingle(UserChoiceContent);
     static QString userChoiceTypeToString(UserChoiceType);
+    static QString userActionToString(UserAction);
 };
 
 

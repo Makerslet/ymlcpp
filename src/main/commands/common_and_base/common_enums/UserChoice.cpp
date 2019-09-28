@@ -28,5 +28,13 @@ namespace server_access {
         }
     }
 
+    QString UserChoiceConvertor::userActionToString(UserAction action)
+    {
+        switch (action) {
+        case UserAction::AddMultiple:   return "add-multiple";
+        case UserAction::Remove:        return "remove";
+        }
+    }
+
 }
 }

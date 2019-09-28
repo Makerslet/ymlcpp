@@ -15,10 +15,11 @@ namespace server_access {
 class UserChoiceSetRequest : public ServerPostRequest
 {
 public:
-    UserChoiceSetRequest(const QString& login,
-                         const QString& oauth,
+    UserChoiceSetRequest(const QString&,
+                         const QString&,
                          UserChoiceType,
                          UserChoiceContent,
+                         UserAction,
                          const QStringList&);
 
     QPair<QNetworkRequest, QByteArray> toNetworkRequest() const override;
@@ -30,10 +31,11 @@ private:
 
 private:
     const QString _oauth;
-    const QString _login;
+    const QString _userId;
 
     const UserChoiceType _choiceType;
     const UserChoiceContent _choiceContent;
+    const UserAction _action;
 
     const QStringList _ids;
     static const QString _templateUrl;

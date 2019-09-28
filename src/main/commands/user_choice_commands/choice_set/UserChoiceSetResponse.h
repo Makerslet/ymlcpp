@@ -20,8 +20,11 @@ public:
 
 private:
     void parseResponse(const QByteArray&) override;
+    void parseError(const QVariantHash&);
 
 private:
+    ResponseResult _respStatus;
+    ErrorInfo _errInfo;
 };
 
 }

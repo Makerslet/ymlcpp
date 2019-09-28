@@ -4,6 +4,9 @@
 #include "commands/user_choice_commands/choice_get/UserChoiceGetRequest.h"
 #include "commands/user_choice_commands/choice_get/UserLikesGetResponse.h"
 #include "commands/user_choice_commands/choice_get/UserDislikesGetResponse.h"
+#include "commands/user_choice_commands/choice_set/UserChoiceSetRequest.h"
+#include "commands/UserInfoRequest.h"
+#include "commands/UserInfoResponse.h"
 
 #include <QDebug>
 
@@ -34,12 +37,21 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << authResponse->oauthToken();
         _oauthToken = authResponse->oauthToken();
 
-        auto uInfoReq = QSharedPointer<UserChoiceGetRequest>::create(_oauthToken, "yamustest",
-                                 UserChoiceType::Dislike, UserChoiceContent::Tracks);
+        auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);
+        emit sendRequest(userInfoReq);
+    }
+    else if(response->appResponseType() == AppResponseType::UserInfoResponse) {
+        auto userInfoResp = response.dynamicCast<UserInfoResponse>();
+        _userId = QString::number(userInfoResp->userInfo().account.uid);
+
+        auto uInfoReq = QSharedPointer<UserChoiceSetRequest>::create(_oauthToken, _userId,
+                                                                     UserChoiceType::Like, UserChoiceContent::Tracks,
+                                                                     UserAction::Remove,
+                                                                     QStringList{"5528436255"});
         emit sendRequest(uInfoReq);
     }
     else if(response->appResponseType() == AppResponseType::UserChoiceGetResponse) {
-        auto responseDc  = response.dynamicCast<UserDislikeTracksGetResponse>();
+        auto responseDc  = response.dynamicCast<UserLikeTracksGetResponse>();
         int i = 10;
     }
     /*

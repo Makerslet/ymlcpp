@@ -29,6 +29,7 @@ signals:
 private:
     ymlcpp::server_access::ServerAccessManager _sam;
     QString _oauthToken;
+    QString _userId;
 };
 
 }
