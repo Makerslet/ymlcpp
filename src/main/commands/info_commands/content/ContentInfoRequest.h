@@ -1,8 +1,8 @@
 #ifndef CONTENTINFOREQUEST_H
 #define CONTENTINFOREQUEST_H
 
-#include "../common_and_base/base_requests_responses/ServerPostRequest.h"
-#include "../common_and_base/common_enums/UserChoice.h"
+#include "../../common_and_base/base_requests_responses/ServerPostRequest.h"
+#include "../../common_and_base/common_enums/UserChoice.h"
 
 #include <QPair>
 #include <QNetworkRequest>

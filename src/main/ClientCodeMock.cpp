@@ -5,9 +5,9 @@
 #include "commands/user_choice_commands/choice_get/UserLikesGetResponse.h"
 #include "commands/user_choice_commands/choice_get/UserDislikesGetResponse.h"
 #include "commands/user_choice_commands/choice_set/UserChoiceSetRequest.h"
-#include "commands/info_commands/UserInfoRequest.h"
-#include "commands/info_commands/UserInfoResponse.h"
-#include "commands/info_commands/ContentInfoRequest.h"
+#include "commands/info_commands/user/UserInfoRequest.h"
+#include "commands/info_commands/user/UserInfoResponse.h"
+#include "commands/info_commands/content/ContentInfoRequest.h"
 
 #include <QDebug>
 

@@ -1,6 +1,8 @@
 #include "ContentInfoRequest.h"
-
-#include <QDebug>
+#include "AlbumsInfoResponse.h"
+#include "ArtistsInfoResponse.h"
+#include "TracksInforesponse.h"
+#include "PlaylistsInfoResponse.h"
 
 namespace ymlcpp {
 namespace server_access {
@@ -24,8 +26,12 @@ QPair<QNetworkRequest, QByteArray> ContentInfoRequest::toNetworkRequest() const
 
 QSharedPointer<IServerResponse> ContentInfoRequest::createResponse(const QByteArray& data) const
 {
-    qDebug() << data;
-    return QSharedPointer<IServerResponse>();
+    switch (_contentType) {
+    case ContentType::Albums:       return QSharedPointer<AlbumsInfoResponse>::create(data);
+    case ContentType::Artists:      return QSharedPointer<ArtistsInfoResponse>::create(data);
+    case ContentType::Playlists:    return QSharedPointer<PlaylistsInfoResponse>::create(data);
+    case ContentType::Tracks:       return QSharedPointer<TracksInforesponse>::create(data);
+    }
 }
 
 QNetworkRequest ContentInfoRequest::prepareRequest(int payloadLen) const
