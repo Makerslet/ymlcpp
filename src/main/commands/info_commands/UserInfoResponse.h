@@ -1,7 +1,7 @@
 #ifndef USERINFORESPONSE_H
 #define USERINFORESPONSE_H
 
-#include "common_and_base/base_requests_responses/IServerResponse.h"
+#include "../common_and_base/base_requests_responses/IServerResponse.h"
 
 #include <QDateTime>
 #include <QVariant>

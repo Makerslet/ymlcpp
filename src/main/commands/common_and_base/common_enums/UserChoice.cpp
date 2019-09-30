@@ -3,18 +3,18 @@
 namespace ymlcpp {
 namespace server_access {
 
-    QString UserChoiceConvertor::userChoiceContentToString(UserChoiceContent content)
+    QString UserChoiceConvertor::userChoiceContentToString(ContentType content)
     {
         switch (content) {
-        case UserChoiceContent::Albums:     return "albums";
-        case UserChoiceContent::Artists:    return "artists";
-        case UserChoiceContent::Playlists:  return "playlists";
-        case UserChoiceContent::Tracks:     return "tracks";
+        case ContentType::Albums:     return "albums";
+        case ContentType::Artists:    return "artists";
+        case ContentType::Playlists:  return "playlists";
+        case ContentType::Tracks:     return "tracks";
 
         }
     }
 
-    QString UserChoiceConvertor::userChoiceContentToStringSingle(UserChoiceContent content)
+    QString UserChoiceConvertor::userChoiceContentToStringSingle(ContentType content)
     {
         auto result = userChoiceContentToString(content);
         return result.remove(result.length() - 1, 1);

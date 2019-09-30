@@ -7,7 +7,6 @@
 
 #include <QPair>
 #include <QNetworkRequest>
-#include <QMap>
 
 namespace ymlcpp {
 namespace server_access {
@@ -18,7 +17,7 @@ public:
     UserChoiceSetRequest(const QString&,
                          const QString&,
                          UserChoiceType,
-                         UserChoiceContent,
+                         ContentType,
                          UserAction,
                          const QStringList&);
 
@@ -34,7 +33,7 @@ private:
     const QString _userId;
 
     const UserChoiceType _choiceType;
-    const UserChoiceContent _choiceContent;
+    const ContentType _choiceContent;
     const UserAction _action;
 
     const QStringList _ids;

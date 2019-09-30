@@ -10,7 +10,7 @@ namespace server_access {
 const QString UserChoiceSetRequest::_templateUrl("https://api.music.yandex.net/users/%1/%2/%3/%4");
 
 UserChoiceSetRequest::UserChoiceSetRequest(const QString &oauth, const QString &userId,
-                UserChoiceType choiceType, UserChoiceContent choiceContent,
+                UserChoiceType choiceType, ContentType choiceContent,
                 UserAction action, const QStringList& ids) :
     ServerPostRequest (AppRequestType::UserChoiceSetRequest),
     _oauth(oauth),

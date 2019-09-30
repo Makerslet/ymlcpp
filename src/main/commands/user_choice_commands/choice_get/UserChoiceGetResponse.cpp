@@ -3,7 +3,7 @@
 namespace ymlcpp {
 namespace server_access {
 
-UserChoiceGetResponse::UserChoiceGetResponse(UserChoiceType type, UserChoiceContent content) :
+UserChoiceGetResponse::UserChoiceGetResponse(UserChoiceType type, ContentType content) :
     IServerResponse (AppResponseType::UserChoiceGetResponse),
     _choiceType(type), _choiceContent(content)
 {
@@ -28,7 +28,7 @@ UserChoiceType UserChoiceGetResponse::choiceType() const
 {
     return  _choiceType;
 }
-UserChoiceContent UserChoiceGetResponse::choiceContent() const
+ContentType UserChoiceGetResponse::choiceContent() const
 {
     return _choiceContent;
 }

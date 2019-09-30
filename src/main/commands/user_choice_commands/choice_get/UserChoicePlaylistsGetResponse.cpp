@@ -9,7 +9,7 @@ namespace ymlcpp {
 namespace server_access {
 
 UserChoicePlaylistsGetResponse::UserChoicePlaylistsGetResponse(UserChoiceType choiceType, const QByteArray& data) :
-    UserChoiceGetResponse(choiceType, UserChoiceContent::Playlists)
+    UserChoiceGetResponse(choiceType, ContentType::Playlists)
 {
     parseResponse(data);
 }

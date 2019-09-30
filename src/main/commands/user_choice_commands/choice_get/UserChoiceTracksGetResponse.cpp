@@ -10,7 +10,7 @@ namespace server_access {
 
 
 UserChoiceTracksGetResponse::UserChoiceTracksGetResponse(UserChoiceType choiceType, const QByteArray& data) :
-    UserChoiceGetResponse (choiceType, UserChoiceContent::Tracks)
+    UserChoiceGetResponse (choiceType, ContentType::Tracks)
 {
     qDebug() << data;
     parseResponse(data);

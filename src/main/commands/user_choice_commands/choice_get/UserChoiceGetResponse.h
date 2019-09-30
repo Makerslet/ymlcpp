@@ -12,13 +12,13 @@ namespace server_access {
 class UserChoiceGetResponse : public IServerResponse
 {
 public:
-    UserChoiceGetResponse(UserChoiceType, UserChoiceContent);
+    UserChoiceGetResponse(UserChoiceType, ContentType);
     ~UserChoiceGetResponse() override;
 
     ResponseResult status() const override;
     ErrorInfo errorInfo() const;
     UserChoiceType choiceType() const;
-    UserChoiceContent choiceContent() const;
+    ContentType choiceContent() const;
 
 protected:
     void parseError(const QVariantHash&);
@@ -29,7 +29,7 @@ protected:
 
 private:
     const UserChoiceType _choiceType;
-    const UserChoiceContent _choiceContent;
+    const ContentType _choiceContent;
 };
 
 }

@@ -1,7 +1,7 @@
 #ifndef USERINFOREQUEST_H
 #define USERINFOREQUEST_H
 
-#include "common_and_base/base_requests_responses/ServerGetRequest.h"
+#include "../common_and_base/base_requests_responses/ServerGetRequest.h"
 
 namespace ymlcpp {
 namespace server_access {

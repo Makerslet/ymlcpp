@@ -11,7 +11,7 @@ namespace server_access  {
 class UserChoiceGetRequest : public ServerGetRequest
 {
 public:
-    UserChoiceGetRequest(const QString&, const QString&, UserChoiceType, UserChoiceContent);
+    UserChoiceGetRequest(const QString&, const QString&, UserChoiceType, ContentType);
 
     QNetworkRequest toNetworkRequest() const override;
     QSharedPointer<IServerResponse> createResponse(const QByteArray&) const override;
@@ -20,7 +20,7 @@ private:
     QString _oauthToken;
     QString _login;
     UserChoiceType _choiceType;
-    UserChoiceContent _choiceContent;
+    ContentType _choiceContent;
 
     static const QString _templateUrl;
 };

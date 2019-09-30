@@ -5,8 +5,9 @@
 #include "commands/user_choice_commands/choice_get/UserLikesGetResponse.h"
 #include "commands/user_choice_commands/choice_get/UserDislikesGetResponse.h"
 #include "commands/user_choice_commands/choice_set/UserChoiceSetRequest.h"
-#include "commands/UserInfoRequest.h"
-#include "commands/UserInfoResponse.h"
+#include "commands/info_commands/UserInfoRequest.h"
+#include "commands/info_commands/UserInfoResponse.h"
+#include "commands/info_commands/ContentInfoRequest.h"
 
 #include <QDebug>
 
@@ -37,15 +38,18 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << authResponse->oauthToken();
         _oauthToken = authResponse->oauthToken();
 
-        auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);
-        emit sendRequest(userInfoReq);
+        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Albums, QStringList{"433482", "433483"});
+        emit sendRequest(infoReq);
+
+        //auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);
+        //emit sendRequest(userInfoReq);
     }
     else if(response->appResponseType() == AppResponseType::UserInfoResponse) {
         auto userInfoResp = response.dynamicCast<UserInfoResponse>();
         _userId = QString::number(userInfoResp->userInfo().account.uid);
 
         auto uInfoReq = QSharedPointer<UserChoiceSetRequest>::create(_oauthToken, _userId,
-                                                                     UserChoiceType::Like, UserChoiceContent::Tracks,
+                                                                     UserChoiceType::Like, ContentType::Tracks,
                                                                      UserAction::Remove,
                                                                      QStringList{"5528436255"});
         emit sendRequest(uInfoReq);
