@@ -50,5 +50,17 @@ QByteArray ServerPostRequest::toApiFormat(const QString& base, const QStringList
     return result;
 }
 
+QByteArray ServerPostRequest::toApiFormat(const QString& base, const QString& addInfo, const QStringList& ids) const
+{
+    QByteArray result;
+
+    for(auto id : ids)
+        result.append(QString("%1=True&%2=%3&").arg(addInfo).arg(base).arg(id));
+
+    result.remove(result.length() - 1, 1);
+
+    return result;
+}
+
 }
 }

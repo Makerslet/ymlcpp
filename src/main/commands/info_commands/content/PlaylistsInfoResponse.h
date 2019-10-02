@@ -11,6 +11,15 @@ class PlaylistsInfoResponse : public IServerResponse
 {
 public:
     PlaylistsInfoResponse(const QByteArray&);
+    ~PlaylistsInfoResponse() override;
+
+    ResponseResult status() const override;
+
+private:
+    void parseResponse(const QByteArray&) override;
+
+private:
+    ResponseResult _respResult;
 };
 
 }

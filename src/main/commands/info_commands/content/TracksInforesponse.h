@@ -7,10 +7,19 @@ namespace ymlcpp {
 namespace server_access {
 
 
-class TracksInforesponse : public IServerResponse
+class TracksInfoResponse : public IServerResponse
 {
 public:
-    TracksInforesponse(const QByteArray&);
+    TracksInfoResponse(const QByteArray&);
+    ~TracksInfoResponse() override;
+
+    ResponseResult status() const override;
+
+private:
+    void parseResponse(const QByteArray&) override;
+
+private:
+    ResponseResult _respResult;
 };
 
 }

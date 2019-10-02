@@ -38,7 +38,7 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << authResponse->oauthToken();
         _oauthToken = authResponse->oauthToken();
 
-        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Albums, QStringList{"433482", "433483"});
+        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Tracks, QStringList{"5528436255"});
         emit sendRequest(infoReq);
 
         //auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);

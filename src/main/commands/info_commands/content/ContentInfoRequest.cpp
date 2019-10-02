@@ -4,6 +4,8 @@
 #include "TracksInforesponse.h"
 #include "PlaylistsInfoResponse.h"
 
+#include <QDebug>
+
 namespace ymlcpp {
 namespace server_access {
 
@@ -30,7 +32,7 @@ QSharedPointer<IServerResponse> ContentInfoRequest::createResponse(const QByteAr
     case ContentType::Albums:       return QSharedPointer<AlbumsInfoResponse>::create(data);
     case ContentType::Artists:      return QSharedPointer<ArtistsInfoResponse>::create(data);
     case ContentType::Playlists:    return QSharedPointer<PlaylistsInfoResponse>::create(data);
-    case ContentType::Tracks:       return QSharedPointer<TracksInforesponse>::create(data);
+    case ContentType::Tracks:       return QSharedPointer<TracksInfoResponse>::create(data);
     }
 }
 
@@ -42,10 +44,11 @@ QNetworkRequest ContentInfoRequest::prepareRequest(int payloadLen) const
 
     QUrl actualUrl(_templateUrl.arg(contentTypeStr));
     QNetworkRequest request(actualUrl);
+    qDebug() << actualUrl;
 
     QString authValue = QString("OAuth %1").arg(_oauth);
     request.setRawHeader("Authorization", authValue.toUtf8());
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+    //request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
     request.setHeader(QNetworkRequest::ContentLengthHeader, payloadLen);
     return  request;
 }
@@ -55,7 +58,10 @@ QByteArray ContentInfoRequest::preparePayload() const
     QString contentId = QString("%1-ids").arg(
                 UserChoiceConvertor::userChoiceContentToStringSingle(_contentType));
 
-    return toApiFormat(contentId, _ids);
+    QByteArray apiformat = toApiFormat(contentId, _ids);
+
+    qDebug() << apiformat;
+    return  apiformat;
 }
 
 }

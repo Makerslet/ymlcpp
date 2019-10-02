@@ -28,6 +28,7 @@ public:
 protected:
     QByteArray toApiFormat(const QHash<QString, QString>&) const;
     QByteArray toApiFormat(const QString&, const QStringList&) const;
+    QByteArray toApiFormat(const QString&, const QString&, const QStringList&) const;
 
 private:
     const ServerRequestType _serverReqType = ServerRequestType::POST;
