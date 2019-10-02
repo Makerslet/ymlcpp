@@ -58,9 +58,12 @@ QByteArray ContentInfoRequest::preparePayload() const
     QString contentId = QString("%1-ids").arg(
                 UserChoiceConvertor::userChoiceContentToStringSingle(_contentType));
 
-    QByteArray apiformat = toApiFormat(contentId, _ids);
+    QByteArray apiformat;
+    if(_contentType == ContentType::Tracks)
+        apiformat = toApiFormat(contentId, "with-positions", _ids);
+    else
+        apiformat = toApiFormat(contentId, _ids);
 
-    qDebug() << apiformat;
     return  apiformat;
 }
 

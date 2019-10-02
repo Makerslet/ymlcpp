@@ -8,6 +8,7 @@
 #include "commands/info_commands/user/UserInfoRequest.h"
 #include "commands/info_commands/user/UserInfoResponse.h"
 #include "commands/info_commands/content/ContentInfoRequest.h"
+#include "commands/info_commands/content/TracksInforesponse.h"
 
 #include <QDebug>
 
@@ -38,7 +39,7 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << authResponse->oauthToken();
         _oauthToken = authResponse->oauthToken();
 
-        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Tracks, QStringList{"5528436255"});
+        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Tracks, QStringList{"55286255"});
         emit sendRequest(infoReq);
 
         //auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);
@@ -54,8 +55,8 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
                                                                      QStringList{"5528436255"});
         emit sendRequest(uInfoReq);
     }
-    else if(response->appResponseType() == AppResponseType::UserChoiceGetResponse) {
-        auto responseDc  = response.dynamicCast<UserLikeTracksGetResponse>();
+    else if(response->appResponseType() == AppResponseType::ContentInfoResponse) {
+        auto responseDc  = response.dynamicCast<TracksInfoResponse>();
         int i = 10;
     }
     /*
