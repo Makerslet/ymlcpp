@@ -48,7 +48,7 @@ QNetworkRequest ContentInfoRequest::prepareRequest(int payloadLen) const
 
     QString authValue = QString("OAuth %1").arg(_oauth);
     request.setRawHeader("Authorization", authValue.toUtf8());
-    //request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
     request.setHeader(QNetworkRequest::ContentLengthHeader, payloadLen);
     return  request;
 }
@@ -64,7 +64,8 @@ QByteArray ContentInfoRequest::preparePayload() const
     else
         apiformat = toApiFormat(contentId, _ids);
 
-    return  apiformat;
+    qDebug() << apiformat;
+    return apiformat;
 }
 
 }

@@ -25,6 +25,7 @@ TrackDescription TrackDescriptionParser::parseTrackDescription(const QVariantHas
     track.lyricsAvailable = trackHash["lyricsAvailable"].toBool();
     track.type = trackHash["type"].toString();
 
+    auto artists = trackHash["artists"].toList();
     for(auto artist : trackHash["artists"].toList())
         track.artists.push_back(
                     ArtistDescriptionParser::parseArtistDescription(

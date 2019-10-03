@@ -39,25 +39,26 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << authResponse->oauthToken();
         _oauthToken = authResponse->oauthToken();
 
-        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Tracks, QStringList{"55286255"});
+        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Playlists, QStringList{"25722788"});
         emit sendRequest(infoReq);
 
-        //auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);
-        //emit sendRequest(userInfoReq);
+//        auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);
+//        emit sendRequest(userInfoReq);
     }
     else if(response->appResponseType() == AppResponseType::UserInfoResponse) {
         auto userInfoResp = response.dynamicCast<UserInfoResponse>();
         _userId = QString::number(userInfoResp->userInfo().account.uid);
 
-        auto uInfoReq = QSharedPointer<UserChoiceSetRequest>::create(_oauthToken, _userId,
-                                                                     UserChoiceType::Like, ContentType::Tracks,
-                                                                     UserAction::Remove,
-                                                                     QStringList{"5528436255"});
+        auto uInfoReq = QSharedPointer<UserChoiceGetRequest>::create(_oauthToken, _userId,
+                                                                     UserChoiceType::Like, ContentType::Playlists);
         emit sendRequest(uInfoReq);
+    }
+    else if(response->appResponseType() == AppResponseType::UserChoiceGetResponse) {
+        auto rep = response.dynamicCast<UserChoicePlaylistsGetResponse>();
+        int i = 10;
     }
     else if(response->appResponseType() == AppResponseType::ContentInfoResponse) {
         auto responseDc  = response.dynamicCast<TracksInfoResponse>();
-        int i = 10;
     }
     /*
     else if(response->appResponseType() == AppResponseType::TrackVariantsResponse)

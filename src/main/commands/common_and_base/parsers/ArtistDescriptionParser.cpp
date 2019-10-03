@@ -23,6 +23,7 @@ namespace server_access {
         for(auto link : artistHash["links"].toList())
             description.links.push_back(
                         parseArtistLink(link.toHash()));
+        return  description;
     }
 
     ArtistCover ArtistDescriptionParser::parseArtistCover(const QVariantHash& coverHash)

@@ -39,6 +39,7 @@ AlbumDescription AlbumDescriptionParser::parseAlbumDescription(const QVariantHas
     for(auto best : albumHash["best"].toList())
         description.bests.push_back(
                     parseBestDescription(best.toHash()));
+    return description;
 }
 
 BuyAlbumDescription AlbumDescriptionParser::parseBuyAlbumDescription(const QVariantHash& buyHash)
