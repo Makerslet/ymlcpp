@@ -2,9 +2,9 @@
 #define CLIENTCODEMOCK_H
 
 #include "ServerAccessManager.h"
-#include "commands/headers/IServerRequest.h"
-#include "commands/headers/IServerResponse.h"
-#include "commands/AuthorizationRequest.h"
+#include "commands/common_and_base/base_requests_responses/IServerRequest.h"
+#include "commands/common_and_base/base_requests_responses/IServerResponse.h"
+#include "commands/authorization_commands/AuthorizationRequest.h"
 
 #include <QObject>
 #include <QSharedPointer>
@@ -29,6 +29,7 @@ signals:
 private:
     ymlcpp::server_access::ServerAccessManager _sam;
     QString _oauthToken;
+    QString _userId;
 };
 
 }

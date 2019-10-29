@@ -3,8 +3,8 @@
 
 #include <QObject>
 
-#include "commands/headers/IServerRequest.h"
-#include "commands/headers/IServerResponse.h"
+#include "commands/common_and_base/base_requests_responses/IServerRequest.h"
+#include "commands/common_and_base/base_requests_responses/IServerResponse.h"
 
 #include "RequestResponseConvertor.h"
 #include "ServerAccessor.h"

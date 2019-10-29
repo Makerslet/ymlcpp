@@ -1,28 +1,25 @@
-#ifndef TRACKGETPATHREQUEST_H
-#define TRACKGETPATHREQUEST_H
+#ifndef GETFEEDREQUEST_H
+#define GETFEEDREQUEST_H
 
 #include "common_and_base/base_requests_responses/ServerGetRequest.h"
-
-#include <QUrl>
-
 
 namespace ymlcpp {
 namespace server_access {
 
-class TrackGetPathRequest : public ServerGetRequest
+class GetFeedRequest : public ServerGetRequest
 {
 public:
-    TrackGetPathRequest(const QString&, const QUrl&);
+    GetFeedRequest(const QString&);
 
     QNetworkRequest toNetworkRequest() const override;
     QSharedPointer<IServerResponse> createResponse(const QByteArray&) const override;
 
 private:
     QString _oauthToken;
-    QUrl _trackXmlUrl;
+    static const QUrl _userInfoUrl;
 };
 
 }
 }
 
-#endif // TRACKGETPATHREQUEST_H
+#endif // GETFEEDREQUEST_H

@@ -1,7 +1,7 @@
 #ifndef TRACKVARIANTSREQUEST_H
 #define TRACKVARIANTSREQUEST_H
 
-#include "ServerGetRequest.h"
+#include "common_and_base/base_requests_responses/ServerGetRequest.h"
 
 namespace ymlcpp {
 namespace server_access {

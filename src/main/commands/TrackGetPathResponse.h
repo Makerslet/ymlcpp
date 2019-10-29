@@ -1,7 +1,7 @@
 #ifndef TRACKGETPATHRESPONSE_H
 #define TRACKGETPATHRESPONSE_H
 
-#include "headers/IServerResponse.h"
+#include "common_and_base/base_requests_responses/IServerResponse.h"
 
 #include <QVariant>
 
