@@ -64,7 +64,6 @@ QByteArray ContentInfoRequest::preparePayload() const
     else
         apiformat = toApiFormat(contentId, _ids);
 
-    qDebug() << apiformat;
     return apiformat;
 }
 

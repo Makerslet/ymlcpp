@@ -11,7 +11,8 @@ enum class AppResponseType {
     UserChoiceGetResponse,
     UserChoiceSetResponse,
     TrackVariantsResponse,
-    TrackPathResponse
+    TrackPathResponse,
+    FeedResponse
 };
 
 }

@@ -9,6 +9,9 @@
 #include "commands/info_commands/user/UserInfoResponse.h"
 #include "commands/info_commands/content/ContentInfoRequest.h"
 #include "commands/info_commands/content/TracksInforesponse.h"
+#include "commands/info_commands/content/PlaylistsInfoResponse.h"
+#include "commands/GetFeedRequest.h"
+#include "commands/GetFeedResponse.h"
 
 #include <QDebug>
 
@@ -39,11 +42,18 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << authResponse->oauthToken();
         _oauthToken = authResponse->oauthToken();
 
-        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Playlists, QStringList{"25722788"});
-        emit sendRequest(infoReq);
 
-//        auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);
-//        emit sendRequest(userInfoReq);
+//        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Playlists, QStringList{"25722788"});
+//        emit sendRequest(infoReq);
+
+        auto feedReq = QSharedPointer<GetFeedRequest>::create(_oauthToken);
+        emit sendRequest(feedReq);
+
+//        auto likesPlaylists = QSharedPointer<UserChoiceGetRequest>::create(_oauthToken, _userId, UserChoiceType::Like, ContentType::Playlists);
+//        emit sendRequest(likesPlaylists);
+
+        //auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);
+        //emit sendRequest(userInfoReq);
     }
     else if(response->appResponseType() == AppResponseType::UserInfoResponse) {
         auto userInfoResp = response.dynamicCast<UserInfoResponse>();
@@ -58,7 +68,7 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         int i = 10;
     }
     else if(response->appResponseType() == AppResponseType::ContentInfoResponse) {
-        auto responseDc  = response.dynamicCast<TracksInfoResponse>();
+        auto responseDc  = response.dynamicCast<PlaylistsInfoResponse>();
     }
     /*
     else if(response->appResponseType() == AppResponseType::TrackVariantsResponse)
