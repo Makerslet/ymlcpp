@@ -5,6 +5,7 @@
 #include "common_and_base/common_structures/PlaylistDescription.h"
 
 #include <QVariant>
+#include <QVector>
 
 namespace ymlcpp {
 namespace server_access {

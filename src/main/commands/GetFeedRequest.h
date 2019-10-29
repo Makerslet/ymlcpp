@@ -16,7 +16,7 @@ public:
 
 private:
     QString _oauthToken;
-    static const QUrl _userInfoUrl;
+    static const QUrl _feedUrl;
 };
 
 }

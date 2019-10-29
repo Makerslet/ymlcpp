@@ -12,6 +12,8 @@
 #include "commands/info_commands/content/PlaylistsInfoResponse.h"
 #include "commands/GetFeedRequest.h"
 #include "commands/GetFeedResponse.h"
+#include "commands/SearchRequest.h"
+#include "commands/SearchResponse.h"
 
 #include <QDebug>
 
@@ -42,12 +44,14 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << authResponse->oauthToken();
         _oauthToken = authResponse->oauthToken();
 
+        auto searchRequest = QSharedPointer<SearchRequest>::create(_oauthToken, "bullet for");
+        emit sendRequest(searchRequest);
 
 //        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Playlists, QStringList{"25722788"});
 //        emit sendRequest(infoReq);
 
-        auto feedReq = QSharedPointer<GetFeedRequest>::create(_oauthToken);
-        emit sendRequest(feedReq);
+//        auto feedReq = QSharedPointer<GetFeedRequest>::create(_oauthToken);
+//        emit sendRequest(feedReq);
 
 //        auto likesPlaylists = QSharedPointer<UserChoiceGetRequest>::create(_oauthToken, _userId, UserChoiceType::Like, ContentType::Playlists);
 //        emit sendRequest(likesPlaylists);

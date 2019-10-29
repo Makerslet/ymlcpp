@@ -4,7 +4,7 @@
 namespace ymlcpp {
 namespace server_access {
 
-const QUrl GetFeedRequest::_userInfoUrl("https://api.music.yandex.net/feed");
+const QUrl GetFeedRequest::_feedUrl("https://api.music.yandex.net/feed");
 
 
 GetFeedRequest::GetFeedRequest(const QString& oauthToken) :
@@ -16,7 +16,7 @@ GetFeedRequest::GetFeedRequest(const QString& oauthToken) :
 
 QNetworkRequest GetFeedRequest::toNetworkRequest() const
 {
-    QNetworkRequest request(_userInfoUrl);
+    QNetworkRequest request(_feedUrl);
 
     QString authValue = QString("OAuth %1").arg(_oauthToken);
     request.setRawHeader("Authorization", authValue.toUtf8());

@@ -12,7 +12,9 @@ enum class AppResponseType {
     UserChoiceSetResponse,
     TrackVariantsResponse,
     TrackPathResponse,
-    FeedResponse
+    GenresResponse,
+    FeedResponse,
+    SearchResponse
 };
 
 }
