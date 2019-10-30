@@ -5,7 +5,7 @@
 namespace ymlcpp {
 namespace server_access {
 
-const QString SearchRequest::_userInfoUrl("https://api.music.yandex.net/search?%1");
+const QString SearchRequest::_searchUrl("https://api.music.yandex.net/search?%1");
 
 
 SearchRequest::SearchRequest(const QString& oauthToken, const QString& searchString) :
@@ -23,7 +23,7 @@ SearchRequest::SearchRequest(const QString& oauthToken, const QString& searchStr
 
 QNetworkRequest SearchRequest::toNetworkRequest() const
 {
-    QUrl actualUrl(_userInfoUrl.arg(createSearchUrl()));
+    QUrl actualUrl(_searchUrl.arg(createSearchUrl()));
     QNetworkRequest request(actualUrl);
 
     QString authValue = QString("OAuth %1").arg(_oauthToken);

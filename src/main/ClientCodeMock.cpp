@@ -14,6 +14,8 @@
 #include "commands/GetFeedResponse.h"
 #include "commands/SearchRequest.h"
 #include "commands/SearchResponse.h"
+#include "commands/SearchSuggestRequest.h"
+#include "commands/SearchSuggestResponse.h"
 
 #include <QDebug>
 
@@ -44,7 +46,7 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
         qDebug() << authResponse->oauthToken();
         _oauthToken = authResponse->oauthToken();
 
-        auto searchRequest = QSharedPointer<SearchRequest>::create(_oauthToken, "bullet for");
+        auto searchRequest = QSharedPointer<SearchSuggestRequest>::create(_oauthToken, "bullet for");
         emit sendRequest(searchRequest);
 
 //        auto infoReq = QSharedPointer<ContentInfoRequest>::create(_oauthToken, ContentType::Playlists, QStringList{"25722788"});

@@ -1,17 +1,15 @@
-#ifndef SEARCHREQUEST_H
-#define SEARCHREQUEST_H
+#ifndef SEARCHSUGGESTREQUEST_H
+#define SEARCHSUGGESTREQUEST_H
 
 #include "common_and_base/base_requests_responses/ServerGetRequest.h"
-#include "common_and_base/common_enums/UserChoice.h"
 
 namespace ymlcpp {
 namespace server_access {
 
-class SearchRequest : public ServerGetRequest
+class SearchSuggestRequest : public ServerGetRequest
 {
 public:
-    SearchRequest(const QString&, const QString&);
-    SearchRequest(const QString&, const QString&, ContentType);
+    SearchSuggestRequest(const QString&, const QString&);
     QNetworkRequest toNetworkRequest() const override;
     QSharedPointer<IServerResponse> createResponse(const QByteArray&) const override;
 
@@ -22,12 +20,11 @@ private:
     QString _oauthToken;
     QString _searchString;
 
-    bool _concreteContent;
-    ContentType _contentType;
-    static const QString _searchUrl;
+    static const QString _searchSuggestUrl;
 };
 
+
 }
 }
 
-#endif // SEARCHREQUEST_H
+#endif // SEARCHSUGGESTREQUEST_H

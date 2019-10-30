@@ -14,7 +14,8 @@ enum class AppResponseType {
     TrackPathResponse,
     GenresResponse,
     FeedResponse,
-    SearchResponse
+    SearchResponse,
+    SearchSuggestResponse
 };
 
 }

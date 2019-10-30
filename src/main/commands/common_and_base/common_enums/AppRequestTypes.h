@@ -14,7 +14,8 @@ enum class AppRequestType {
     TrackPathRequest,
     GenresRequest,
     FeedRequest,
-    SearchRequest
+    SearchRequest,
+    SearchSuggestRequest
 };
 
 }
