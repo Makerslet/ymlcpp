@@ -34,7 +34,9 @@ QPair<QNetworkRequest, QByteArray> UserChoiceSetRequest::toNetworkRequest() cons
 
 QSharedPointer<IServerResponse> UserChoiceSetRequest::createResponse(const QByteArray& payload) const
 {
-    return QSharedPointer<UserChoiceSetResponse>::create(payload);
+    auto response = QSharedPointer<UserChoiceSetResponse>::create();
+    response->parseResponse(payload);
+    return response.dynamicCast<IServerResponse>();
 }
 
 QNetworkRequest UserChoiceSetRequest::prepareRequest(int payloadLen) const

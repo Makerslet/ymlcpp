@@ -1,7 +1,7 @@
 #ifndef SEARCHSUGGESTRESPONSE_H
 #define SEARCHSUGGESTRESPONSE_H
 
-#include "common_and_base/base_requests_responses/IServerResponse.h"
+#include "common_and_base/base_requests_responses/ServerResponse.h"
 
 #include <QVariant>
 #include <QVector>
@@ -15,26 +15,21 @@ struct SearchSuggestResult
     QStringList suggestions;
 };
 
-class SearchSuggestResponse : public IServerResponse
+class SearchSuggestResponse : public ServerResponse
 {
 public:
-    SearchSuggestResponse(const QByteArray&);
+    SearchSuggestResponse();
     ~SearchSuggestResponse() override;
 
-    ResponseResult status() const override;
-    ErrorInfo errorInfo() const;
-    SearchSuggestResult description() const;
+    SearchSuggestResult suggestResult() const;
 
 private:
-    void parseResponse(const QByteArray&) override;
+    void parseContent(const QVariant&) override;
     void parseSuggestions(const QVariantList &);
     void parseBest(const QVariantHash &);
-    void parseError(const QVariantHash&);
 
 private:
-    ResponseResult _respStatus;
     SearchSuggestResult _result;
-    ErrorInfo _errInfo;
 };
 
 }

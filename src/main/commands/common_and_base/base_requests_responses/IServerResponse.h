@@ -1,5 +1,7 @@
 #ifndef ISERVERRESPONSE_H
 #define ISERVERRESPONSE_H
+// давим warning по виртуальному деструктору чтобы не добавлять cpp файл
+#pragma clang diagnostic ignored "-Wweak-vtables"
 
 #include "../common_enums/AppResponseTypes.h"
 
@@ -23,16 +25,11 @@ struct ErrorInfo
 class IServerResponse
 {
 public:
-    IServerResponse(AppResponseType rType) : _respType(rType) {}
     virtual ~IServerResponse(){}
-    virtual AppResponseType appResponseType() const { return  _respType;}
+    virtual AppResponseType appResponseType() const = 0;
     virtual ResponseResult status() const = 0;
-
-protected:
+    virtual ErrorInfo errInfo() const = 0;
     virtual void parseResponse(const QByteArray&) = 0;
-
-private:
-    AppResponseType _respType;
 };
 
 }

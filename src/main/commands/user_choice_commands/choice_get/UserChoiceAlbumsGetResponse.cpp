@@ -8,16 +8,12 @@
 namespace ymlcpp {
 namespace server_access {
 
-UserChoiceAlbumsGetResponse::UserChoiceAlbumsGetResponse(UserChoiceType choiceType, const QByteArray& data) :
+UserChoiceAlbumsGetResponse::UserChoiceAlbumsGetResponse(UserChoiceType choiceType) :
     UserChoiceGetResponse (choiceType, ContentType::Albums)
-{
-    parseResponse(data);
-}
+{}
 
 UserChoiceAlbumsGetResponse::~UserChoiceAlbumsGetResponse()
-{
-
-}
+{}
 
 QVector<LikeAlbum> UserChoiceAlbumsGetResponse::userLikes() const
 {
@@ -25,28 +21,10 @@ QVector<LikeAlbum> UserChoiceAlbumsGetResponse::userLikes() const
 }
 
 
-void UserChoiceAlbumsGetResponse::parseResponse(const QByteArray& data)
+void UserChoiceAlbumsGetResponse::parseContent(const QVariant& data)
 {
-    auto jsonDoc = QJsonDocument::fromJson(data);
-    auto jsonObject = jsonDoc.object();
-
-    auto rootHash = jsonObject.toVariantHash();
-    auto resultFieldIter = rootHash.find("result");
-    auto errorFieldIter = rootHash.find("error");
-
-    if(resultFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Succes;
-        for(auto album : resultFieldIter.value().toList())
-            parseAlbum(album.toHash());
-    }
-    else if(errorFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Error;
-        parseError(errorFieldIter.value().toHash());
-    }
-    else
-        _respStatus = ResponseResult::Error;
+    for(auto album : data.toList())
+        parseAlbum(album.toHash());
 }
 
 void UserChoiceAlbumsGetResponse::parseAlbum(const QVariantHash& albumHash)

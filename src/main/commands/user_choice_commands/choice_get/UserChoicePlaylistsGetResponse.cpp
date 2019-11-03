@@ -3,20 +3,16 @@
 
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QDebug>
 
 namespace ymlcpp {
 namespace server_access {
 
-UserChoicePlaylistsGetResponse::UserChoicePlaylistsGetResponse(UserChoiceType choiceType, const QByteArray& data) :
+UserChoicePlaylistsGetResponse::UserChoicePlaylistsGetResponse(UserChoiceType choiceType) :
     UserChoiceGetResponse(choiceType, ContentType::Playlists)
-{
-    parseResponse(data);
-}
+{}
 
 UserChoicePlaylistsGetResponse::~UserChoicePlaylistsGetResponse()
-{
-}
+{}
 
 QVector<PlaylistDescription> UserChoicePlaylistsGetResponse::userLikes() const
 {
@@ -25,28 +21,11 @@ QVector<PlaylistDescription> UserChoicePlaylistsGetResponse::userLikes() const
 
 
 
-void UserChoicePlaylistsGetResponse::parseResponse(const QByteArray& data)
+void UserChoicePlaylistsGetResponse::parseContent(const QVariant& data)
 {
-    auto jsonDoc = QJsonDocument::fromJson(data);
-    auto jsonObject = jsonDoc.object();
-
-    auto rootHash = jsonObject.toVariantHash();
-    auto resultFieldIter = rootHash.find("result");
-    auto errorFieldIter = rootHash.find("error");
-
-    if(resultFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Succes;
-        for(auto playlist : resultFieldIter.value().toList())
-            _userLikes.push_back(PlaylistDescriptionParser::parsePlaylistDescription(playlist.toHash()));
-    }
-    else if(errorFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Error;
-        parseError(errorFieldIter.value().toHash());
-    }
-    else
-        _respStatus = ResponseResult::Error;
+    for(auto playlist : data.toList())
+        _userLikes.push_back(PlaylistDescriptionParser::parsePlaylistDescription(
+                                 playlist.toHash()));
 }
 
 }

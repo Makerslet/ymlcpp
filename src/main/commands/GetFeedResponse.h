@@ -1,7 +1,7 @@
 #ifndef GETFEEDRESPONSE_H
 #define GETFEEDRESPONSE_H
 
-#include "common_and_base/base_requests_responses/IServerResponse.h"
+#include "common_and_base/base_requests_responses/ServerResponse.h"
 #include "common_and_base/common_structures/PlaylistDescription.h"
 
 #include <QVariant>
@@ -19,24 +19,19 @@ struct PlaylistWithTracks
 };
 
 
-class GetFeedResponse : public IServerResponse
+class GetFeedResponse : public ServerResponse
 {
 public:
-    GetFeedResponse(const QByteArray&);
+    GetFeedResponse();
     ~GetFeedResponse() override;
 
-    ResponseResult status() const override;
-    ErrorInfo errorInfo() const;
     QVector<PlaylistWithTracks> description() const;
 
 private:
-    void parseResponse(const QByteArray&) override;
-    void parseError(const QVariantHash&);
+    void parseContent(const QVariant&) override;
 
 private:
-    ResponseResult _respStatus;
     QVector<PlaylistWithTracks> _playlists;
-    ErrorInfo _errInfo;
 };
 
 }

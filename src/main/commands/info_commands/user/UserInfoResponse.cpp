@@ -9,60 +9,37 @@
 namespace ymlcpp {
 namespace server_access {
 
-UserInfoResponse::UserInfoResponse(const QByteArray& data) :
-    IServerResponse (AppResponseType::UserInfoResponse)
-{
-    parseResponse(data);
-}
+UserInfoResponse::UserInfoResponse() :
+    ServerResponse (AppResponseType::UserInfoResponse)
+{}
 
 UserInfoResponse::~UserInfoResponse()
+{}
+
+void UserInfoResponse::parseContent(const QVariant& data)
 {
-}
+    auto resultHashMap = data.toHash();
 
-void UserInfoResponse::parseResponse(const QByteArray& data)
-{
-    auto jsonDoc = QJsonDocument::fromJson(data);
-    auto jsonObject = jsonDoc.object();
+    auto accountIter = resultHashMap.find("account");
+    if(accountIter != resultHashMap.end())
+        parseAccount(accountIter.value().toHash());
 
-    auto rootHash = jsonObject.toVariantHash();
-    auto resultFieldIter = rootHash.find("result");
-    auto errorFieldIter = rootHash.find("error");
+    auto permissionsIter = resultHashMap.find("permissions");
+    if(permissionsIter != resultHashMap.end())
+        parsePermissions(permissionsIter.value().toHash());
 
-    if(resultFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Succes;
-        auto resultHashMap = resultFieldIter.value().toHash();
+    auto subscriptionIter = resultHashMap.find("subscription");
+    if(subscriptionIter != resultHashMap.end())
+        parseSubscription(subscriptionIter.value().toHash());
 
-        auto accountIter = resultHashMap.find("account");
-        if(accountIter != resultHashMap.end())
-            parseAccount(accountIter.value().toHash());
+    auto plusIter = resultHashMap.find("plus");
+    if(plusIter != resultHashMap.end())
+        parsePlus(plusIter.value().toHash());
 
-        auto permissionsIter = resultHashMap.find("permissions");
-        if(permissionsIter != resultHashMap.end())
-            parsePermissions(permissionsIter.value().toHash());
+    _userInfo.subeditor = resultHashMap["subeditor"].toBool();
+    _userInfo.subeditorLevel = resultHashMap["subeditorLevel"].toUInt();
+    _userInfo.defaultEmail = resultHashMap["defaultEmail"].toString();
 
-        auto subscriptionIter = resultHashMap.find("subscription");
-        if(subscriptionIter != resultHashMap.end())
-            parseSubscription(subscriptionIter.value().toHash());
-
-        auto plusIter = resultHashMap.find("plus");
-        if(plusIter != resultHashMap.end())
-            parsePlus(plusIter.value().toHash());
-
-        _userInfo.subeditor = resultHashMap["subeditor"].toBool();
-        _userInfo.subeditorLevel = resultHashMap["subeditorLevel"].toUInt();
-        _userInfo.defaultEmail = resultHashMap["defaultEmail"].toString();
-    }
-    else if(errorFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Error;
-        parseError(errorFieldIter.value().toHash());
-    }
-    else
-    {
-        // unknown error
-        _respStatus = ResponseResult::Error;
-    }
 }
 
 void UserInfoResponse::parseAccount(const QVariantHash& accHash)
@@ -103,25 +80,9 @@ void UserInfoResponse::parsePlus(const QVariantHash& plusHash)
     plus.isTutorialCompleted = plusHash["isTutorialCompleted"].toBool();
 }
 
-void UserInfoResponse::parseError(const QVariantHash& errHash)
-{
-    _errInfo.name = errHash["name"].toString();
-    _errInfo.message = errHash["message"].toString();
-}
-
-ResponseResult UserInfoResponse::status() const
-{
-    return _respStatus;
-}
-
 UserInfo UserInfoResponse::userInfo() const
 {
     return _userInfo;
-}
-
-ErrorInfo UserInfoResponse::errorInfo() const
-{
-    return _errInfo;
 }
 
 }

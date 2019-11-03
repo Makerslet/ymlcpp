@@ -12,41 +12,18 @@
 namespace ymlcpp {
 namespace server_access {
 
-SearchSuggestResponse::SearchSuggestResponse(const QByteArray& data) :
-    IServerResponse (AppResponseType::SearchSuggestResponse)
+SearchSuggestResponse::SearchSuggestResponse() :
+    ServerResponse (AppResponseType::SearchSuggestResponse)
 {
-    parseResponse(data);
 }
 
 SearchSuggestResponse::~SearchSuggestResponse(){}
 
-ResponseResult SearchSuggestResponse::status() const
+void SearchSuggestResponse::parseContent(const QVariant& data)
 {
-    return _respStatus;
-}
-
-void SearchSuggestResponse::parseResponse(const QByteArray& data)
-{
-    auto jsonDoc = QJsonDocument::fromJson(data);
-    auto jsonObject = jsonDoc.object();
-
-    auto rootHash = jsonObject.toVariantHash();
-    auto resultFieldIter = rootHash.find("result");
-    auto errorFieldIter = rootHash.find("error");
-
-    if(resultFieldIter != rootHash.end())
-    {
-        auto resultFieldHash = resultFieldIter.value().toHash();
-        parseBest(resultFieldHash["best"].toHash());
-        parseSuggestions(resultFieldHash["suggestions"].toList());
-    }
-    else if(errorFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Error;
-        parseError(errorFieldIter.value().toHash());
-    }
-    else
-        _respStatus = ResponseResult::Error;
+    auto resultFieldHash = data.toHash();
+    parseBest(resultFieldHash["best"].toHash());
+    parseSuggestions(resultFieldHash["suggestions"].toList());
 }
 
 void SearchSuggestResponse::parseSuggestions(const QVariantList& suggList)
@@ -81,18 +58,7 @@ void SearchSuggestResponse::parseBest(const QVariantHash& bestHash)
     _result.suggestions.push_back(text);
 }
 
-ErrorInfo SearchSuggestResponse::errorInfo() const
-{
-    return _errInfo;
-}
-
-void SearchSuggestResponse::parseError(const QVariantHash& errHash)
-{
-    _errInfo.name = errHash["name"].toString();
-    _errInfo.message = errHash["message"].toString();
-}
-
-SearchSuggestResult SearchSuggestResponse::description() const
+SearchSuggestResult SearchSuggestResponse::suggestResult() const
 {
     return _result;
 }

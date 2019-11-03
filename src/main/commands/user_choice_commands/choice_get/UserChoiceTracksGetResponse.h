@@ -27,13 +27,13 @@ struct UserLikeTracks
 class UserChoiceTracksGetResponse : public UserChoiceGetResponse
 {
 public:
-    UserChoiceTracksGetResponse(UserChoiceType, const QByteArray&);
+    UserChoiceTracksGetResponse(UserChoiceType);
     ~UserChoiceTracksGetResponse() override;
 
     UserLikeTracks userLikes() const;
 
 private:
-    void parseResponse(const QByteArray&) override;
+    void parseContent(const QVariant&) override;
     void parseLibrary(const QVariantHash&);
     void parseTrack(const QVariantHash&);
 

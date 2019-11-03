@@ -38,7 +38,9 @@ QPair<QNetworkRequest, QByteArray> AuthorizationRequest::toNetworkRequest() cons
 
 QSharedPointer<IServerResponse> AuthorizationRequest::createResponse(const QByteArray& payload) const
 {
-    return QSharedPointer<AuthorizationResponse>::create(payload);
+    auto response = QSharedPointer<AuthorizationResponse>::create();
+    response->parseResponse(payload);
+    return response.dynamicCast<IServerResponse>();
 }
 
 QNetworkRequest AuthorizationRequest::prepareRequest(int payloadLen) const

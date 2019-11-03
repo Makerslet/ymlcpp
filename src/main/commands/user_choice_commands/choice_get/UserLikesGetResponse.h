@@ -13,28 +13,28 @@ namespace server_access {
 class UserLikeAlbumsGetResponse : public UserChoiceAlbumsGetResponse
 {
 public:
-    UserLikeAlbumsGetResponse(const QByteArray&);
+    UserLikeAlbumsGetResponse();
     ~UserLikeAlbumsGetResponse() override;
 };
 
 class UserLikeArtistsGetResponse : public UserChoiceArtistsGetResponse
 {
 public:
-    UserLikeArtistsGetResponse(const QByteArray&);
+    UserLikeArtistsGetResponse();
     ~UserLikeArtistsGetResponse();
 };
 
 class UserLikePlaylistsGetResponse : public UserChoicePlaylistsGetResponse
 {
 public:
-    UserLikePlaylistsGetResponse(const QByteArray&);
+    UserLikePlaylistsGetResponse();
     ~UserLikePlaylistsGetResponse();
 };
 
 class UserLikeTracksGetResponse : public UserChoiceTracksGetResponse
 {
 public:
-    UserLikeTracksGetResponse(const QByteArray&);
+    UserLikeTracksGetResponse();
     ~UserLikeTracksGetResponse() override;
 };
 

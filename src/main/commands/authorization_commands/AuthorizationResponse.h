@@ -1,7 +1,7 @@
 #ifndef AUTHORIZATIONRESPONSE_H
 #define AUTHORIZATIONRESPONSE_H
 
-#include "../common_and_base/base_requests_responses/IServerResponse.h"
+#include "../common_and_base/base_requests_responses/ServerResponse.h"
 
 #include <QByteArray>
 #include <QJsonObject>
@@ -11,7 +11,7 @@ namespace ymlcpp {
 namespace server_access {
 
 
-class AuthorizationResponse : public IServerResponse
+class AuthorizationResponse : public ServerResponse
 {
     enum class AuthorizationError {
         AuthorizationPending,
@@ -39,9 +39,8 @@ class AuthorizationResponse : public IServerResponse
     using FieldsMap = QMap<ResponseFields, QString>;
 
 public:
-    AuthorizationResponse(const QByteArray&);
+    AuthorizationResponse();
 
-    ResponseResult status() const override;
 
     QString oauthToken() const;
 
@@ -49,15 +48,15 @@ public:
     QString errorDescriprion() const;
 
     QUrl captchaUrl() const;
+    void parseResponse(const QByteArray&) override;
 
 private:
-    void parseResponse(const QByteArray&) override;
-    void parseError(const QJsonObject&);
+    void parseError(const QVariantHash&) override;
+    void parseContent(const QVariant&) override;
 
 private:
     QString _oauthToken;
 
-    ResponseResult _respStatus;
     AuthorizationError _error;
     QString _errorDescription;
 

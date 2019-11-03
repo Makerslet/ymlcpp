@@ -1,7 +1,7 @@
 #ifndef USERINFORESPONSE_H
 #define USERINFORESPONSE_H
 
-#include "../../common_and_base/base_requests_responses/IServerResponse.h"
+#include "../../common_and_base/base_requests_responses/ServerResponse.h"
 
 #include <QDateTime>
 #include <QVariant>
@@ -53,28 +53,23 @@ struct UserInfo {
     QString defaultEmail;
 };
 
-class UserInfoResponse : public IServerResponse
+class UserInfoResponse : public ServerResponse
 {
 public:
-    UserInfoResponse(const QByteArray&);
+    UserInfoResponse();
     ~UserInfoResponse() override;
 
-    ResponseResult status() const override;
     UserInfo userInfo() const;
-    ErrorInfo errorInfo() const;
 
 private:
-    void parseResponse(const QByteArray&) override;
+    void parseContent(const QVariant&) override;
     void parseAccount(const QVariantHash&);
     void parsePermissions(const QVariantHash&);
     void parseSubscription(const QVariantHash&);
     void parsePlus(const QVariantHash&);
-    void parseError(const QVariantHash&);
 
 private:
-    ResponseResult _respStatus;
     UserInfo _userInfo;
-    ErrorInfo _errInfo;
 };
 
 }

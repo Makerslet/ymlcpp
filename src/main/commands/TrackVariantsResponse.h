@@ -1,7 +1,7 @@
 #ifndef TRACKVARIANTSRESPONSE_H
 #define TRACKVARIANTSRESPONSE_H
 
-#include "common_and_base/base_requests_responses/IServerResponse.h"
+#include "common_and_base/base_requests_responses/ServerResponse.h"
 
 #include <QVector>
 #include <QVariant>
@@ -26,26 +26,20 @@ struct TrackVariant
     QUrl trackXmlUrl;
 };
 
-class TrackVariantsResponse : public IServerResponse
+class TrackVariantsResponse : public ServerResponse
 {
 public:
-    TrackVariantsResponse(const QByteArray&);
+    TrackVariantsResponse();
     ~TrackVariantsResponse() override;
 
-    ResponseResult status() const override;
     QVector<TrackVariant> trackVariants() const;
-    ErrorInfo errorInfo() const;
 
 private:
-    void parseResponse(const QByteArray&) override;
-    void parseResult(const QVariantList &);
+    void parseContent(const QVariant&) override;
     void parseTrackVariant(const QVariantHash&);
-    void parseError(const QVariantHash&);
 
 private:
-    ResponseResult _respStatus;
     QVector<TrackVariant> _trackVariants;
-    ErrorInfo _errInfo;
 };
 
 }

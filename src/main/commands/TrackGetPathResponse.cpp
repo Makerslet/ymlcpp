@@ -1,6 +1,5 @@
 #include "TrackGetPathResponse.h"
 
-#include <QDebug>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QXmlStreamReader>
@@ -8,30 +7,18 @@
 namespace ymlcpp {
 namespace server_access {
 
-TrackGetPathResponse::TrackGetPathResponse(const QByteArray& data) :
-    IServerResponse (AppResponseType::TrackPathResponse)
+TrackGetPathResponse::TrackGetPathResponse() :
+    ServerResponse (AppResponseType::TrackPathResponse)
 {
-    qDebug() << data;
-    parseResponse(data);
 }
 
 TrackGetPathResponse::~TrackGetPathResponse()
 {
 }
 
-ResponseResult TrackGetPathResponse::status() const
-{
-    return  _respStatus;
-}
-
 PathDescription TrackGetPathResponse::pathDescription() const
 {
     return _pathDescription;
-}
-
-ErrorInfo TrackGetPathResponse::errorInfo() const
-{
-    return _errInfo;
 }
 
 void TrackGetPathResponse::parseXml(const QByteArray& rawXml)
@@ -79,6 +66,9 @@ void TrackGetPathResponse::parseResponse(const QByteArray& data)
         parseXml(data);
     }
 }
+
+void TrackGetPathResponse::parseContent(const QVariant& data)
+{}
 
 }
 }

@@ -27,11 +27,9 @@ const AuthorizationResponse::FieldsMap AuthorizationResponse::_fields {
     {ResponseFields::ErrorDescription, "error_description"}
 };
 
-AuthorizationResponse::AuthorizationResponse(const QByteArray& data) :
-    IServerResponse (AppResponseType::AuthorizationResponse)
-{
-    parseResponse(data);
-}
+AuthorizationResponse::AuthorizationResponse() :
+    ServerResponse (AppResponseType::AuthorizationResponse)
+{}
 
 void AuthorizationResponse::parseResponse(const QByteArray& data)
 {
@@ -39,15 +37,18 @@ void AuthorizationResponse::parseResponse(const QByteArray& data)
 
     auto jsonObject = document.object();
 
-    if(jsonObject.find(_fields[ResponseFields::Error]) != jsonObject.end())
+    auto errIterator = jsonObject.find(_fields[ResponseFields::Error]);
+    auto tokenIterator = jsonObject.find(_fields[ResponseFields::AccessToken]);
+
+    if(errIterator != jsonObject.end())
     {
         _respStatus = ResponseResult::Error;
-        parseError(jsonObject);
+        parseError(errIterator.value().toVariant().toHash());
     }
-    else if(jsonObject.find(_fields[ResponseFields::AccessToken]) != jsonObject.end())
+    else if(tokenIterator != jsonObject.end())
     {
         _respStatus = ResponseResult::Succes;
-        _oauthToken = jsonObject.find(_fields[ResponseFields::AccessToken]).value().toString();
+        parseContent(tokenIterator.value().toVariant());
     }
     else
     {
@@ -57,7 +58,7 @@ void AuthorizationResponse::parseResponse(const QByteArray& data)
     }
 }
 
-void AuthorizationResponse::parseError(const QJsonObject& object)
+void AuthorizationResponse::parseError(const QVariantHash& object)
 {
     auto errorStr = object.find(_fields[ResponseFields::Error]).value().toString();
     auto errorDescriptionIter = object.find(_fields[ResponseFields::ErrorDescription]);
@@ -66,11 +67,10 @@ void AuthorizationResponse::parseError(const QJsonObject& object)
     _errorDescription = errorDescriptionIter != object.end() ? errorDescriptionIter.value().toString() : "";
 }
 
-ResponseResult AuthorizationResponse::status() const
+void AuthorizationResponse::parseContent(const QVariant& content)
 {
-    return _respStatus;
+    _oauthToken = content.toString();
 }
-
 
 QString AuthorizationResponse::oauthToken() const
 {

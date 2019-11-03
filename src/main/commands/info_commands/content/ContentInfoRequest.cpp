@@ -28,12 +28,16 @@ QPair<QNetworkRequest, QByteArray> ContentInfoRequest::toNetworkRequest() const
 
 QSharedPointer<IServerResponse> ContentInfoRequest::createResponse(const QByteArray& data) const
 {
+    QSharedPointer<IServerResponse> response;
     switch (_contentType) {
-    case ContentType::Albums:       return QSharedPointer<AlbumsInfoResponse>::create(data);
-    case ContentType::Artists:      return QSharedPointer<ArtistsInfoResponse>::create(data);
-    case ContentType::Playlists:    return QSharedPointer<PlaylistsInfoResponse>::create(data);
-    case ContentType::Tracks:       return QSharedPointer<TracksInfoResponse>::create(data);
+    case ContentType::Albums:       response = QSharedPointer<AlbumsInfoResponse>::create(); break;
+    case ContentType::Artists:      response = QSharedPointer<ArtistsInfoResponse>::create(); break;
+    case ContentType::Playlists:    response = QSharedPointer<PlaylistsInfoResponse>::create(); break;
+    case ContentType::Tracks:       response = QSharedPointer<TracksInfoResponse>::create(); break;
     }
+
+    response->parseResponse(data);
+    return response;
 }
 
 QNetworkRequest ContentInfoRequest::prepareRequest(int payloadLen) const

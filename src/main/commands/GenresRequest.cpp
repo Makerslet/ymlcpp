@@ -24,7 +24,9 @@ QNetworkRequest GenresRequest::toNetworkRequest() const
 
 QSharedPointer<IServerResponse> GenresRequest::createResponse(const QByteArray& data) const
 {
-    return QSharedPointer<GenresResponse>::create(data);
+    auto response = QSharedPointer<GenresResponse>::create();
+    response->parseResponse(data);
+    return response.dynamicCast<IServerResponse>();
 }
 
 

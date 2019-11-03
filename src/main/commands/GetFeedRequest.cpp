@@ -27,7 +27,9 @@ QNetworkRequest GetFeedRequest::toNetworkRequest() const
 
 QSharedPointer<IServerResponse> GetFeedRequest::createResponse(const QByteArray& data) const
 {
-    return  QSharedPointer<GetFeedResponse>::create(data);
+    auto response = QSharedPointer<GetFeedResponse>::create();
+    response->parseResponse(data);
+    return response.dynamicCast<IServerResponse>();
 }
 
 }

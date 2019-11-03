@@ -1,7 +1,7 @@
 #ifndef ALBUMSINFORESPONSE_H
 #define ALBUMSINFORESPONSE_H
 
-#include "../../common_and_base/base_requests_responses/IServerResponse.h"
+#include "../../common_and_base/base_requests_responses/ServerResponse.h"
 #include "../../common_and_base/common_structures/AlbumDescription.h"
 
 #include <QVariant>
@@ -10,25 +10,19 @@ namespace ymlcpp {
 namespace server_access {
 
 
-class AlbumsInfoResponse : public IServerResponse
+class AlbumsInfoResponse : public ServerResponse
 {
 public:
-    AlbumsInfoResponse(const QByteArray&);
+    AlbumsInfoResponse();
     ~AlbumsInfoResponse() override;
 
-    ResponseResult status() const override;
     QList<AlbumDescription> albumsDescription() const;
-    ErrorInfo errorInfo() const;
 
 private:
-    void parseResponse(const QByteArray&) override;
-    void parseContent(const QVariantHash&);
-    void parseError(const QVariantHash&);
+    void parseContent(const QVariant&) override;
 
 private:
-    ResponseResult _respStatus;
     QList<AlbumDescription> _albums;
-    ErrorInfo _errInfo;
 };
 
 }

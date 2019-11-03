@@ -14,13 +14,13 @@ namespace server_access {
 class UserChoicePlaylistsGetResponse : public UserChoiceGetResponse
 {
 public:
-    UserChoicePlaylistsGetResponse(UserChoiceType, const QByteArray&);
+    UserChoicePlaylistsGetResponse(UserChoiceType);
     ~UserChoicePlaylistsGetResponse() override;
 
     QVector<PlaylistDescription> userLikes() const;
 
 private:
-    void parseResponse(const QByteArray&) override;
+    void parseContent(const QVariant&) override;
 
 private:
     QVector<PlaylistDescription> _userLikes;

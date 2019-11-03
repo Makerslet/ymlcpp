@@ -9,75 +9,37 @@
 namespace ymlcpp {
 namespace server_access {
 
-GetFeedResponse::GetFeedResponse(const QByteArray& data) :
-    IServerResponse (AppResponseType::FeedResponse)
-{
-    parseResponse(data);
-}
+GetFeedResponse::GetFeedResponse() :
+    ServerResponse (AppResponseType::FeedResponse)
+{}
 
 GetFeedResponse::~GetFeedResponse(){}
 
-void GetFeedResponse::parseResponse(const QByteArray& data)
+void GetFeedResponse::parseContent(const QVariant& data)
 {
-    // пока что из фида будем доставать только плейлист дня
-    auto jsonDoc = QJsonDocument::fromJson(data);
-    auto jsonObject = jsonDoc.object();
-
-    auto rootHash = jsonObject.toVariantHash();
-    auto resultFieldIter = rootHash.find("result");
-    auto errorFieldIter = rootHash.find("error");
-
-    if(resultFieldIter != rootHash.end())
+    auto resultHash = data.toHash();
+    auto generatedPlaylistsIter = resultHash.find("generatedPlaylists");
+    for(auto playlist : generatedPlaylistsIter.value().toList())
     {
-        _respStatus = ResponseResult::Succes;
-        auto resultHash = resultFieldIter.value().toHash();
-        auto generatedPlaylistsIter = resultHash.find("generatedPlaylists");
-        for(auto playlist : generatedPlaylistsIter.value().toList())
-        {
-            PlaylistWithTracks plwt;
+        PlaylistWithTracks plwt;
 
-            auto playlistHash = playlist.toHash();
-            plwt.type = playlistHash["type"].toString();
-            plwt.ready = playlistHash["ready"].toBool();
+        auto playlistHash = playlist.toHash();
+        plwt.type = playlistHash["type"].toString();
+        plwt.ready = playlistHash["ready"].toBool();
 
-            auto playlistData = playlistHash["data"].toHash();
-            plwt.description = PlaylistDescriptionParser::parsePlaylistInfo(playlistData);
+        auto playlistData = playlistHash["data"].toHash();
+        plwt.description = PlaylistDescriptionParser::parsePlaylistInfo(playlistData);
 
-            auto tracksIter = playlistData.find("tracks");
-            if(tracksIter != playlistData.end())
-                for(auto track : tracksIter.value().toList())
-                {
-                    auto trackHash = track.toHash();
-                    plwt.tracks.push_back(trackHash.find("id").value().toUInt());
-                }
+        auto tracksIter = playlistData.find("tracks");
+        if(tracksIter != playlistData.end())
+            for(auto track : tracksIter.value().toList())
+            {
+                auto trackHash = track.toHash();
+                plwt.tracks.push_back(trackHash.find("id").value().toUInt());
+            }
 
-            _playlists.push_back(plwt);
-        }
+        _playlists.push_back(plwt);
     }
-    else if(errorFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Error;
-        parseError(errorFieldIter.value().toHash());
-    }
-    else
-        _respStatus = ResponseResult::Error;
-}
-
-ResponseResult GetFeedResponse::status() const
-{
-    return _respStatus;
-}
-
-
-ErrorInfo GetFeedResponse::errorInfo() const
-{
-    return _errInfo;
-}
-
-void GetFeedResponse::parseError(const QVariantHash& errHash)
-{
-    _errInfo.name = errHash["name"].toString();
-    _errInfo.message = errHash["message"].toString();
 }
 
 QVector<PlaylistWithTracks> GetFeedResponse::description() const

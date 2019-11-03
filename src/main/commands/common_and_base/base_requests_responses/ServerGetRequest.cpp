@@ -5,14 +5,10 @@ namespace server_access {
 
 ServerGetRequest::ServerGetRequest(AppRequestType appReqType) :
     _appReqType(appReqType)
-{
-
-}
+{}
 
 ServerGetRequest::~ServerGetRequest()
-{
-
-}
+{}
 
 ServerRequestType ServerGetRequest::serverRequestType() const
 {

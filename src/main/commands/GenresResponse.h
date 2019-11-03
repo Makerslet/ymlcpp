@@ -1,7 +1,7 @@
 #ifndef GENRESRESPONSE_H
 #define GENRESRESPONSE_H
 
-#include "common_and_base/base_requests_responses/IServerResponse.h"
+#include "common_and_base/base_requests_responses/ServerResponse.h"
 
 #include <QVariant>
 
@@ -13,25 +13,18 @@ struct GenreDescription
 
 };
 
-class GenresResponse : public IServerResponse
+class GenresResponse : public ServerResponse
 {
 public:
-    GenresResponse(const QByteArray&);
+    GenresResponse();
     ~GenresResponse() override;
-
-    ResponseResult status() const override;
     GenreDescription genreDescription() const;
-    ErrorInfo errorInfo() const;
 
 private:
-    void parseResponse(const QByteArray&) override;
-    void parseResult(const QVariantHash &);
-    void parseError(const QVariantHash&);
+    void parseContent(const QVariant&) override;
 
 private:
-    ResponseResult _respStatus;
     GenreDescription _genreDescription;
-    ErrorInfo _errInfo;
 };
 
 }

@@ -3,49 +3,26 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QVariant>
-#include <QDebug>
 
 namespace ymlcpp {
 namespace server_access {
 
 
-UserChoiceTracksGetResponse::UserChoiceTracksGetResponse(UserChoiceType choiceType, const QByteArray& data) :
+UserChoiceTracksGetResponse::UserChoiceTracksGetResponse(UserChoiceType choiceType) :
     UserChoiceGetResponse (choiceType, ContentType::Tracks)
-{
-    qDebug() << data;
-    parseResponse(data);
-}
+{}
 
 UserChoiceTracksGetResponse::~UserChoiceTracksGetResponse()
-{
-}
+{}
 
 UserLikeTracks UserChoiceTracksGetResponse::userLikes() const
 {
     return _userLikes;
 }
 
-void UserChoiceTracksGetResponse::parseResponse(const QByteArray& data)
+void UserChoiceTracksGetResponse::parseContent(const QVariant& data)
 {
-    auto jsonDoc = QJsonDocument::fromJson(data);
-    auto jsonObject = jsonDoc.object();
-
-    auto rootHash = jsonObject.toVariantHash();
-    auto resultFieldIter = rootHash.find("result");
-    auto errorFieldIter = rootHash.find("error");
-
-    if(resultFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Succes;
-        parseLibrary(resultFieldIter.value().toHash());
-    }
-    else if(errorFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Error;
-        parseError(errorFieldIter.value().toHash());
-    }
-    else
-        _respStatus = ResponseResult::Error;
+    parseLibrary(data.toHash());
 }
 
 void UserChoiceTracksGetResponse::parseLibrary(const QVariantHash& resultHash)

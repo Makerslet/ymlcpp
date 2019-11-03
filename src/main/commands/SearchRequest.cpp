@@ -57,7 +57,9 @@ QString SearchRequest::createSearchUrl() const
 
 QSharedPointer<IServerResponse> SearchRequest::createResponse(const QByteArray& data) const
 {
-    return  QSharedPointer<SearchResponse>::create(data);
+    auto response =  QSharedPointer<SearchResponse>::create();
+    response->parseResponse(data);
+    return response.dynamicCast<IServerResponse>();
 }
 
 }

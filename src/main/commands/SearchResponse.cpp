@@ -11,43 +11,20 @@ namespace ymlcpp {
 namespace server_access {
 
 
-SearchResponse::SearchResponse(const QByteArray& data) :
-    IServerResponse (AppResponseType::SearchResponse)
-{
-    parseResponse(data);
-}
+SearchResponse::SearchResponse() :
+    ServerResponse (AppResponseType::SearchResponse)
+{}
 
 SearchResponse::~SearchResponse(){}
 
-ResponseResult SearchResponse::status() const
+void SearchResponse::parseContent(const QVariant& data)
 {
-    return _respStatus;
-}
+    auto resultFieldHash = data.toHash();
+    parseTracks(resultFieldHash);
+    parseAlbums(resultFieldHash);
+    parsePlaylists(resultFieldHash);
+    parseArtists(resultFieldHash);
 
-void SearchResponse::parseResponse(const QByteArray& data)
-{
-    auto jsonDoc = QJsonDocument::fromJson(data);
-    auto jsonObject = jsonDoc.object();
-
-    auto rootHash = jsonObject.toVariantHash();
-    auto resultFieldIter = rootHash.find("result");
-    auto errorFieldIter = rootHash.find("error");
-
-    if(resultFieldIter != rootHash.end())
-    {
-        auto resultFieldHash = resultFieldIter.value().toHash();
-        parseTracks(resultFieldHash);
-        parseAlbums(resultFieldHash);
-        parsePlaylists(resultFieldHash);
-        parseArtists(resultFieldHash);
-    }
-    else if(errorFieldIter != rootHash.end())
-    {
-        _respStatus = ResponseResult::Error;
-        parseError(errorFieldIter.value().toHash());
-    }
-    else
-        _respStatus = ResponseResult::Error;
 }
 
 void SearchResponse::parseTracks(const QVariantHash& rootResult)
@@ -97,18 +74,6 @@ void SearchResponse::parseArtists(const QVariantHash& rootResult)
             _result.artists.push_back(
                         ArtistDescriptionParser::parseArtistDescription(artist.toHash()));
     }
-}
-
-
-ErrorInfo SearchResponse::errorInfo() const
-{
-    return _errInfo;
-}
-
-void SearchResponse::parseError(const QVariantHash& errHash)
-{
-    _errInfo.name = errHash["name"].toString();
-    _errInfo.message = errHash["message"].toString();
 }
 
 SearchResult SearchResponse::description() const

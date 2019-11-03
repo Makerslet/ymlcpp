@@ -20,13 +20,13 @@ struct LikeAlbum
 class UserChoiceAlbumsGetResponse : public UserChoiceGetResponse
 {
 public:
-    UserChoiceAlbumsGetResponse(UserChoiceType, const QByteArray&);
+    UserChoiceAlbumsGetResponse(UserChoiceType);
     ~UserChoiceAlbumsGetResponse() override;
 
     QVector<LikeAlbum> userLikes() const;
 
 private:
-    void parseResponse(const QByteArray&) override;
+    void parseContent(const QVariant&) override;
     void parseAlbum(const QVariantHash&);
 
 private:

@@ -1,7 +1,7 @@
 #ifndef TRACKGETPATHRESPONSE_H
 #define TRACKGETPATHRESPONSE_H
 
-#include "common_and_base/base_requests_responses/IServerResponse.h"
+#include "common_and_base/base_requests_responses/ServerResponse.h"
 
 #include <QVariant>
 
@@ -17,25 +17,21 @@ struct PathDescription
     int region;
 };
 
-class TrackGetPathResponse : public IServerResponse
+class TrackGetPathResponse : public ServerResponse
 {
 public:
-    TrackGetPathResponse(const QByteArray& data);
+    TrackGetPathResponse();
     ~TrackGetPathResponse() override;
 
-    ResponseResult status() const override;
     PathDescription pathDescription() const;
-    ErrorInfo errorInfo() const;
+    void parseResponse(const QByteArray&) override;
 
 private:
-    void parseResponse(const QByteArray&) override;
+    void parseContent(const QVariant&) override;
     void parseXml(const QByteArray&);
 
 private:
-    ResponseResult _respStatus;
     PathDescription _pathDescription;
-    ErrorInfo _errInfo;
-
 };
 
 }

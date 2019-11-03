@@ -1,7 +1,7 @@
 #ifndef USERCHOICESETRESPONSE
 #define USERCHOICESETRESPONSE
 
-#include "../../common_and_base/base_requests_responses/IServerResponse.h"
+#include "../../common_and_base/base_requests_responses/ServerResponse.h"
 
 #include <QByteArray>
 #include <QJsonObject>
@@ -11,20 +11,14 @@ namespace ymlcpp {
 namespace server_access {
 
 
-class UserChoiceSetResponse : public IServerResponse
+class UserChoiceSetResponse : public ServerResponse
 {
 public:
-    UserChoiceSetResponse(const QByteArray&);
-
-    ResponseResult status() const override;
-
-private:
-    void parseResponse(const QByteArray&) override;
-    void parseError(const QVariantHash&);
+    UserChoiceSetResponse();
+    ~UserChoiceSetResponse();
 
 private:
-    ResponseResult _respStatus;
-    ErrorInfo _errInfo;
+    void parseContent(const QVariant&) override;
 };
 
 }

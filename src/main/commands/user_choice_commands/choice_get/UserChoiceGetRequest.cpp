@@ -47,25 +47,27 @@ QNetworkRequest UserChoiceGetRequest::toNetworkRequest() const
 
 QSharedPointer<IServerResponse> UserChoiceGetRequest::createResponse(const QByteArray& data) const
 {
+    QSharedPointer<IServerResponse> response;
     if(_choiceType == UserChoiceType::Like)
     {
         switch (_choiceContent) {
-        case ContentType::Albums:     return QSharedPointer<UserLikeAlbumsGetResponse>::create(data);
-        case ContentType::Artists:    return QSharedPointer<UserLikeArtistsGetResponse>::create(data);
-        case ContentType::Playlists:  return QSharedPointer<UserLikePlaylistsGetResponse>::create(data);
-        case ContentType::Tracks:     return QSharedPointer<UserLikeTracksGetResponse>::create(data);
+        case ContentType::Albums:     response = QSharedPointer<UserLikeAlbumsGetResponse>::create(); break;
+        case ContentType::Artists:    response = QSharedPointer<UserLikeArtistsGetResponse>::create(); break;
+        case ContentType::Playlists:  response = QSharedPointer<UserLikePlaylistsGetResponse>::create(); break;
+        case ContentType::Tracks:     response = QSharedPointer<UserLikeTracksGetResponse>::create(); break;
         }
     }
     else if(_choiceType == UserChoiceType::Dislike)
     {
         switch (_choiceContent) {
-        case ContentType::Albums:     return QSharedPointer<UserDislikeAlbumsGetResponse>::create(data);
-        case ContentType::Artists:    return QSharedPointer<UserDislikeArtistsGetResponse>::create(data);
-        case ContentType::Playlists:  return QSharedPointer<UserDislikePlaylistsGetResponse>::create(data);
-        case ContentType::Tracks:     return QSharedPointer<UserDislikeTracksGetResponse>::create(data);
+        case ContentType::Albums:     response = QSharedPointer<UserDislikeAlbumsGetResponse>::create(); break;
+        case ContentType::Artists:    response = QSharedPointer<UserDislikeArtistsGetResponse>::create(); break;
+        case ContentType::Playlists:  response = QSharedPointer<UserDislikePlaylistsGetResponse>::create(); break;
+        case ContentType::Tracks:     response = QSharedPointer<UserDislikeTracksGetResponse>::create(); break;
         }
     }
-
+    response->parseResponse(data);
+    return response;
 }
 
 

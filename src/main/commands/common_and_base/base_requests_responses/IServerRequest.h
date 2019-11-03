@@ -1,5 +1,7 @@
 #ifndef ISERVERREQUEST_H
 #define ISERVERREQUEST_H
+// давим warning по виртуальному деструктору чтобы не добавлять cpp файл
+#pragma clang diagnostic ignored "-Wweak-vtables"
 
 #include "IServerResponse.h"
 #include "../common_enums/AppRequestTypes.h"

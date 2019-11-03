@@ -28,7 +28,9 @@ QNetworkRequest TrackVariantsRequest::toNetworkRequest() const
 
 QSharedPointer<IServerResponse> TrackVariantsRequest::createResponse(const QByteArray& data) const
 {
-    return QSharedPointer<TrackVariantsResponse>::create(data);
+    auto response = QSharedPointer<TrackVariantsResponse>::create();
+    response->parseResponse(data);
+    return response.dynamicCast<IServerResponse>();
 }
 
 }

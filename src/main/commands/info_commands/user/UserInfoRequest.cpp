@@ -26,7 +26,9 @@ QNetworkRequest UserInfoRequest::toNetworkRequest() const
 
 QSharedPointer<IServerResponse> UserInfoRequest::createResponse(const QByteArray& data) const
 {
-    return  QSharedPointer<UserInfoResponse>::create(data);
+    auto response =  QSharedPointer<UserInfoResponse>::create();
+    response->parseResponse(data);
+    return response.dynamicCast<IServerResponse>();
 }
 
 }

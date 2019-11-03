@@ -24,7 +24,9 @@ QNetworkRequest TrackGetPathRequest::toNetworkRequest() const
 
 QSharedPointer<IServerResponse> TrackGetPathRequest::createResponse(const QByteArray& data) const
 {
-    return QSharedPointer<TrackGetPathResponse>::create(data);
+    auto response = QSharedPointer<TrackGetPathResponse>::create();
+    response->parseResponse(data);
+    return response.dynamicCast<IServerResponse>();
 }
 
 
