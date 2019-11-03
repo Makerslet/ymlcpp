@@ -40,7 +40,6 @@ void SearchResponse::parseResponse(const QByteArray& data)
         parseAlbums(resultFieldHash);
         parsePlaylists(resultFieldHash);
         parseArtists(resultFieldHash);
-        int i = 10;
     }
     else if(errorFieldIter != rootHash.end())
     {

@@ -11,7 +11,8 @@ namespace server_access {
 
 struct SearchSuggestResult
 {
-
+    //QSharedPointer<void> best;
+    QStringList suggestions;
 };
 
 class SearchSuggestResponse : public IServerResponse
@@ -26,6 +27,8 @@ public:
 
 private:
     void parseResponse(const QByteArray&) override;
+    void parseSuggestions(const QVariantList &);
+    void parseBest(const QVariantHash &);
     void parseError(const QVariantHash&);
 
 private:
