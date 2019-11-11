@@ -16,6 +16,12 @@
 #include "commands/SearchResponse.h"
 #include "commands/SearchSuggestRequest.h"
 #include "commands/SearchSuggestResponse.h"
+#include "commands/TrackVariantsRequest.h"
+#include "commands/TrackVariantsResponse.h"
+#include "commands/TrackGetPathRequest.h"
+#include "commands/TrackGetPathResponse.h"
+#include "commands/TrackDownloadRequest.h"
+#include "commands/TrackDownloadResponse.h"
 
 #include <QDebug>
 
@@ -58,25 +64,52 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
 //        auto likesPlaylists = QSharedPointer<UserChoiceGetRequest>::create(_oauthToken, _userId, UserChoiceType::Like, ContentType::Playlists);
 //        emit sendRequest(likesPlaylists);
 
-        auto userInfoReq = QSharedPointer<UserInfoRequest>::create(_oauthToken);
-        emit sendRequest(userInfoReq);
+        auto trackVariantsReq = QSharedPointer<TrackVariantsRequest>::create(_oauthToken, "45675837");
+        emit sendRequest(trackVariantsReq);
     }
-    else if(response->appResponseType() == AppResponseType::UserInfoResponse) {
-        auto userInfoResp = response.dynamicCast<UserInfoResponse>();
-        int i = 10;
+    else if(response->appResponseType() == AppResponseType::TrackVariantsResponse)
+    {
+        auto trackVariantsResponse = response.dynamicCast<TrackVariantsResponse>();
+        auto trackVariants = trackVariantsResponse->trackVariants();
+
+        auto lambda = [](const TrackVariant& track) {return track.codec == TrackCodec::mp3;};
+        auto iterMp3 = std::find_if(trackVariants.begin(), trackVariants.end(), lambda);
+
+        auto url = iterMp3->trackXmlUrl.toString() + "f";
+        auto reqDescriptionXml = QSharedPointer<TrackGetPathRequest>::create(_oauthToken,
+                    iterMp3->trackXmlUrl);
+
+        emit sendRequest(reqDescriptionXml);
+    }
+    else if(response->appResponseType() == AppResponseType::TrackPathResponse)
+    {
+        auto trackVariantsResponse = response.dynamicCast<TrackGetPathResponse>();
+        auto pathDescription = trackVariantsResponse->pathDescription();
+        auto trackDownloadRequest = QSharedPointer<TrackDownloadRequest>::create(
+                    _oauthToken, pathDescription);
+        emit sendRequest(trackDownloadRequest);
+
+    }
+    else if(response->appResponseType() == AppResponseType::TrackDownloadResponse)
+    {
+        auto trackDownloadResponse = response.dynamicCast<TrackDownloadResponse>();
+    }
+//    else if(response->appResponseType() == AppResponseType::UserInfoResponse) {
+//        auto userInfoResp = response.dynamicCast<UserInfoResponse>();
+//        int i = 10;
 //        _userId = QString::number(userInfoResp->userInfo().account.uid);
 
 //        auto uInfoReq = QSharedPointer<UserChoiceGetRequest>::create(_oauthToken, _userId,
 //                                                                     UserChoiceType::Like, ContentType::Playlists);
 //        emit sendRequest(uInfoReq);
-    }
-    else if(response->appResponseType() == AppResponseType::UserChoiceGetResponse) {
-        auto rep = response.dynamicCast<UserChoicePlaylistsGetResponse>();
-        int i = 10;
-    }
-    else if(response->appResponseType() == AppResponseType::ContentInfoResponse) {
-        auto responseDc  = response.dynamicCast<PlaylistsInfoResponse>();
-    }
+//    }
+//    else if(response->appResponseType() == AppResponseType::UserChoiceGetResponse) {
+//        auto rep = response.dynamicCast<UserChoicePlaylistsGetResponse>();
+//        int i = 10;
+//    }
+//    else if(response->appResponseType() == AppResponseType::ContentInfoResponse) {
+//        auto responseDc  = response.dynamicCast<PlaylistsInfoResponse>();
+//    }
     /*
     else if(response->appResponseType() == AppResponseType::TrackVariantsResponse)
     {

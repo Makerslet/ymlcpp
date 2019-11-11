@@ -1,0 +1,37 @@
+{
+  "invocationInfo": {
+    "hostname": "sas1-9422-00e-sas-music-stable-0b1-20086.gencfg-c.yandex.net",
+    "req-id": "1572955868308442-5209992534644355037",
+    "exec-duration-millis": "1"
+  },
+  "result": [
+    {
+      "codec": "aac",
+      "bitrateInKbps": 128,
+      "gain": true,
+      "preview": false,
+      "downloadInfoUrl": "https://storage.mds.yandex.net/file-download-info/50478_6bb52ab3.12832731.5.34669/g128?sign=6e185954086f87b8910a85ef9827e3cb4be08c851b2b2d332c64689597249541&ts=5dc16718"
+    },
+    {
+      "codec": "mp3",
+      "bitrateInKbps": 192,
+      "gain": false,
+      "preview": false,
+      "downloadInfoUrl": "https://storage.mds.yandex.net/file-download-info/50478_6bb52ab3.12832731.1.34669/2?sign=64dd3e5ba5bb2fbe3a4c8ec2948b4734be7a5893138dd8a54cbf0bed2610d315&ts=5dc16718"
+    },
+    {
+      "codec": "aac",
+      "bitrateInKbps": 64,
+      "gain": true,
+      "preview": false,
+      "downloadInfoUrl": "https://storage.mds.yandex.net/file-download-info/50478_6bb52ab3.12832731.9.34669/g64he?sign=c2fe775824960d0b37e4650670e73ca21822085db518e1c6584d44eb4a7423d6&ts=5dc16718"
+    },
+    {
+      "codec": "aac",
+      "bitrateInKbps": 192,
+      "gain": false,
+      "preview": false,
+      "downloadInfoUrl": "https://storage.mds.yandex.net/file-download-info/50478_6bb52ab3.12832731.8.34669/192?sign=98f0a6b66a3a8ab795467525f07a5e74eca09cf34145fd4a91d6f2c666b631e5&ts=5dc16718"
+    }
+  ]
+}

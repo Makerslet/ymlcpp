@@ -1,0 +1,50 @@
+{
+  "invocationInfo": {
+    "hostname": "myt1-0261-c2e-msk-myt-music-st-e72-18274.gencfg-c.yandex.net",
+    "req-id": "1572955015485658-14992804932504004368",
+    "exec-duration-millis": "26"
+  },
+  "result": {
+    "account": {
+      "now": "2019-11-05T11:56:55+00:00",
+      "uid": 924466900,
+      "login": "yamustest",
+      "region": 225,
+      "fullName": "sdf fdsf",
+      "secondName": "sdf",
+      "firstName": "fdsf",
+      "displayName": "yamustest",
+      "serviceAvailable": true,
+      "hostedUser": false,
+      "registeredAt": "2019-08-23T13:48:07+00:00"
+    },
+    "permissions": {
+      "until": "2019-11-06T11:56:55+00:00",
+      "values": [
+        "landing-play",
+        "feed-play",
+        "radio-play",
+        "mix-play",
+        "play-radio-full-tracks"
+      ],
+      "default": [
+        "landing-play",
+        "feed-play",
+        "radio-play",
+        "mix-play",
+        "play-radio-full-tracks"
+      ]
+    },
+    "subscription": {
+      "canStartTrial": false,
+      "mcdonalds": false
+    },
+    "subeditor": false,
+    "subeditorLevel": 0,
+    "plus": {
+      "hasPlus": false,
+      "isTutorialCompleted": false
+    },
+    "defaultEmail": "yamustest@yandex.ru"
+  }
+}

@@ -16,7 +16,7 @@ TrackGetPathResponse::~TrackGetPathResponse()
 {
 }
 
-PathDescription TrackGetPathResponse::pathDescription() const
+TrackPathDescription TrackGetPathResponse::pathDescription() const
 {
     return _pathDescription;
 }
