@@ -7,7 +7,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QVariant>
-#include <QDebug>
 
 namespace ymlcpp {
 namespace server_access {
@@ -62,7 +61,6 @@ SearchSuggestResult SearchSuggestResponse::suggestResult() const
 {
     return _result;
 }
-
 
 }
 }

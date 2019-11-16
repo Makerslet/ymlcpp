@@ -1,0 +1,20 @@
+{
+  "invocationInfo": {
+    "hostname": "sas2-7050-ad0-sas-music-stable-0b1-20086.gencfg-c.yandex.net",
+    "req-id": "1573913791140951-923596669945054150",
+    "exec-duration-millis": "2"
+  },
+  "result": {
+    "library": {
+      "uid": 924466900,
+      "revision": 15,
+      "tracks": [
+        {
+          "id": "21709897",
+          "albumId": "2490405",
+          "timestamp": "2019-08-27T13:55:41+00:00"
+        }
+      ]
+    }
+  }
+}

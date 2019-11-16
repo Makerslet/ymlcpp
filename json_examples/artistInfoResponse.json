@@ -1,0 +1,34 @@
+{
+   "invocationInfo": {
+      "hostname": "myt1-0214-6c2-msk-myt-music-st-e72-18274.gencfg-c.yandex.net",
+      "req-id": "1573901906768580-12722042739097732217",
+      "exec-duration-millis": "0"
+   },
+   "result": [
+      {
+         "id": "3132",
+         "name": "Terry Lewis",
+         "various": false,
+         "composer": false,
+         "cover": {
+            "type": "from-album-cover",
+            "prefix": "80ff7b34.a.1527352-1",
+            "uri": "avatars.yandex.net/get-music-content/33216/80ff7b34.a.1527352-1/%%"
+         },
+         "ogImage": "avatars.yandex.net/get-music-content/33216/80ff7b34.a.1527352-1/%%",
+         "genres": [
+            "relax",
+            "country"
+         ],
+         "counts": {
+            "tracks": 70,
+            "directAlbums": 3,
+            "alsoAlbums": 29,
+            "alsoTracks": 25
+         },
+         "available": true,
+         "links": [],
+         "ticketsAvailable": false
+      }
+   ]
+}

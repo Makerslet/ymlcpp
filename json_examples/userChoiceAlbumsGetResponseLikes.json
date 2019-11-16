@@ -1,0 +1,17 @@
+{
+  "invocationInfo": {
+    "hostname": "myt1-0292-aec-msk-myt-music-st-e72-18274.gencfg-c.yandex.net",
+    "req-id": "1573913399711957-3518135691222493737",
+    "exec-duration-millis": "3"
+  },
+  "result": [
+    {
+      "id": 2352605,
+      "timestamp": "2019-09-23T13:20:02+00:00"
+    },
+    {
+      "id": 2262314,
+      "timestamp": "2019-09-23T12:38:56+00:00"
+    }
+  ]
+}

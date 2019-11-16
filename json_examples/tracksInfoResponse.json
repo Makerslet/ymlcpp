@@ -1,0 +1,128 @@
+{
+   "invocationInfo": {
+      "hostname": "man1-8172-man-music-stable-back-18274.gencfg-c.yandex.net",
+      "req-id": "1573902185390539-5891937924340238057",
+      "exec-duration-millis": "1"
+   },
+   "result": [
+      {
+         "id": "3132432",
+         "realId": "20904383",
+         "title": "This Masquerade",
+         "major": {
+            "id": 131,
+            "name": "TUNECORE"
+         },
+         "available": true,
+         "availableForPremiumUsers": true,
+         "availableFullWithoutPermission": false,
+         "durationMs": 386980,
+         "storageDir": "53040_3c7724e2.30785894.1.20904383",
+         "fileSize": 9288097,
+         "normalization": {
+            "gain": -4.5,
+            "peak": 32223
+         },
+         "previewDurationMs": 30000,
+         "artists": [
+            {
+               "id": 3142944,
+               "name": "Smooth Jazz Sax Instrumentals",
+               "various": false,
+               "composer": false,
+               "cover": {
+                  "type": "from-album-cover",
+                  "prefix": "834ed353.a.3364458-1",
+                  "uri": "avatars.yandex.net/get-music-content/63210/834ed353.a.3364458-1/%%"
+               },
+               "genres": []
+            }
+         ],
+         "albums": [
+            {
+               "id": 2387298,
+               "title": "Classic Hits",
+               "year": 2014,
+               "releaseDate": "2014-11-26T00:00:00+03:00",
+               "coverUri": "avatars.yandex.net/get-music-content/38044/ac139c3a.a.2387298-1/%%",
+               "ogImage": "avatars.yandex.net/get-music-content/38044/ac139c3a.a.2387298-1/%%",
+               "genre": "jazz",
+               "buy": [],
+               "trackCount": 25,
+               "recent": false,
+               "veryImportant": false,
+               "artists": [
+                  {
+                     "id": 3142944,
+                     "name": "Smooth Jazz Sax Instrumentals",
+                     "various": false,
+                     "composer": false,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "834ed353.a.3364458-1",
+                        "uri": "avatars.yandex.net/get-music-content/63210/834ed353.a.3364458-1/%%"
+                     },
+                     "genres": []
+                  }
+               ],
+               "labels": [
+                  {
+                     "id": 576886,
+                     "name": "SaxLove"
+                  }
+               ],
+               "available": true,
+               "availableForPremiumUsers": true,
+               "availableForMobile": true,
+               "availablePartially": false,
+               "bests": [],
+               "trackPosition": {
+                  "volume": 1,
+                  "index": 12
+               }
+            }
+         ],
+         "coverUri": "avatars.yandex.net/get-music-content/38044/ac139c3a.a.2387298-1/%%",
+         "ogImage": "avatars.yandex.net/get-music-content/38044/ac139c3a.a.2387298-1/%%",
+         "lyricsAvailable": true,
+         "type": "music",
+         "rememberPosition": false,
+         "substituted": {
+            "id": "3132432",
+            "realId": "3132432",
+            "title": "This Masquerade",
+            "available": false,
+            "availableForPremiumUsers": false,
+            "availableFullWithoutPermission": false,
+            "durationMs": 386980,
+            "storageDir": "53040_3c7724e2.30785894.1.20904383",
+            "fileSize": 9288097,
+            "normalization": {
+               "gain": -4.5,
+               "peak": 32223
+            },
+            "previewDurationMs": 30000,
+            "artists": [
+               {
+                  "id": 348077,
+                  "name": "Music-Themes",
+                  "various": true,
+                  "composer": false,
+                  "cover": {
+                     "type": "from-album-cover",
+                     "prefix": "9cba06f4.a.334178-1",
+                     "uri": "avatars.yandex.net/get-music-content/63210/9cba06f4.a.334178-1/%%"
+                  },
+                  "genres": []
+               }
+            ],
+            "albums": [],
+            "ogImage": "",
+            "lyricsAvailable": false,
+            "type": "music",
+            "rememberPosition": false,
+            "error": "no-rights"
+         }
+      }
+   ]
+}

@@ -1,0 +1,48 @@
+{
+   "invocationInfo": {
+      "hostname": "myt1-0159-4a8-msk-myt-music-st-e72-18274.gencfg-c.yandex.net",
+      "req-id": "1573901540550394-2959489118252925924",
+      "exec-duration-millis": "1"
+   },
+   "result": [
+      {
+         "id": 32132,
+         "title": "Navigation (The OMD B-Sides)",
+         "contentWarning": "clean",
+         "year": 2001,
+         "releaseDate": "2001-01-01T00:00:00+03:00",
+         "coverUri": "avatars.yandex.net/get-music-content/38044/4b2daeb6.a.32132-1/%%",
+         "ogImage": "avatars.yandex.net/get-music-content/38044/4b2daeb6.a.32132-1/%%",
+         "genre": "pop",
+         "buy": [],
+         "trackCount": 19,
+         "recent": false,
+         "veryImportant": false,
+         "artists": [
+            {
+               "id": 84532,
+               "name": "Orchestral Manoeuvres In The Dark",
+               "various": false,
+               "composer": false,
+               "cover": {
+                  "type": "from-artist-photos",
+                  "prefix": "7e586a0b.p.84532/",
+                  "uri": "avatars.yandex.net/get-music-content/193823/7e586a0b.p.84532/%%"
+               },
+               "genres": []
+            }
+         ],
+         "labels": [
+            {
+               "id": 14959,
+               "name": "Virgin"
+            }
+         ],
+         "available": true,
+         "availableForPremiumUsers": true,
+         "availableForMobile": true,
+         "availablePartially": false,
+         "bests": []
+      }
+   ]
+}

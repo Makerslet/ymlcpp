@@ -1,0 +1,18 @@
+1) GenresRequest (запрос всех жанров) - genresRequest.json - not implemented
+2) GetFeedRequest (запрос на получение рекомендация) - getFeedRequest.json - только generatedPlaylists
+3) SearchRequest (запрос поиска по введенным данным) - searchRequest.json - best not implemented, videos not implemented
+4) SearchSuggestRequest (подсказка к запросу) - searchSuggestRequest.json
+5) TrackVariantsRequest (варианты трека) - trackVariants.json
+6) TrackGetPathRequest (параметры пути к запрощенному варианту трека) - trackGetPath.xml
+7) AuthorizationRequest (запрос авторизационного токена) - authorization.json
+8) UserInfoRequest (запрос информации о пользователе) - userInfo.json
+9) AlbumsInfoResponse(contentInfoRequest) (запрос информации об альбоме) - albumsInfoResponse.json
+10) ArtistInfoResponse (contentInfoRequest) (запрос информации об артисте) - artistInfoResponse.json
+11) TracksInfoResponse (contentInfoRequest) (запрос информации о треке) - tracksInfoResponse.json
+12) PlaylistsInfoResponse (contentInfoRequest) (запрос информации о плейлисте) - not implemented
+13) UserChoiceAlbumsGetResponse (likes - запрос лайков альбомов) - userChoiceAlbumsGetResponseLikes.json
+14) UserChoiceTracksGetResponse (likes - запрос лайков треков) - userChoiceTracksGetResponseLikes.json
+15) UserChoiceArtistsGetResponse (likes - запрос лайков артистов) - userChoiceArtistsGetResponseLikes.json
+16) UserChoicePlaylistsGetResponse (likes - запрос лайков плейлистов) - userChoicePlaylistsGetResponseLikes.json
+17) UserChoiceSetResponseAdd (добавление контента в список лайков) - userChoiceSetResponseAdd.json
+18) UserChoiceSetResponseRemove (добавление контента в список лайков) - userChoiceSetResponseRemove.json

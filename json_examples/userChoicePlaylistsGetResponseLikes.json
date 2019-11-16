@@ -1,0 +1,84 @@
+{
+  "invocationInfo": {
+    "hostname": "man1-4950-faf-man-music-stable-bc4-18274.gencfg-c.yandex.net",
+    "req-id": "1573914314521721-10826118280405648173",
+    "exec-duration-millis": "17"
+  },
+  "result": [
+    {
+      "playlist": {
+        "owner": {
+          "uid": 1130000003933996,
+          "login": "genesis@2ch.hk",
+          "name": "Дмитрий Кирман",
+          "sex": "male",
+          "verified": false
+        },
+        "available": true,
+        "uid": 1130000003933996,
+        "kind": 1227,
+        "title": "Need for Speed: Underground 2 OST",
+        "revision": 23,
+        "snapshot": 11,
+        "trackCount": 19,
+        "visibility": "public",
+        "collective": false,
+        "created": "2017-08-02T11:41:42+00:00",
+        "modified": "2017-08-02T11:49:44+00:00",
+        "isBanner": false,
+        "isPremiere": false,
+        "durationMs": 4544630,
+        "cover": {
+          "type": "pic",
+          "dir": "/get-music-user-playlist/59900/1130000003933996.1227.17639/",
+          "version": "1501674154380",
+          "uri": "avatars.yandex.net/get-music-user-playlist/59900/1130000003933996.1227.17639/%%?1501674154380",
+          "custom": true
+        },
+        "ogImage": "avatars.yandex.net/get-music-user-playlist/59900/1130000003933996.1227.17639/%%?1501674154380",
+        "tags": [],
+        "prerolls": []
+      },
+      "timestamp": "2019-10-28T18:43:05+00:00"
+    },
+    {
+      "playlist": {
+        "owner": {
+          "uid": 405705740,
+          "login": "yamusic-new",
+          "name": "Яндекс.Музыка",
+          "sex": "female",
+          "verified": true
+        },
+        "available": true,
+        "uid": 405705740,
+        "kind": 1045,
+        "title": "Экстрим-метал",
+        "description": "Не хватает грохота гитар? Эти новинки исправят ситуацию",
+        "descriptionFormatted": "Не хватает грохота гитар? Эти новинки исправят ситуацию",
+        "revision": 0,
+        "snapshot": 1,
+        "trackCount": 50,
+        "visibility": "public",
+        "collective": false,
+        "created": "2017-03-21T21:27:23+00:00",
+        "modified": "2019-11-16T05:30:53+00:00",
+        "isBanner": false,
+        "isPremiere": false,
+        "idForFrom": "genre_recent",
+        "durationMs": 15939880,
+        "cover": {
+          "type": "pic",
+          "dir": "/get-music-user-playlist/30088/98ibQnXoV3Ao/",
+          "version": "1563266923214",
+          "uri": "avatars.yandex.net/get-music-user-playlist/69910/eaupC3wu7JWe/%%?1563266923214",
+          "custom": true
+        },
+        "ogImage": "avatars.yandex.net/get-music-user-playlist/69910/eaupC3wu7JWe/%%?1563266923214",
+        "tags": [],
+        "prerolls": []
+      },
+      "timestamp": "2019-09-23T19:58:54+00:00"
+    }
+  ]
+}

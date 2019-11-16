@@ -15,7 +15,7 @@ class UserChoiceSetResponse : public ServerResponse
 {
 public:
     UserChoiceSetResponse();
-    ~UserChoiceSetResponse();
+    ~UserChoiceSetResponse() override;
 
 private:
     void parseContent(const QVariant&) override;

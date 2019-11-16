@@ -1,0 +1,97 @@
+{
+  "invocationInfo": {
+    "hostname": "myt1-0214-6c2-msk-myt-music-st-e72-18274.gencfg-c.yandex.net",
+    "req-id": "1573913998167063-8454989002302774227",
+    "exec-duration-millis": "2"
+  },
+  "result": [
+    {
+      "id": "48203",
+      "name": "Trivium",
+      "various": false,
+      "composer": false,
+      "cover": {
+        "type": "from-artist-photos",
+        "prefix": "5941c680.p.48203/",
+        "uri": "avatars.yandex.net/get-music-content/119639/5941c680.p.48203/%%"
+      },
+      "ogImage": "avatars.yandex.net/get-music-content/119639/5941c680.p.48203/%%",
+      "genres": [
+        "extrememetal"
+      ],
+      "counts": {
+        "tracks": 133,
+        "directAlbums": 18,
+        "alsoAlbums": 14,
+        "alsoTracks": 13
+      },
+      "available": true,
+      "ratings": {
+        "week": 2206,
+        "month": 2142,
+        "day": 2179
+      },
+      "links": [
+        {
+          "title": "trivium.org",
+          "href": "http://www.trivium.org/",
+          "type": "official"
+        },
+        {
+          "title": "TriviumOfficial",
+          "href": "https://twitter.com/TriviumOfficial",
+          "type": "social",
+          "socialNetwork": "twitter"
+        },
+        {
+          "title": "TriviumOfficial",
+          "href": "https://www.facebook.com/TriviumOfficial",
+          "type": "social",
+          "socialNetwork": "facebook"
+        },
+        {
+          "title": "trivium",
+          "href": "http://www.youtube.com/trivium",
+          "type": "social",
+          "socialNetwork": "youtube"
+        },
+        {
+          "title": "triviumband/",
+          "href": "https://www.instagram.com/triviumband/",
+          "type": "social",
+          "socialNetwork": "instagram"
+        }
+      ],
+      "ticketsAvailable": false
+    },
+    {
+      "id": "726199",
+      "name": "As I Lay Dying",
+      "various": false,
+      "composer": false,
+      "cover": {
+        "type": "from-album-cover",
+        "prefix": "05fc25c3.a.8233682-1",
+        "uri": "avatars.yandex.net/get-music-content/176019/05fc25c3.a.8233682-1/%%"
+      },
+      "ogImage": "avatars.yandex.net/get-music-content/176019/05fc25c3.a.8233682-1/%%",
+      "genres": [
+        "extrememetal"
+      ],
+      "counts": {
+        "tracks": 98,
+        "directAlbums": 10,
+        "alsoAlbums": 0,
+        "alsoTracks": 0
+      },
+      "available": true,
+      "ratings": {
+        "week": 1756,
+        "month": 1744,
+        "day": 1673
+      },
+      "links": [],
+      "ticketsAvailable": false
+    }
+  ]
+}

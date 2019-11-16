@@ -1,0 +1,85 @@
+{
+   "invocationInfo": {
+      "hostname": "sas1-9411-bf9-sas-music-stable-0b1-20086.gencfg-c.yandex.net",
+      "req-id": "1573900208443456-1346404541558350977",
+      "exec-duration-millis": "6"
+   },
+   "result": {
+      "best": {
+         "type": "artist",
+         "text": "while she sleeps",
+         "result": {
+            "id": "680942",
+            "name": "While She Sleeps",
+            "various": false,
+            "composer": false,
+            "cover": {
+               "type": "from-album-cover",
+               "prefix": "4dda4e85.a.6979955-1",
+               "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+            },
+            "ogImage": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%",
+            "genres": [
+               "extrememetal"
+            ],
+            "counts": {
+               "tracks": 65,
+               "directAlbums": 7,
+               "alsoAlbums": 0,
+               "alsoTracks": 0
+            },
+            "available": true,
+            "ratings": {
+               "week": 5144,
+               "month": 5218,
+               "day": 5085
+            },
+            "links": [
+               {
+                  "title": "whileshesleeps.com",
+                  "href": "http://www.whileshesleeps.com",
+                  "type": "official"
+               },
+               {
+                  "title": "user/whileshesleeps1",
+                  "href": "https://www.youtube.com/user/whileshesleeps1",
+                  "type": "social",
+                  "socialNetwork": "youtube"
+               },
+               {
+                  "title": "whileshesleeps",
+                  "href": "https://www.facebook.com/whileshesleeps",
+                  "type": "social",
+                  "socialNetwork": "facebook"
+               },
+               {
+                  "title": "whileshesleeps",
+                  "href": "https://twitter.com/whileshesleeps",
+                  "type": "social",
+                  "socialNetwork": "twitter"
+               },
+               {
+                  "title": "whileshesleeps/",
+                  "href": "https://www.instagram.com/whileshesleeps/",
+                  "type": "social",
+                  "socialNetwork": "instagram"
+               }
+            ],
+            "ticketsAvailable": false
+         }
+      },
+      "suggestions": [
+         "while she sleeps",
+         "while she sleeps feat. jenny staniforth",
+         "while she sleeps - the guilty party",
+         "while she sleeps - silence speaks",
+         "while she sleeps - anti-social",
+         "while she sleeps - so what?",
+         "while she sleeps - the guilty party",
+         "while she sleeps - brainwashed",
+         "в стиле: while she sleeps feat. jenny staniforth",
+         "в стиле: while she sleeps",
+         "лучшее: while she sleeps"
+      ]
+   }
+}

@@ -1,0 +1,1812 @@
+{
+   "invocationInfo": {
+      "hostname": "man2-2421-ecd-man-music-stable-bc4-18274.gencfg-c.yandex.net",
+      "req-id": "1573899828451973-12247187716750159075",
+      "exec-duration-millis": "413"
+   },
+   "result": {
+      "misspellCorrected": false,
+      "nocorrect": false,
+      "searchRequestId": "man2-2421-ecd-man-music-stable-bc4-18274.gencfg-c.yandex.net-1573899828451973-12247187716750159075-1573899828500",
+      "text": "while she",
+      "best": {
+         "type": "artist",
+         "result": {
+            "id": 680942,
+            "cover": {
+               "type": "from-album-cover",
+               "prefix": "4dda4e85.a.6979955-1",
+               "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+            },
+            "composer": false,
+            "name": "While She Sleeps",
+            "various": false,
+            "counts": {
+               "tracks": 65,
+               "directAlbums": 7,
+               "alsoAlbums": 0,
+               "alsoTracks": 0
+            },
+            "genres": [
+               "extrememetal"
+            ],
+            "ticketsAvailable": false,
+            "popularTracks": [
+               {
+                  "id": 49173892,
+                  "available": true,
+                  "availableAsRbt": false,
+                  "availableForPremiumUsers": true,
+                  "lyricsAvailable": true,
+                  "albums": [
+                     {
+                        "id": 6730620,
+                        "storageDir": "6e42bfe6.a.6730620",
+                        "artists": [],
+                        "coverUri": "avatars.yandex.net/get-music-content/118603/6e42bfe6.a.6730620-1/%%",
+                        "trackCount": 1,
+                        "genre": "extrememetal",
+                        "available": true,
+                        "availableForPremiumUsers": true,
+                        "title": "THE GUILTY PARTY",
+                        "trackPosition": {
+                           "volume": 1,
+                           "index": 1
+                        }
+                     }
+                  ],
+                  "storageDir": "1135407_fe5925f2.73065568.1.49173892",
+                  "durationMs": 266530,
+                  "explicit": false,
+                  "title": "THE GUILTY PARTY",
+                  "artists": [],
+                  "regions": [
+                     "RUSSIA_PREMIUM",
+                     "RUSSIA"
+                  ]
+               },
+               {
+                  "id": 41071254,
+                  "available": true,
+                  "availableAsRbt": false,
+                  "availableForPremiumUsers": true,
+                  "lyricsAvailable": false,
+                  "albums": [
+                     {
+                        "id": 7169040,
+                        "storageDir": "02439d36.a.7169040",
+                        "artists": [],
+                        "coverUri": "avatars.yandex.net/get-music-content/193823/02439d36.a.7169040-1/%%",
+                        "trackCount": 19,
+                        "genre": "extrememetal",
+                        "available": true,
+                        "contentWarning": "explicit",
+                        "availableForPremiumUsers": true,
+                        "title": "You Are We",
+                        "trackPosition": {
+                           "volume": 1,
+                           "index": 13
+                        }
+                     }
+                  ],
+                  "storageDir": "1132934_20994084.61912707.1.41071254",
+                  "durationMs": 351030,
+                  "explicit": false,
+                  "title": "Silence Speaks",
+                  "version": "Alternative Version - Live at St Pancras Church",
+                  "artists": [],
+                  "regions": [
+                     "RUSSIA_PREMIUM",
+                     "RUSSIA"
+                  ]
+               },
+               {
+                  "id": 44383629,
+                  "available": true,
+                  "availableAsRbt": false,
+                  "availableForPremiumUsers": true,
+                  "lyricsAvailable": true,
+                  "contentWarning": "explicit",
+                  "albums": [
+                     {
+                        "id": 5950950,
+                        "storageDir": "37d1d197.a.5950950",
+                        "artists": [],
+                        "trackCount": 0,
+                        "genre": "extrememetal",
+                        "available": false,
+                        "contentWarning": "explicit",
+                        "availableForPremiumUsers": false,
+                        "title": "ANTI-SOCIAL"
+                     }
+                  ],
+                  "storageDir": "1373963_befd58f5.70029931.1.44383629",
+                  "durationMs": 254540,
+                  "explicit": false,
+                  "title": "ANTI-SOCIAL",
+                  "artists": [],
+                  "regions": [
+                     "RUSSIA_PREMIUM",
+                     "RUSSIA"
+                  ]
+               }
+            ],
+            "regions": [
+               "RUSSIA_PREMIUM",
+               "RUSSIA"
+            ]
+         }
+      },
+      "playlists": {
+         "total": 20,
+         "perPage": 4,
+         "order": 1,
+         "results": [
+            {
+               "uid": 457553308,
+               "kind": 680942,
+               "trackCount": 20,
+               "title": "Лучшее: While She Sleeps",
+               "owner": {
+                  "uid": 457553308,
+                  "login": "yamusic-bestsongs",
+                  "name": "Яндекс.Музыка",
+                  "sex": "unknown",
+                  "verified": true
+               },
+               "cover": {
+                  "type": "pic",
+                  "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%",
+                  "custom": false
+               },
+               "tags": [],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "uid": 460142547,
+               "kind": 2673840,
+               "trackCount": 20,
+               "title": "В стиле: While She Sleeps feat. Jenny Staniforth",
+               "owner": {
+                  "uid": 460142547,
+                  "login": "yamusic-similar",
+                  "name": "Яндекс.Музыка",
+                  "sex": "unknown",
+                  "verified": true
+               },
+               "cover": {
+                  "type": "mosaic",
+                  "itemsUri": [
+                     "avatars.yandex.net/get-music-content/49707/eccb2bda.a.1098755-1/%%",
+                     "avatars.yandex.net/get-music-content/32236/73bde39b.a.1893137-1/%%",
+                     "avatars.yandex.net/get-music-content/192707/81abdd6c.a.4719523-1/%%",
+                     "avatars.yandex.net/get-music-content/41288/d3132b0e.a.1721528-1/%%"
+                  ],
+                  "custom": false
+               },
+               "tags": [],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "uid": 460142547,
+               "kind": 680942,
+               "trackCount": 20,
+               "title": "В стиле: While She Sleeps",
+               "owner": {
+                  "uid": 460142547,
+                  "login": "yamusic-similar",
+                  "name": "Яндекс.Музыка",
+                  "sex": "unknown",
+                  "verified": true
+               },
+               "cover": {
+                  "type": "pic",
+                  "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%",
+                  "custom": false
+               },
+               "tags": [],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "uid": 50235327,
+               "kind": 1005,
+               "trackCount": 14,
+               "title": "While She Sleeps 30.08.19",
+               "owner": {
+                  "uid": 50235327,
+                  "login": "elfruin",
+                  "name": "ViableSprite",
+                  "sex": "male",
+                  "verified": false
+               },
+               "cover": {
+                  "type": "mosaic",
+                  "itemsUri": [
+                     "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%",
+                     "avatars.yandex.net/get-music-content/193823/02439d36.a.7169040-1/%%",
+                     "avatars.yandex.net/get-music-content/32236/8c8ba562.a.2623404-1/%%",
+                     "avatars.yandex.net/get-music-content/49707/eccb2bda.a.1098755-1/%%"
+                  ],
+                  "custom": false
+               },
+               "tags": [],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            }
+         ]
+      },
+      "artists": {
+         "total": 2,
+         "perPage": 10,
+         "order": 0,
+         "results": [
+            {
+               "id": 680942,
+               "cover": {
+                  "type": "from-album-cover",
+                  "prefix": "4dda4e85.a.6979955-1",
+                  "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+               },
+               "composer": false,
+               "name": "While She Sleeps",
+               "various": false,
+               "counts": {
+                  "tracks": 65,
+                  "directAlbums": 7,
+                  "alsoAlbums": 0,
+                  "alsoTracks": 0
+               },
+               "genres": [
+                  "extrememetal"
+               ],
+               "ticketsAvailable": false,
+               "popularTracks": [
+                  {
+                     "id": 49173892,
+                     "available": true,
+                     "availableAsRbt": false,
+                     "availableForPremiumUsers": true,
+                     "lyricsAvailable": true,
+                     "albums": [
+                        {
+                           "id": 6730620,
+                           "storageDir": "6e42bfe6.a.6730620",
+                           "artists": [],
+                           "coverUri": "avatars.yandex.net/get-music-content/118603/6e42bfe6.a.6730620-1/%%",
+                           "trackCount": 1,
+                           "genre": "extrememetal",
+                           "available": true,
+                           "availableForPremiumUsers": true,
+                           "title": "THE GUILTY PARTY",
+                           "trackPosition": {
+                              "volume": 1,
+                              "index": 1
+                           }
+                        }
+                     ],
+                     "storageDir": "1135407_fe5925f2.73065568.1.49173892",
+                     "durationMs": 266530,
+                     "explicit": false,
+                     "title": "THE GUILTY PARTY",
+                     "artists": [],
+                     "regions": [
+                        "RUSSIA_PREMIUM",
+                        "RUSSIA"
+                     ]
+                  },
+                  {
+                     "id": 41071254,
+                     "available": true,
+                     "availableAsRbt": false,
+                     "availableForPremiumUsers": true,
+                     "lyricsAvailable": false,
+                     "albums": [
+                        {
+                           "id": 7169040,
+                           "storageDir": "02439d36.a.7169040",
+                           "artists": [],
+                           "coverUri": "avatars.yandex.net/get-music-content/193823/02439d36.a.7169040-1/%%",
+                           "trackCount": 19,
+                           "genre": "extrememetal",
+                           "available": true,
+                           "contentWarning": "explicit",
+                           "availableForPremiumUsers": true,
+                           "title": "You Are We",
+                           "trackPosition": {
+                              "volume": 1,
+                              "index": 13
+                           }
+                        }
+                     ],
+                     "storageDir": "1132934_20994084.61912707.1.41071254",
+                     "durationMs": 351030,
+                     "explicit": false,
+                     "title": "Silence Speaks",
+                     "version": "Alternative Version - Live at St Pancras Church",
+                     "artists": [],
+                     "regions": [
+                        "RUSSIA_PREMIUM",
+                        "RUSSIA"
+                     ]
+                  },
+                  {
+                     "id": 44383629,
+                     "available": true,
+                     "availableAsRbt": false,
+                     "availableForPremiumUsers": true,
+                     "lyricsAvailable": true,
+                     "contentWarning": "explicit",
+                     "albums": [
+                        {
+                           "id": 5950950,
+                           "storageDir": "37d1d197.a.5950950",
+                           "artists": [],
+                           "trackCount": 0,
+                           "genre": "extrememetal",
+                           "available": false,
+                           "contentWarning": "explicit",
+                           "availableForPremiumUsers": false,
+                           "title": "ANTI-SOCIAL"
+                        }
+                     ],
+                     "storageDir": "1373963_befd58f5.70029931.1.44383629",
+                     "durationMs": 254540,
+                     "explicit": false,
+                     "title": "ANTI-SOCIAL",
+                     "artists": [],
+                     "regions": [
+                        "RUSSIA_PREMIUM",
+                        "RUSSIA"
+                     ]
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 2673840,
+               "composer": false,
+               "name": "While She Sleeps feat. Jenny Staniforth",
+               "various": false,
+               "counts": {
+                  "tracks": 1,
+                  "directAlbums": 0,
+                  "alsoAlbums": 1,
+                  "alsoTracks": 1
+               },
+               "genres": [],
+               "ticketsAvailable": false,
+               "popularTracks": [
+                  {
+                     "id": 10174285,
+                     "available": true,
+                     "availableAsRbt": false,
+                     "availableForPremiumUsers": true,
+                     "lyricsAvailable": true,
+                     "albums": [
+                        {
+                           "id": 1098755,
+                           "storageDir": "eccb2bda.a.1098755",
+                           "artists": [],
+                           "coverUri": "avatars.yandex.net/get-music-content/49707/eccb2bda.a.1098755-1/%%",
+                           "trackCount": 18,
+                           "genre": "extrememetal",
+                           "available": true,
+                           "availableForPremiumUsers": true,
+                           "title": "This Is the Six",
+                           "trackPosition": {
+                              "volume": 1,
+                              "index": 16
+                           }
+                        }
+                     ],
+                     "storageDir": "44020_7f841fb5.13234462.1.10174285",
+                     "durationMs": 300960,
+                     "explicit": false,
+                     "title": "Seven Hills",
+                     "version": "Alternate version",
+                     "artists": [],
+                     "regions": [
+                        "RUSSIA_PREMIUM",
+                        "RUSSIA"
+                     ]
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            }
+         ]
+      },
+      "videos": {
+         "total": 6,
+         "perPage": 6,
+         "order": 6,
+         "results": [
+            {
+               "youtubeUrl": "http://www.youtube.com/watch?v=-0PfGJPO-k4",
+               "thumbnailUrl": "https://avatars.mds.yandex.net/get-vthumb/1646513/2d220eb678e65ce38cd9c19403bffcb4/%%x%%",
+               "title": "While She Sleeps - Haunt ME",
+               "duration": 299,
+               "text": "",
+               "htmlAutoPlayVideoPlayer": "<iframe src=\"//www.youtube.com/embed/-0PfGJPO-k4?autoplay=1&amp;enablejsapi=1&amp;wmode=opaque\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"1\" allow=\"autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture\" aria-label=\"Video\"></iframe>",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "youtubeUrl": "http://www.youtube.com/watch?v=htc45JfjxC4",
+               "thumbnailUrl": "https://avatars.mds.yandex.net/get-vthumb/748935/c23b8c34aa0689036c7c849ff0aeda68/%%x%%",
+               "title": "While She Sleeps - THE Guilty Party",
+               "duration": 276,
+               "text": "",
+               "htmlAutoPlayVideoPlayer": "<iframe src=\"//www.youtube.com/embed/htc45JfjxC4?autoplay=1&amp;enablejsapi=1&amp;wmode=opaque\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"1\" allow=\"autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture\" aria-label=\"Video\"></iframe>",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "youtubeUrl": "http://www.youtube.com/watch?v=eH6tqXQNWUA",
+               "thumbnailUrl": "https://avatars.mds.yandex.net/get-vthumb/2089485/a6f0218719a359ae3f1f5b2bd3549392/%%x%%",
+               "title": "While She Sleeps ft.  Oli Sykes- Silence Speaks (Official Video)",
+               "duration": 304,
+               "text": "",
+               "htmlAutoPlayVideoPlayer": "<iframe src=\"//www.youtube.com/embed/eH6tqXQNWUA?autoplay=1&amp;enablejsapi=1&amp;wmode=opaque\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"1\" allow=\"autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture\" aria-label=\"Video\"></iframe>",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "youtubeUrl": "http://www.youtube.com/watch?v=7NzaqB0c50U",
+               "thumbnailUrl": "https://avatars.mds.yandex.net/get-vthumb/215316/4a473f36c99c454c5a5398420426464e/%%x%%",
+               "title": "While She Sleeps - Empire Of Silence (Official Video)",
+               "duration": 263,
+               "text": "",
+               "htmlAutoPlayVideoPlayer": "<iframe src=\"//www.youtube.com/embed/7NzaqB0c50U?autoplay=1&amp;enablejsapi=1&amp;wmode=opaque\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"1\" allow=\"autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture\" aria-label=\"Video\"></iframe>",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "youtubeUrl": "http://www.youtube.com/watch?v=I65FVY6sqWk",
+               "thumbnailUrl": "https://avatars.mds.yandex.net/get-vthumb/916850/b0f926c96d284bbcd8a630bd3b6435ec/%%x%%",
+               "title": "While She Sleeps - Steal The Sun (Official Video)",
+               "duration": 277,
+               "text": "",
+               "htmlAutoPlayVideoPlayer": "<iframe src=\"//www.youtube.com/embed/I65FVY6sqWk?autoplay=1&amp;enablejsapi=1&amp;wmode=opaque\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"1\" allow=\"autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture\" aria-label=\"Video\"></iframe>",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "youtubeUrl": "http://www.youtube.com/watch?v=T1IOW2rR0OY",
+               "thumbnailUrl": "https://avatars.mds.yandex.net/get-vthumb/406130/74932a418550cce619629e17154e4740/%%x%%",
+               "title": "While She Sleeps - Four Walls (Official Video)",
+               "duration": 307,
+               "text": "",
+               "htmlAutoPlayVideoPlayer": "<iframe src=\"//www.youtube.com/embed/T1IOW2rR0OY?autoplay=1&amp;enablejsapi=1&amp;wmode=opaque\" frameborder=\"0\" scrolling=\"no\" allowfullscreen=\"1\" allow=\"autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture\" aria-label=\"Video\"></iframe>",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            }
+         ]
+      },
+      "tracks": {
+         "total": 30892,
+         "perPage": 20,
+         "order": 2,
+         "results": [
+            {
+               "id": 15304057,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 1671522,
+                     "storageDir": "04468c36.a.1671522",
+                     "originalReleaseYear": 2013,
+                     "year": 2013,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/38044/04468c36.a.1671522-1/%%",
+                     "trackCount": 4,
+                     "genre": "indie",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "S/T",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 3
+                     }
+                  }
+               ],
+               "storageDir": "1590002_18cc4513.20106209.1.15304057",
+               "durationMs": 156550,
+               "explicit": false,
+               "title": "While She",
+               "artists": [
+                  {
+                     "id": 2553339,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "04468c36.a.1671522-1",
+                        "uri": "avatars.yandex.net/get-music-content/38044/04468c36.a.1671522-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Falling from Friday",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 43595919,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 5806544,
+                     "storageDir": "5cdb9f6e.a.5806544",
+                     "originalReleaseYear": 2019,
+                     "year": 2019,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/117546/5cdb9f6e.a.5806544-1/%%",
+                     "trackCount": 11,
+                     "genre": "hardrock",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "Ride to Nowhere",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 9
+                     }
+                  }
+               ],
+               "storageDir": "1136444_9dad9ba9.65197462.2.43595919",
+               "durationMs": 247640,
+               "explicit": false,
+               "title": "While She Sleeps",
+               "artists": [
+                  {
+                     "id": 3969670,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "df780c93.a.3013442-5",
+                        "uri": "avatars.yandex.net/get-music-content/163479/df780c93.a.3013442-5/%%"
+                     },
+                     "composer": false,
+                     "name": "Inglorious",
+                     "various": false,
+                     "decomposed": []
+                  },
+                  {
+                     "id": 6223967,
+                     "composer": false,
+                     "name": "Inglorius",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 49173892,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": true,
+               "albums": [
+                  {
+                     "id": 6979955,
+                     "storageDir": "4dda4e85.a.6979955",
+                     "originalReleaseYear": 2019,
+                     "year": 2019,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%",
+                     "trackCount": 11,
+                     "genre": "extrememetal",
+                     "available": true,
+                     "contentWarning": "explicit",
+                     "availableForPremiumUsers": true,
+                     "title": "SO WHAT?",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 5
+                     }
+                  }
+               ],
+               "storageDir": "1135407_fe5925f2.73065568.1.49173892",
+               "durationMs": 266530,
+               "explicit": false,
+               "title": "THE GUILTY PARTY",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 10723247,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 1162905,
+                     "storageDir": "19383277.a.1162905",
+                     "originalReleaseYear": 2008,
+                     "year": 2008,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/49876/19383277.a.1162905-1/%%",
+                     "trackCount": 13,
+                     "genre": "rock",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "Odd Foundations",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 2
+                     }
+                  }
+               ],
+               "storageDir": "1662525_7f36741a.14151181.1.10723247",
+               "durationMs": 335540,
+               "explicit": false,
+               "title": "While She Sits",
+               "artists": [
+                  {
+                     "id": 37089,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "5c6b0528.a.5147121-1",
+                        "uri": "avatars.yandex.net/get-music-content/118603/5c6b0528.a.5147121-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Notch",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 21496943,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": true,
+               "albums": [
+                  {
+                     "id": 2460843,
+                     "storageDir": "571818aa.a.2460843",
+                     "originalReleaseYear": 2010,
+                     "year": 2010,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/49707/571818aa.a.2460843-1/%%",
+                     "trackCount": 16,
+                     "genre": "rock",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "Brussld",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 15
+                     }
+                  }
+               ],
+               "storageDir": "510326_aff83675.31654513.1.21496943",
+               "durationMs": 200100,
+               "explicit": false,
+               "title": "While She Dances",
+               "artists": [
+                  {
+                     "id": 3379,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "1993e188.a.5229554-1",
+                        "uri": "avatars.yandex.net/get-music-content/113160/1993e188.a.5229554-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Arno",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 24293990,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 2827533,
+                     "storageDir": "199336bf.a.2827533",
+                     "originalReleaseYear": 2015,
+                     "year": 2015,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/41288/199336bf.a.2827533-1/%%",
+                     "trackCount": 15,
+                     "genre": "foreignrap",
+                     "available": true,
+                     "contentWarning": "explicit",
+                     "availableForPremiumUsers": true,
+                     "title": "Hustle in the Party",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 3
+                     }
+                  }
+               ],
+               "storageDir": "230570_94eede35.35780526.1.24293990",
+               "durationMs": 201950,
+               "explicit": false,
+               "title": "While She Twerking",
+               "artists": [
+                  {
+                     "id": 3808748,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "199336bf.a.2827533-1",
+                        "uri": "avatars.yandex.net/get-music-content/41288/199336bf.a.2827533-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Kenny00g & P Banks",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 21519291,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": true,
+               "albums": [
+                  {
+                     "id": 2623404,
+                     "storageDir": "8c8ba562.a.2623404",
+                     "originalReleaseYear": 2015,
+                     "year": 2015,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/32236/8c8ba562.a.2623404-1/%%",
+                     "trackCount": 15,
+                     "genre": "extrememetal",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "Brainwashed",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 7
+                     }
+                  }
+               ],
+               "storageDir": "99157_8df54d6a.65369002.1.21519291",
+               "durationMs": 307960,
+               "explicit": false,
+               "title": "Four Walls",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 54191585,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 7796594,
+                     "storageDir": "347b9141.a.7796594",
+                     "originalReleaseYear": 2019,
+                     "year": 2019,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/142001/347b9141.a.7796594-1/%%",
+                     "trackCount": 17,
+                     "genre": "dance",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "Typ3 Records WMC/MMW 2019",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 7
+                     }
+                  }
+               ],
+               "storageDir": "1520909_75c33be6.80626455.1.54191585",
+               "durationMs": 495880,
+               "explicit": false,
+               "title": "While She Dreams",
+               "artists": [
+                  {
+                     "id": 1630459,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "9c075b7d.a.8666056-1",
+                        "uri": "avatars.yandex.net/get-music-content/98892/9c075b7d.a.8666056-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Luke Hunter",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 33801003,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": true,
+               "albums": [
+                  {
+                     "id": 4056198,
+                     "storageDir": "eefb86d3.a.4056198",
+                     "originalReleaseYear": 2017,
+                     "year": 2017,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/49707/eefb86d3.a.4056198-1/%%",
+                     "trackCount": 11,
+                     "genre": "extrememetal",
+                     "available": true,
+                     "contentWarning": "explicit",
+                     "availableForPremiumUsers": true,
+                     "title": "You Are We",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 9
+                     }
+                  }
+               ],
+               "storageDir": "1195010_6b071606.50184777.6.33801003",
+               "durationMs": 283140,
+               "explicit": false,
+               "title": "Hurricane",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 33800997,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": true,
+               "contentWarning": "explicit",
+               "albums": [
+                  {
+                     "id": 4056198,
+                     "storageDir": "eefb86d3.a.4056198",
+                     "originalReleaseYear": 2017,
+                     "year": 2017,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/49707/eefb86d3.a.4056198-1/%%",
+                     "trackCount": 11,
+                     "genre": "extrememetal",
+                     "available": true,
+                     "contentWarning": "explicit",
+                     "availableForPremiumUsers": true,
+                     "title": "You Are We",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 1
+                     }
+                  }
+               ],
+               "storageDir": "920551_72400325.50184763.6.33800997",
+               "durationMs": 287610,
+               "explicit": true,
+               "title": "You Are We",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 41071254,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 7388737,
+                     "storageDir": "247da070.a.7388737",
+                     "originalReleaseYear": 2018,
+                     "year": 2018,
+                     "version": "Live at St Pancras Church; Alternative Version",
+                     "type": "single",
+                     "artists": [],
+                     "trackCount": 0,
+                     "genre": "extrememetal",
+                     "available": false,
+                     "availableForPremiumUsers": false,
+                     "title": "Silence Speaks"
+                  }
+               ],
+               "storageDir": "1132934_20994084.61912707.1.41071254",
+               "durationMs": 351030,
+               "explicit": false,
+               "title": "Silence Speaks",
+               "version": "Alternative Version - Live at St Pancras Church",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 33800999,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": true,
+               "albums": [
+                  {
+                     "id": 7169040,
+                     "storageDir": "02439d36.a.7169040",
+                     "originalReleaseYear": 2018,
+                     "year": 2018,
+                     "version": "Special Edition",
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/193823/02439d36.a.7169040-1/%%",
+                     "trackCount": 19,
+                     "genre": "extrememetal",
+                     "available": true,
+                     "contentWarning": "explicit",
+                     "availableForPremiumUsers": true,
+                     "title": "You Are We",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 3
+                     }
+                  }
+               ],
+               "storageDir": "472510_5fb2046b.51750761.5.33800999",
+               "durationMs": 279720,
+               "explicit": false,
+               "title": "Feel",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 57561893,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 8665737,
+                     "storageDir": "a37066b3.a.8665737",
+                     "originalReleaseYear": 2003,
+                     "year": 2003,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/119639/a37066b3.a.8665737-1/%%",
+                     "trackCount": 11,
+                     "genre": "newage",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "Zen Garden: Awakening Storm",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 2
+                     }
+                  }
+               ],
+               "storageDir": "1027306_d689a127.85618018.2.57561893",
+               "durationMs": 284950,
+               "explicit": false,
+               "title": "While She Sleeps",
+               "artists": [
+                  {
+                     "id": 3610848,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "ba8809f7.a.8664232-1",
+                        "uri": "avatars.yandex.net/get-music-content/97284/ba8809f7.a.8664232-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Trammell Starks",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 15127839,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 1653660,
+                     "storageDir": "e37cd82d.a.1653660",
+                     "originalReleaseYear": 2004,
+                     "year": 2004,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/49707/e37cd82d.a.1653660-1/%%",
+                     "trackCount": 13,
+                     "genre": "jazz",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "Melancolía Feat. Seamus Blake | Ben Street | Antonio Sanchez.",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 9
+                     }
+                  }
+               ],
+               "storageDir": "15615_0a55630f.15127839",
+               "durationMs": 273160,
+               "explicit": false,
+               "title": "While She Sleeps",
+               "artists": [
+                  {
+                     "id": 1089114,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "3dcf9fcb.a.1249548-1",
+                        "uri": "avatars.yandex.net/get-music-content/41288/3dcf9fcb.a.1249548-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Manuel Valera",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 15075500,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 1648086,
+                     "storageDir": "89f04e0b.a.1648086",
+                     "originalReleaseYear": 2012,
+                     "year": 2012,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/42108/89f04e0b.a.1648086-1/%%",
+                     "trackCount": 12,
+                     "genre": "folk",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "All in a Daze Work",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 12
+                     }
+                  }
+               ],
+               "storageDir": "13284_14539319.15075500",
+               "durationMs": 208930,
+               "explicit": false,
+               "title": "While She Waits",
+               "artists": [
+                  {
+                     "id": 2515682,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "89f04e0b.a.1648086-1",
+                        "uri": "avatars.yandex.net/get-music-content/42108/89f04e0b.a.1648086-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Scott Neubert",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 40130850,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 5206400,
+                     "storageDir": "dc0c0e5d.a.5206400",
+                     "originalReleaseYear": 2018,
+                     "year": 2018,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/143117/dc0c0e5d.a.5206400-1/%%",
+                     "trackCount": 22,
+                     "genre": "techno",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "Techno Herz Berlin 2018",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 7
+                     }
+                  }
+               ],
+               "storageDir": "405099_8f5a9d42.60779343.2.40130850",
+               "durationMs": 315870,
+               "explicit": false,
+               "title": "While She Sleeps",
+               "artists": [
+                  {
+                     "id": 4387371,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "644c13d9.a.5854807-1",
+                        "uri": "avatars.yandex.net/get-music-content/95061/644c13d9.a.5854807-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Deep Dimension",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 4822588,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "contentWarning": "explicit",
+               "albums": [
+                  {
+                     "id": 536317,
+                     "storageDir": "3af94ab3.a.536317",
+                     "originalReleaseYear": 2012,
+                     "year": 2012,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/28589/3af94ab3.a.536317-1/%%",
+                     "trackCount": 6,
+                     "genre": "pop",
+                     "available": true,
+                     "contentWarning": "explicit",
+                     "availableForPremiumUsers": true,
+                     "title": "Cyber Bully",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 4
+                     }
+                  }
+               ],
+               "storageDir": "15603_0597c0d9.4822588",
+               "durationMs": 213890,
+               "explicit": true,
+               "title": "While She Work",
+               "artists": [
+                  {
+                     "id": 915569,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "3af94ab3.a.536317-1",
+                        "uri": "avatars.yandex.net/get-music-content/28589/3af94ab3.a.536317-1/%%"
+                     },
+                     "composer": false,
+                     "name": "E13",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 44383629,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": true,
+               "contentWarning": "explicit",
+               "albums": [
+                  {
+                     "id": 6979955,
+                     "storageDir": "4dda4e85.a.6979955",
+                     "originalReleaseYear": 2019,
+                     "year": 2019,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%",
+                     "trackCount": 11,
+                     "genre": "extrememetal",
+                     "available": true,
+                     "contentWarning": "explicit",
+                     "availableForPremiumUsers": true,
+                     "title": "SO WHAT?",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 1
+                     }
+                  }
+               ],
+               "storageDir": "1373963_befd58f5.70029931.1.44383629",
+               "durationMs": 254540,
+               "explicit": true,
+               "title": "ANTI-SOCIAL",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 22153374,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 8747175,
+                     "storageDir": "49ee8321.a.8747175",
+                     "originalReleaseYear": 1993,
+                     "year": 1993,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/192707/49ee8321.a.8747175-1/%%",
+                     "trackCount": 9,
+                     "genre": "newage",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "The Archery of Guitar",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 3
+                     }
+                  }
+               ],
+               "storageDir": "1672685_0278430a.32744643.1.22153374",
+               "durationMs": 203440,
+               "explicit": false,
+               "title": "While She Sleeps",
+               "artists": [
+                  {
+                     "id": 94508,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "c7e497a2.a.6366910-1",
+                        "uri": "avatars.yandex.net/get-music-content/149669/c7e497a2.a.6366910-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Billy McLaughlin",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 42410516,
+               "available": true,
+               "availableAsRbt": false,
+               "availableForPremiumUsers": true,
+               "lyricsAvailable": false,
+               "albums": [
+                  {
+                     "id": 5600273,
+                     "storageDir": "a46ec84c.a.5600273",
+                     "originalReleaseYear": 2018,
+                     "year": 2018,
+                     "artists": [],
+                     "coverUri": "avatars.yandex.net/get-music-content/117546/a46ec84c.a.5600273-1/%%",
+                     "trackCount": 99,
+                     "genre": "country",
+                     "available": true,
+                     "availableForPremiumUsers": true,
+                     "title": "Peter Rosenthal",
+                     "trackPosition": {
+                        "volume": 1,
+                        "index": 95
+                     }
+                  }
+               ],
+               "storageDir": "963409_e420cf86.63656442.1.42410516",
+               "durationMs": 196490,
+               "explicit": false,
+               "title": "While She Waits",
+               "artists": [
+                  {
+                     "id": 6044437,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "a46ec84c.a.5600273-1",
+                        "uri": "avatars.yandex.net/get-music-content/117546/a46ec84c.a.5600273-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Peter Rosenthal",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            }
+         ]
+      },
+      "albums": {
+         "total": 22,
+         "perPage": 10,
+         "order": 3,
+         "results": [
+            {
+               "id": 6979955,
+               "storageDir": "4dda4e85.a.6979955",
+               "originalReleaseYear": 2019,
+               "year": 2019,
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%",
+               "trackCount": 11,
+               "genre": "extrememetal",
+               "available": true,
+               "contentWarning": "explicit",
+               "availableForPremiumUsers": true,
+               "title": "SO WHAT?",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 7169040,
+               "storageDir": "02439d36.a.7169040",
+               "originalReleaseYear": 2018,
+               "year": 2018,
+               "version": "Special Edition",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/193823/02439d36.a.7169040-1/%%",
+               "trackCount": 19,
+               "genre": "extrememetal",
+               "available": true,
+               "contentWarning": "explicit",
+               "availableForPremiumUsers": true,
+               "title": "You Are We",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 6730620,
+               "storageDir": "6e42bfe6.a.6730620",
+               "originalReleaseYear": 2019,
+               "year": 2019,
+               "type": "single",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/118603/6e42bfe6.a.6730620-1/%%",
+               "trackCount": 1,
+               "genre": "extrememetal",
+               "available": true,
+               "availableForPremiumUsers": true,
+               "title": "THE GUILTY PARTY",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 8796335,
+               "storageDir": "7f85ec55.a.8796335",
+               "originalReleaseYear": 2018,
+               "year": 2018,
+               "artists": [
+                  {
+                     "id": 22146,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "8ac27a41.a.4821476-1",
+                        "uri": "avatars.yandex.net/get-music-content/142001/8ac27a41.a.4821476-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Art Lande",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/193823/7f85ec55.a.8796335-1/%%",
+               "trackCount": 14,
+               "genre": "jazz",
+               "available": true,
+               "availableForPremiumUsers": true,
+               "title": "While She Sleeps",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 2623404,
+               "storageDir": "8c8ba562.a.2623404",
+               "originalReleaseYear": 2015,
+               "year": 2015,
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/32236/8c8ba562.a.2623404-1/%%",
+               "trackCount": 15,
+               "genre": "extrememetal",
+               "available": true,
+               "availableForPremiumUsers": true,
+               "title": "Brainwashed",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 1098755,
+               "storageDir": "eccb2bda.a.1098755",
+               "originalReleaseYear": 2013,
+               "year": 2013,
+               "version": "Deluxe Edition",
+               "artists": [
+                  {
+                     "id": 680942,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "4dda4e85.a.6979955-1",
+                        "uri": "avatars.yandex.net/get-music-content/175191/4dda4e85.a.6979955-1/%%"
+                     },
+                     "composer": false,
+                     "name": "While She Sleeps",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/49707/eccb2bda.a.1098755-1/%%",
+               "trackCount": 18,
+               "genre": "extrememetal",
+               "available": true,
+               "availableForPremiumUsers": true,
+               "title": "This Is the Six",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 5164856,
+               "storageDir": "ffb0589b.a.5164856",
+               "originalReleaseYear": 2018,
+               "year": 2018,
+               "artists": [
+                  {
+                     "id": 3147528,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "887717ea.a.4974613-1",
+                        "uri": "avatars.yandex.net/get-music-content/118603/887717ea.a.4974613-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Leah James",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/117546/ffb0589b.a.5164856-1/%%",
+               "trackCount": 10,
+               "genre": "alternative",
+               "available": true,
+               "availableForPremiumUsers": true,
+               "title": "While She Sleeps",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 1051238,
+               "storageDir": "7964f66e.a.1051238",
+               "originalReleaseYear": 2013,
+               "year": 2013,
+               "artists": [
+                  {
+                     "id": 664421,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "c7c2f26c.a.2665655-1",
+                        "uri": "avatars.yandex.net/get-music-content/49876/c7c2f26c.a.2665655-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Deymare",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/63210/7964f66e.a.1051238-1/%%",
+               "trackCount": 4,
+               "genre": "house",
+               "available": true,
+               "availableForPremiumUsers": true,
+               "title": "While She Danced",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 1518163,
+               "storageDir": "49d6ddab.a.1518163",
+               "originalReleaseYear": 2011,
+               "year": 2011,
+               "type": "single",
+               "artists": [
+                  {
+                     "id": 2336319,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "7a97a500.a.2563754-1",
+                        "uri": "avatars.yandex.net/get-music-content/63210/7a97a500.a.2563754-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Tom Edington",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/49876/49d6ddab.a.1518163-1/%%",
+               "trackCount": 1,
+               "genre": "country",
+               "available": true,
+               "availableForPremiumUsers": true,
+               "title": "While She Dreams",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            },
+            {
+               "id": 6881076,
+               "storageDir": "50a98577.a.6881076",
+               "originalReleaseYear": 2019,
+               "year": 2019,
+               "type": "single",
+               "artists": [
+                  {
+                     "id": 6956863,
+                     "cover": {
+                        "type": "from-album-cover",
+                        "prefix": "50a98577.a.6881076-1",
+                        "uri": "avatars.yandex.net/get-music-content/149669/50a98577.a.6881076-1/%%"
+                     },
+                     "composer": false,
+                     "name": "Dickon Maciver",
+                     "various": false,
+                     "decomposed": []
+                  }
+               ],
+               "coverUri": "avatars.yandex.net/get-music-content/149669/50a98577.a.6881076-1/%%",
+               "trackCount": 1,
+               "genre": "pop",
+               "available": true,
+               "availableForPremiumUsers": true,
+               "title": "While She Comes and Goes...",
+               "regions": [
+                  "RUSSIA_PREMIUM",
+                  "RUSSIA"
+               ]
+            }
+         ]
+      }
+   }
+}

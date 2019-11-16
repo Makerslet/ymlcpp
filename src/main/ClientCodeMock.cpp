@@ -22,6 +22,13 @@
 #include "commands/TrackGetPathResponse.h"
 #include "commands/TrackDownloadRequest.h"
 #include "commands/TrackDownloadResponse.h"
+#include "commands/GenresRequest.h"
+#include"commands/GenresResponse.h"
+#include "commands/info_commands/content/AlbumsInfoResponse.h"
+#include "commands/info_commands/content/ArtistsInfoResponse.h"
+#include "commands/info_commands/content/PlaylistsInfoResponse.h"
+#include "commands/info_commands/content/TracksInforesponse.h"
+#include "commands/user_choice_commands/choice_set/UserChoiceSetResponse.h"
 
 #include <QDebug>
 
@@ -64,8 +71,19 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
 //        auto likesPlaylists = QSharedPointer<UserChoiceGetRequest>::create(_oauthToken, _userId, UserChoiceType::Like, ContentType::Playlists);
 //        emit sendRequest(likesPlaylists);
 
-        auto trackVariantsReq = QSharedPointer<TrackVariantsRequest>::create(_oauthToken, "45675837");
-        emit sendRequest(trackVariantsReq);
+//        auto trackVariantsReq = QSharedPointer<TrackVariantsRequest>::create(_oauthToken, "45675837");
+//        emit sendRequest(trackVariantsReq);
+        auto likesAlbumsReq = QSharedPointer<UserChoiceSetRequest>::create(_oauthToken,
+                                                                           "yamustest",
+                                                                           UserChoiceType::Like,
+                                                                           ContentType::Tracks,
+                                                                           UserAction::Remove,
+                                                                           QStringList{"5348657"});
+        emit sendRequest(likesAlbumsReq);
+    }
+    else if(response->appResponseType() == AppResponseType::UserChoiceSetResponse)
+    {
+        auto feedResponse = response.dynamicCast<UserChoiceSetResponse>();
     }
     else if(response->appResponseType() == AppResponseType::TrackVariantsResponse)
     {
