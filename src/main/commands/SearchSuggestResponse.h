@@ -2,16 +2,18 @@
 #define SEARCHSUGGESTRESPONSE_H
 
 #include "common_and_base/base_requests_responses/ServerResponse.h"
+#include "common_and_base/common_structures/ContentBase.h"
 
 #include <QVariant>
 #include <QVector>
+#include <QSharedPointer>
 
 namespace ymlcpp {
 namespace server_access {
 
 struct SearchSuggestResult
 {
-    //QSharedPointer<void> best;
+    QSharedPointer<ContentBase> best;
     QStringList suggestions;
 };
 

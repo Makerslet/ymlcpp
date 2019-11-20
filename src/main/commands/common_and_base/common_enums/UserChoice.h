@@ -11,7 +11,8 @@ enum class ContentType
     Albums,
     Artists,
     Playlists,
-    Tracks
+    Tracks,
+    Unknown
 };
 
 enum class UserChoiceType
@@ -33,6 +34,7 @@ public:
     static QString userChoiceContentToStringSingle(ContentType);
     static QString userChoiceTypeToString(UserChoiceType);
     static QString userActionToString(UserAction);
+    static ContentType contentTypeFromString(const QString&);
 };
 
 

@@ -1,6 +1,7 @@
 #ifndef ALBUMDESCRIPTION_H
 #define ALBUMDESCRIPTION_H
 
+#include "ContentBase.h"
 #include "ArtistDescription.h"
 
 #include <QString>
@@ -26,7 +27,7 @@ struct BestDescription
 
 };
 
-struct AlbumDescription
+struct AlbumDescription : public ContentBase
 {
     uint id;
     QString title;
@@ -46,6 +47,8 @@ struct AlbumDescription
     bool availableForMobile;
     bool availablePartially;
     QList<BestDescription> bests;
+
+    ContentType contentType() const override {return ContentType::Albums;}
 };
 
 }

@@ -1,6 +1,8 @@
 #ifndef ARTISTDESCRIPTION_H
 #define ARTISTDESCRIPTION_H
 
+#include "ContentBase.h"
+
 #include <QString>
 #include <QStringList>
 #include <QUrl>
@@ -39,7 +41,7 @@ struct ArtistLink
 };
 
 
-struct ArtistDescription
+struct ArtistDescription : public ContentBase
 {
     QString id;
     QString name;
@@ -53,6 +55,8 @@ struct ArtistDescription
     ArtistRaitings raitings;
     QList<ArtistLink> links;
     bool ticketsAvailable;
+
+    ContentType contentType() const override {return  ContentType::Artists;}
 };
 
 }

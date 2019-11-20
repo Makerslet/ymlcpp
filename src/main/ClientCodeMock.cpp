@@ -73,13 +73,19 @@ void ClientCodeMock::responseReceived(QSharedPointer<IServerResponse> response)
 
 //        auto trackVariantsReq = QSharedPointer<TrackVariantsRequest>::create(_oauthToken, "45675837");
 //        emit sendRequest(trackVariantsReq);
-        auto likesAlbumsReq = QSharedPointer<UserChoiceSetRequest>::create(_oauthToken,
-                                                                           "yamustest",
-                                                                           UserChoiceType::Like,
-                                                                           ContentType::Tracks,
-                                                                           UserAction::Remove,
-                                                                           QStringList{"5348657"});
-        emit sendRequest(likesAlbumsReq);
+//        auto likesAlbumsReq = QSharedPointer<UserChoiceSetRequest>::create(_oauthToken,
+//                                                                           "yamustest",
+//                                                                           UserChoiceType::Like,
+//                                                                           ContentType::Tracks,
+//                                                                           UserAction::Remove,
+//                                                                           QStringList{"5348657"});
+//        emit sendRequest(likesAlbumsReq);
+        auto searchRequest = QSharedPointer<SearchRequest>::create(_oauthToken, "while she");
+        emit sendRequest(searchRequest);
+    }
+    else if(response->appResponseType() == AppResponseType::SearchResponse)
+    {
+        auto searchResponse = response.dynamicCast<SearchResponse>();
     }
     else if(response->appResponseType() == AppResponseType::UserChoiceSetResponse)
     {

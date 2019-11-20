@@ -1,6 +1,8 @@
 #ifndef PLAYLISTDESCRIPTION_H
 #define PLAYLISTDESCRIPTION_H
 
+#include "ContentBase.h"
+
 #include <QString>
 #include <QDateTime>
 
@@ -25,7 +27,7 @@ struct PlaylistCover
     bool custom;
 };
 
-struct PlaylistInfo
+struct PlaylistInfo : public ContentBase
 {
     PlaylistOwner owner;
     uint uid;
@@ -49,6 +51,8 @@ struct PlaylistInfo
     QString ogImage;
     QStringList tags;
     QStringList prerolls;
+
+    ContentType contentType() const override {return ContentType::Playlists;}
 };
 
 struct PlaylistDescription

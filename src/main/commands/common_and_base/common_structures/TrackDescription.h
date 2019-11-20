@@ -3,6 +3,7 @@
 
 #include "ArtistDescription.h"
 #include "AlbumDescription.h"
+#include "ContentBase.h"
 
 #include <QString>
 
@@ -21,7 +22,7 @@ struct NormalizationDescription
     uint peak;
 };
 
-struct TrackDescription
+struct TrackDescription : public ContentBase
 {
     QString id;
     QString realId;
@@ -41,6 +42,8 @@ struct TrackDescription
     QString ogImage;
     bool lyricsAvailable;
     QString type;
+
+    ContentType contentType() const override {return ContentType::Tracks;}
 };
 
 }

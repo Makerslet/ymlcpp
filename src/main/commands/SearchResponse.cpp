@@ -3,6 +3,7 @@
 #include "common_and_base/parsers/AlbumDescriptionParser.h"
 #include "common_and_base/parsers/PlaylistDescriptionParser.h"
 #include "common_and_base/parsers/ArtistDescriptionParser.h"
+#include "common_and_base/parsers/BestParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -20,6 +21,7 @@ SearchResponse::~SearchResponse(){}
 void SearchResponse::parseContent(const QVariant& data)
 {
     auto resultFieldHash = data.toHash();
+    parseBest(resultFieldHash);
     parseTracks(resultFieldHash);
     parseAlbums(resultFieldHash);
     parsePlaylists(resultFieldHash);
@@ -74,6 +76,15 @@ void SearchResponse::parseArtists(const QVariantHash& rootResult)
             _result.artists.push_back(
                         ArtistDescriptionParser::parseArtistDescription(artist.toHash()));
     }
+}
+
+void SearchResponse::parseBest(const QVariantHash& rootResult)
+{
+    auto bestIter = rootResult.find("best");
+    if(bestIter == rootResult.end())
+        return;
+
+    _result.best = BestParser::parseBest(bestIter.value().toHash());
 }
 
 SearchResult SearchResponse::description() const

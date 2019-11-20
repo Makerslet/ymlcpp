@@ -6,16 +6,18 @@
 #include "common_and_base/common_structures/AlbumDescription.h"
 #include "common_and_base/common_structures/ArtistDescription.h"
 #include "common_and_base/common_structures/PlaylistDescription.h"
+#include "common_and_base/common_structures/ContentBase.h"
 
 #include <QVariant>
 #include <QVector>
+#include <QSharedPointer>
 
 namespace ymlcpp {
 namespace server_access {
 
 struct SearchResult
 {
-    void* best; // будет вариативное поле для лучшего результата
+    QSharedPointer<ContentBase> best;
     QVector<TrackDescription> tracks;
     QVector<AlbumDescription> albums;
     QVector<PlaylistInfo> playlists;
@@ -36,6 +38,7 @@ private:
     void parseAlbums(const QVariantHash&);
     void parsePlaylists(const QVariantHash&);
     void parseArtists(const QVariantHash&);
+    void parseBest(const QVariantHash&);
 
 private:
     SearchResult _result;
