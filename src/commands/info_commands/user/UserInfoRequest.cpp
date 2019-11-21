@@ -1,5 +1,5 @@
-#include "UserInfoRequest.h"
-#include "UserInfoResponse.h"
+#include "commands/info_commands/user/UserInfoRequest.h"
+#include "commands/info_commands/user/UserInfoResponse.h"
 
 namespace ymlcpp {
 namespace server_access {

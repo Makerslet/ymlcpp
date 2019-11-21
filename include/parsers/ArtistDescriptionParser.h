@@ -1,7 +1,7 @@
 #ifndef ARTISTDESCRIPTIONPARSER_H
 #define ARTISTDESCRIPTIONPARSER_H
 
-#include "../common_structures/ArtistDescription.h"
+#include "commands/common_and_base/common_structures/ArtistDescription.h"
 
 #include <QVariant>
 

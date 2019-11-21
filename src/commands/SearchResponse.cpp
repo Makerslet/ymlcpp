@@ -1,9 +1,9 @@
-#include "SearchResponse.h"
-#include "common_and_base/parsers/TrackDescriptionParser.h"
-#include "common_and_base/parsers/AlbumDescriptionParser.h"
-#include "common_and_base/parsers/PlaylistDescriptionParser.h"
-#include "common_and_base/parsers/ArtistDescriptionParser.h"
-#include "common_and_base/parsers/BestParser.h"
+#include "commands/SearchResponse.h"
+#include "parsers/TrackDescriptionParser.h"
+#include "parsers/AlbumDescriptionParser.h"
+#include "parsers/PlaylistDescriptionParser.h"
+#include "parsers/ArtistDescriptionParser.h"
+#include "parsers/BestParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

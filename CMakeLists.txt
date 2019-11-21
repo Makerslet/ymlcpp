@@ -7,10 +7,25 @@
 cmake_minimum_required(VERSION 3.11)
 project(ymlcpp VERSION 1.0 LANGUAGES CXX)
 
+set(TARGET_NAME ymlcpp)
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON) # включаем автоматическую генерацию moc-файлов qt
 
 find_package(Qt5 COMPONENTS Core Network REQUIRED CONFIG)
 
-add_subdirectory(src)
+set(PROJECT_INCLUDES ${PROJECT_SOURCE_DIR}/include)
+set(PROJECT_SOURCES ${PROJECT_SOURCE_DIR}/src)
 
+message(${PROJECT_INCLUDES})
+message(${PROJECT_SOURCES})
+
+include_directories(${PROJECT_INCLUDES})
+
+file(GLOB_RECURSE TARGET_HDR ${PROJECT_INCLUDES}/*.h)
+file(GLOB_RECURSE TARGET_SRC ${PROJECT_SOURCES}/*.cpp)
+
+add_library(${TARGET_NAME} SHARED ${TARGET_SRC} ${TARGET_HDR})
+
+target_sources(${TARGET_NAME} PUBLIC ${TARGET_SRC} PUBLIC ${TARGET_HDR})
+target_link_libraries(${TARGET_NAME} PUBLIC Qt5::Core Qt5::Network)

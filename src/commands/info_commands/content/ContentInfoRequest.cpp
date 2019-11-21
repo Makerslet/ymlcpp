@@ -1,8 +1,8 @@
-#include "ContentInfoRequest.h"
-#include "AlbumsInfoResponse.h"
-#include "ArtistsInfoResponse.h"
-#include "TracksInforesponse.h"
-#include "PlaylistsInfoResponse.h"
+#include "commands/info_commands/content/ContentInfoRequest.h"
+#include "commands/info_commands/content/AlbumsInfoResponse.h"
+#include "commands/info_commands/content/ArtistsInfoResponse.h"
+#include "commands/info_commands/content/TracksInforesponse.h"
+#include "commands/info_commands/content/PlaylistsInfoResponse.h"
 
 #include <QDebug>
 

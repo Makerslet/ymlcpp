@@ -1,5 +1,5 @@
-#include "GenresRequest.h"
-#include "GenresResponse.h"
+#include "commands/GenresRequest.h"
+#include "commands/GenresResponse.h"
 
 namespace ymlcpp {
 namespace server_access {

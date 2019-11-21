@@ -1,5 +1,5 @@
-#include "TrackDownloadRequest.h"
-#include "TrackDownloadResponse.h"
+#include "commands/TrackDownloadRequest.h"
+#include "commands/TrackDownloadResponse.h"
 
 
 namespace ymlcpp {

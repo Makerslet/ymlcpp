@@ -1,5 +1,5 @@
-#include "GetFeedRequest.h"
-#include "GetFeedResponse.h"
+#include "commands/GetFeedRequest.h"
+#include "commands/GetFeedResponse.h"
 
 namespace ymlcpp {
 namespace server_access {

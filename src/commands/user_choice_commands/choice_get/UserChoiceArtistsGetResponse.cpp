@@ -1,6 +1,5 @@
-#include "UserChoiceArtistsGetResponse.h"
-
-#include "../../common_and_base/parsers/ArtistDescriptionParser.h"
+#include "commands/user_choice_commands/choice_get/UserChoiceArtistsGetResponse.h"
+#include "parsers/ArtistDescriptionParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

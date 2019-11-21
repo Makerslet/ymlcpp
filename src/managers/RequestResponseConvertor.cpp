@@ -1,4 +1,4 @@
-#include "RequestResponseConvertor.h"
+#include "managers/RequestResponseConvertor.h"
 
 #include <QNetworkRequest>
 #include <QNetworkReply>

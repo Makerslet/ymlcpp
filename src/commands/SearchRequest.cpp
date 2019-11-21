@@ -1,5 +1,5 @@
-#include "SearchRequest.h"
-#include "SearchResponse.h"
+#include "commands/SearchRequest.h"
+#include "commands/SearchResponse.h"
 
 
 namespace ymlcpp {

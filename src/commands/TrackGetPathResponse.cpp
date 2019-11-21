@@ -1,4 +1,4 @@
-#include "TrackGetPathResponse.h"
+#include "commands/TrackGetPathResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

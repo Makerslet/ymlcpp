@@ -1,4 +1,4 @@
-#include "UserChoiceAlbumsGetResponse.h"
+#include "commands/user_choice_commands/choice_get/UserChoiceAlbumsGetResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

@@ -1,4 +1,4 @@
-#include "UserInfoResponse.h"
+#include "commands/info_commands/user/UserInfoResponse.h"
 
 #include <QJsonObject>
 #include <QJsonDocument>

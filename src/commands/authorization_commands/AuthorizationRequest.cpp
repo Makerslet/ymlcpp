@@ -1,5 +1,5 @@
-#include "AuthorizationRequest.h"
-#include "AuthorizationResponse.h"
+#include "commands/authorization_commands/AuthorizationRequest.h"
+#include "commands/authorization_commands/AuthorizationResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

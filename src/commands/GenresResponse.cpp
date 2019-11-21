@@ -1,4 +1,4 @@
-#include "GenresResponse.h"
+#include "commands/GenresResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

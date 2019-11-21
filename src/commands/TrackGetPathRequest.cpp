@@ -1,5 +1,5 @@
-#include "TrackGetPathRequest.h"
-#include "TrackGetPathResponse.h"
+#include "commands/TrackGetPathRequest.h"
+#include "commands/TrackGetPathResponse.h"
 
 namespace ymlcpp {
 namespace server_access {

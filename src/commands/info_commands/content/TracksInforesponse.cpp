@@ -1,5 +1,5 @@
-#include "TracksInforesponse.h"
-#include "../../common_and_base/parsers/TrackDescriptionParser.h"
+#include "commands/info_commands/content/TracksInforesponse.h"
+#include "parsers/TrackDescriptionParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

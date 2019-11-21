@@ -1,5 +1,5 @@
-#include "ArtistsInfoResponse.h"
-#include "../../common_and_base/parsers/ArtistDescriptionParser.h"
+#include "commands/info_commands/content/ArtistsInfoResponse.h"
+#include "parsers/ArtistDescriptionParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

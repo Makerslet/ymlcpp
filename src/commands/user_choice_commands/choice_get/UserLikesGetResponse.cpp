@@ -1,4 +1,4 @@
-#include "UserLikesGetResponse.h"
+#include "commands/user_choice_commands/choice_get/UserLikesGetResponse.h"
 
 namespace ymlcpp {
 namespace server_access  {

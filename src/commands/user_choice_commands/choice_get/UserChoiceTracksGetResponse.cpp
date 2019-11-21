@@ -1,4 +1,4 @@
-#include "UserChoiceTracksGetResponse.h"
+#include "commands/user_choice_commands/choice_get/UserChoiceTracksGetResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

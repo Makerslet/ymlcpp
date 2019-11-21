@@ -1,5 +1,5 @@
-#include "UserChoiceSetRequest.h"
-#include "UserChoiceSetResponse.h"
+#include "commands/user_choice_commands/choice_set/UserChoiceSetRequest.h"
+#include "commands/user_choice_commands/choice_set/UserChoiceSetResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

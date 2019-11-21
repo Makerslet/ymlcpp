@@ -1,4 +1,4 @@
-#include "ServerAccessor.h"
+#include "managers/ServerAccessor.h"
 #include <QNetworkReply>
 
 namespace ymlcpp {

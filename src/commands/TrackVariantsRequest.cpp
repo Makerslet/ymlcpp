@@ -1,5 +1,5 @@
-#include "TrackVariantsRequest.h"
-#include "TrackVariantsResponse.h"
+#include "commands/TrackVariantsRequest.h"
+#include "commands/TrackVariantsResponse.h"
 
 namespace ymlcpp {
 namespace server_access {

@@ -1,6 +1,6 @@
-#include "AlbumsInfoResponse.h"
-#include "../../common_and_base/common_enums/AppResponseTypes.h"
-#include "../../common_and_base/parsers/AlbumDescriptionParser.h"
+#include "commands/info_commands/content/AlbumsInfoResponse.h"
+#include "commands/common_and_base/common_enums/AppResponseTypes.h"
+#include "parsers/AlbumDescriptionParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

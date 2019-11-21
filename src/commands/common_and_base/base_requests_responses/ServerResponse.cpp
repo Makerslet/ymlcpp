@@ -1,4 +1,4 @@
-#include "ServerResponse.h"
+#include "commands/common_and_base/base_requests_responses/ServerResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

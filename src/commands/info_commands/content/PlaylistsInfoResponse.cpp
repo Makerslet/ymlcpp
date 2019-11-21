@@ -1,4 +1,4 @@
-#include "PlaylistsInfoResponse.h"
+#include "commands/info_commands/content/PlaylistsInfoResponse.h"
 
 namespace ymlcpp {
 namespace server_access {

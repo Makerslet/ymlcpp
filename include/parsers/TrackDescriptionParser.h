@@ -1,7 +1,7 @@
 #ifndef TRACKDESCRIPTIONPARSER_H
 #define TRACKDESCRIPTIONPARSER_H
 
-#include "../common_structures/TrackDescription.h"
+#include "commands/common_and_base/common_structures/TrackDescription.h"
 
 #include <QVariant>
 

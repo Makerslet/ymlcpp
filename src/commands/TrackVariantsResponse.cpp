@@ -1,4 +1,4 @@
-#include "TrackVariantsResponse.h"
+#include "commands/TrackVariantsResponse.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

@@ -1,7 +1,7 @@
 #ifndef ALBUMDESCRIPTIONPARSER_H
 #define ALBUMDESCRIPTIONPARSER_H
 
-#include "../common_structures/AlbumDescription.h"
+#include "commands/common_and_base/common_structures/AlbumDescription.h"
 
 #include <QVariant>
 

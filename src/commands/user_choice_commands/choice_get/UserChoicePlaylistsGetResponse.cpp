@@ -1,5 +1,5 @@
-#include "UserChoicePlaylistsGetResponse.h"
-#include "../../common_and_base/parsers/PlaylistDescriptionParser.h"
+#include "commands/user_choice_commands/choice_get/UserChoicePlaylistsGetResponse.h"
+#include "parsers/PlaylistDescriptionParser.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>

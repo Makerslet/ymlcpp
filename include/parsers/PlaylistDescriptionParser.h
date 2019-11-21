@@ -1,7 +1,7 @@
 #ifndef PLAYLISTDESCRIPTIONPARSER_H
 #define PLAYLISTDESCRIPTIONPARSER_H
 
-#include "../common_structures/PlaylistDescription.h"
+#include "commands/common_and_base/common_structures/PlaylistDescription.h"
 
 #include <QVariant>
 

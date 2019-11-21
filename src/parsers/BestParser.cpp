@@ -1,9 +1,8 @@
-#include "BestParser.h"
-
-#include "AlbumDescriptionParser.h"
-#include "ArtistDescriptionParser.h"
-#include "PlaylistDescriptionParser.h"
-#include "TrackDescriptionParser.h"
+#include "parsers/BestParser.h"
+#include "parsers/AlbumDescriptionParser.h"
+#include "parsers/ArtistDescriptionParser.h"
+#include "parsers/PlaylistDescriptionParser.h"
+#include "parsers/TrackDescriptionParser.h"
 
 
 namespace ymlcpp {

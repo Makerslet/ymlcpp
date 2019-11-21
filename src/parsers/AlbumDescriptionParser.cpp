@@ -1,5 +1,5 @@
-#include "AlbumDescriptionParser.h"
-#include "ArtistDescriptionParser.h"
+#include "parsers/AlbumDescriptionParser.h"
+#include "parsers/ArtistDescriptionParser.h"
 
 namespace ymlcpp {
 namespace server_access {

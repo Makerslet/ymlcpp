@@ -1,6 +1,6 @@
-#include "UserChoiceGetRequest.h"
-#include "UserLikesGetResponse.h"
-#include "UserDislikesGetResponse.h"
+#include "commands/user_choice_commands/choice_get/UserChoiceGetRequest.h"
+#include "commands/user_choice_commands/choice_get/UserLikesGetResponse.h"
+#include "commands/user_choice_commands/choice_get/UserDislikesGetResponse.h"
 
 #include <QDebug>
 

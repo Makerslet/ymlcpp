@@ -1,5 +1,5 @@
-#include "GetFeedResponse.h"
-#include "common_and_base/parsers/PlaylistDescriptionParser.h"
+#include "commands/GetFeedResponse.h"
+#include "parsers/PlaylistDescriptionParser.h"
 
 #include <QDebug>
 #include <QJsonDocument>
