@@ -14,13 +14,8 @@ set(CMAKE_AUTOMOC ON) # включаем автоматическую генер
 
 find_package(Qt5 COMPONENTS Core Network REQUIRED CONFIG)
 
-set(PROJECT_INCLUDES ${PROJECT_SOURCE_DIR}/include)
-set(PROJECT_SOURCES ${PROJECT_SOURCE_DIR}/src)
-
-message(${PROJECT_INCLUDES})
-message(${PROJECT_SOURCES})
-
-include_directories(${PROJECT_INCLUDES})
+set(PROJECT_INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/include)
+set(PROJECT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 file(GLOB_RECURSE TARGET_HDR ${PROJECT_INCLUDES}/*.h)
 file(GLOB_RECURSE TARGET_SRC ${PROJECT_SOURCES}/*.cpp)
@@ -29,3 +24,5 @@ add_library(${TARGET_NAME} SHARED ${TARGET_SRC} ${TARGET_HDR})
 
 target_sources(${TARGET_NAME} PUBLIC ${TARGET_SRC} PUBLIC ${TARGET_HDR})
 target_link_libraries(${TARGET_NAME} PUBLIC Qt5::Core Qt5::Network)
+
+target_include_directories(${TARGET_NAME} PUBLIC include)
