@@ -11,7 +11,7 @@ class ServerAccessor : public QObject
 {
     Q_OBJECT
 public:
-    ServerAccessor();
+    ServerAccessor(QObject* parent = nullptr);
     ~ServerAccessor();
 
     ServerAccessor(const ServerAccessor&) = delete;

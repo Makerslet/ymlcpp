@@ -4,9 +4,9 @@
 namespace ymlcpp {
 namespace server_access {
 
-ServerAccessor::ServerAccessor()
+ServerAccessor::ServerAccessor(QObject *parent) : QObject (parent)
 {
-    _networkAccessManager = new QNetworkAccessManager();
+    _networkAccessManager = new QNetworkAccessManager(this);
 
     connect(_networkAccessManager, &QNetworkAccessManager::finished,
             this, &ServerAccessor::responseReceived);

@@ -11,7 +11,7 @@ ServerAccessManager::ServerAccessManager(QObject *parent) : QObject(parent)
 {
     _convertor = new RequestResponseConvertor();
 
-    _accessor = new ServerAccessor();
+    _accessor = new ServerAccessor(this);
     connect(_accessor, &ServerAccessor::responseReceived,
             this, &ServerAccessManager::responseFromNetwork);
     connect(_accessor, &ServerAccessor::errorHapenned,
@@ -37,7 +37,6 @@ void ServerAccessManager::sendRequest(QSharedPointer<IServerRequest> request)
         _accessor->sendRequest(req);
         break;
     }
-    default: break;
     }
 }
 

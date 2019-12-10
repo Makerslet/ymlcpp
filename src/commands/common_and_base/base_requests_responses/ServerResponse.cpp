@@ -38,7 +38,10 @@ void ServerResponse::parseResponse(const QByteArray& data)
     auto errorFieldIter = rootHash.find("error");
 
     if(resultFieldIter != rootHash.end())
+    {
+        _respStatus = ResponseResult::Succes;
         parseContent(resultFieldIter.value());
+    }
     else if(errorFieldIter != rootHash.end())
     {
         _respStatus = ResponseResult::Error;
